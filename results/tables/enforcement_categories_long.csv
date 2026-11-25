@@ -1,0 +1,117 @@
+id,country,enforcement_category
+EU001,EU,Financial
+EU001,EU,Penalties
+EU001,EU,|
+EU001,EU,Conformity
+EU001,EU,Assessment
+EU001,EU,|
+EU001,EU,Market
+EU001,EU,Surveillance
+EU002,EU,Financial
+EU002,EU,Penalties
+EU002,EU,|
+EU002,EU,Conformity
+EU002,EU,Assessment
+EU002,EU,|
+EU002,EU,Market
+EU002,EU,Surveillance
+EU003,EU,Financial
+EU003,EU,Penalties
+EU003,EU,|
+EU003,EU,Conformity
+EU003,EU,Assessment
+EU003,EU,|
+EU003,EU,Market
+EU003,EU,Surveillance
+EU004,EU,Financial
+EU004,EU,Penalties
+EU004,EU,|
+EU004,EU,Conformity
+EU004,EU,Assessment
+EU004,EU,|
+EU004,EU,Market
+EU004,EU,Surveillance
+EU005,EU,Financial
+EU005,EU,Penalties
+EU005,EU,|
+EU005,EU,Conformity
+EU005,EU,Assessment
+EU005,EU,|
+EU005,EU,Market
+EU005,EU,Surveillance
+IND001,India,Voluntary
+IND001,India,or
+IND001,India,Soft
+IND001,India,Accountability
+IND001,India,|
+IND001,India,Monitoring
+IND001,India,and
+IND001,India,Reporting
+IND002,India,No
+IND002,India,Specific
+IND002,India,Mechanism
+IND002,India,Identified
+IND002,India,|
+IND002,India,Proposed
+IND002,India,or
+IND002,India,Future
+IND002,India,Mechanism
+IND003,India,Not
+IND003,India,Applicable
+IND004,India,Monitoring
+IND004,India,and
+IND004,India,Reporting
+IND005,India,Existing
+IND005,India,Regulatory
+IND005,India,Powers
+UK001,UK,Existing
+UK001,UK,Regulatory
+UK001,UK,Powers
+UK001,UK,|
+UK001,UK,Monitoring
+UK001,UK,and
+UK001,UK,Evaluation
+UK002,UK,Existing
+UK002,UK,Regulatory
+UK002,UK,Powers
+UK002,UK,|
+UK002,UK,Monitoring
+UK002,UK,and
+UK002,UK,Evaluation
+UK003,UK,Monitoring
+UK003,UK,and
+UK003,UK,Evaluation
+UK004,UK,Existing
+UK004,UK,Regulatory
+UK004,UK,Powers
+UK004,UK,|
+UK004,UK,Monitoring
+UK004,UK,and
+UK004,UK,Evaluation
+UK005,UK,Existing
+UK005,UK,Regulatory
+UK005,UK,Powers
+UK005,UK,|
+UK005,UK,Monitoring
+UK005,UK,and
+UK005,UK,Evaluation
+UK005,UK,|
+UK005,UK,Proposed
+UK005,UK,or
+UK005,UK,Future
+UK005,UK,Mechanism
+OECD001,OECD (international benchmark),Monitoring
+OECD001,OECD (international benchmark),and
+OECD001,OECD (international benchmark),Reporting
+OECD002,OECD (international benchmark),Monitoring
+OECD002,OECD (international benchmark),and
+OECD002,OECD (international benchmark),Reporting
+OECD003,OECD (international benchmark),Monitoring
+OECD003,OECD (international benchmark),and
+OECD003,OECD (international benchmark),Reporting
+OECD004,OECD (international benchmark),Monitoring
+OECD004,OECD (international benchmark),and
+OECD004,OECD (international benchmark),Reporting
+OECD005,OECD (international benchmark),Monitoring
+OECD005,OECD (international benchmark),and
+OECD005,OECD (international benchmark),Reporting

@@ -1,0 +1,10 @@
+id,country,enforcement_level,mechanism,rationale
+EU001,EU,cross_referenced,Administrative fines,Article 9 provider duty is linked to Article 16(a); Article 99(4)(a) provides fines for provider obligations under Article 16. Conformity assessment and market surveillance are wider system mechanisms.
+EU002,EU,cross_referenced,Administrative fines,Article 10 is linked to provider compliance under Article 16(a) and the Article 99(4)(a) penalty framework. Assessment and surveillance operate at system level.
+EU003,EU,cross_referenced,Administrative fines,Article 13 provider transparency duty is within the Articles 9-15 requirements linked by Article 16(a). Article 99(4)(a) applies to provider obligations under Article 16. Wider assessment and surveillance are recorded separately.
+EU004,EU,cross_referenced,Provider administrative fines,Article 14 provider design obligations connect to Article 16(a) and Article 99(4)(a). The deployer duty under Article 26(2) is subject to Article 99(4)(e). These are cross-referenced penalty routes.
+EU004,EU,cross_referenced,Deployer administrative fines,Article 14 provider design obligations connect to Article 16(a) and Article 99(4)(a). The deployer duty under Article 26(2) is subject to Article 99(4)(e). These are cross-referenced penalty routes.
+EU005,EU,cross_referenced,Administrative fines,Article 15 provider requirements connect to Article 16(a) and Article 99(4)(a). Conformity assessment and market surveillance are wider system mechanisms.
+IND001,India,direct,Voluntary transparency reporting,"The examined guidance describes transparency reporting and public or peer scrutiny. These are soft accountability mechanisms, not statutory sanctions."
+IND001,India,direct,Peer scrutiny,"The examined guidance describes transparency reporting and public or peer scrutiny. These are soft accountability mechanisms, not statutory sanctions."
+UK005,UK,direct,Existing statutory regulator powers,Existing regulators use powers under their own laws. The proposed due-regard duty was conditional and not a binding new power in the examined White Paper.

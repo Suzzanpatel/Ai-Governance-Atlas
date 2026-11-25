@@ -1,0 +1,21 @@
+country,dimension,keyword_count,total_words,frequency_per_1000_words
+eu,Accountability,65,94269,0.69
+eu,Enforcement,335,94269,3.554
+eu,Risk Assessment,541,94269,5.739
+eu,Safety and Testing,376,94269,3.989
+eu,Transparency,57,94269,0.605
+india,Accountability,83,16659,4.982
+india,Enforcement,47,16659,2.821
+india,Risk Assessment,30,16659,1.801
+india,Safety and Testing,79,16659,4.742
+india,Transparency,37,16659,2.221
+oecd,Accountability,20,4689,4.265
+oecd,Enforcement,0,4689,0.0
+oecd,Risk Assessment,2,4689,0.427
+oecd,Safety and Testing,8,4689,1.706
+oecd,Transparency,8,4689,1.706
+uk,Accountability,88,32029,2.748
+uk,Enforcement,33,32029,1.03
+uk,Risk Assessment,20,32029,0.624
+uk,Safety and Testing,80,32029,2.498
+uk,Transparency,69,32029,2.154

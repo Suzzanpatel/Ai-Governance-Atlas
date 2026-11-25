@@ -1,0 +1,41 @@
+id,country,responsibility_category
+EU001,EU,AI Provider
+EU002,EU,AI Provider
+EU003,EU,AI Provider
+EU004,EU,AI Provider
+EU004,EU,AI Deployer
+EU005,EU,AI Provider
+IND001,India,Developer
+IND001,India,AI Deployer
+IND002,India,Government
+IND002,India,Regulator
+IND002,India,Developer
+IND002,India,AI Deployer
+IND002,India,End User
+IND003,India,Government
+IND003,India,Institution
+IND004,India,Institution
+IND004,India,Regulator
+IND005,India,Regulator
+IND005,India,Government
+IND005,India,Institution
+UK001,UK,Regulator
+UK001,UK,AI Lifecycle Actors
+UK002,UK,Regulator
+UK002,UK,AI Lifecycle Actors
+UK003,UK,Government
+UK003,UK,Regulator
+UK004,UK,Regulator
+UK004,UK,Developer
+UK004,UK,AI Lifecycle Actors
+UK005,UK,Regulator
+UK005,UK,Government
+OECD001,OECD (international benchmark),AI Lifecycle Actors
+OECD001,OECD (international benchmark),Government
+OECD002,OECD (international benchmark),AI Lifecycle Actors
+OECD003,OECD (international benchmark),AI Lifecycle Actors
+OECD003,OECD (international benchmark),Multiple Stakeholders
+OECD004,OECD (international benchmark),AI Lifecycle Actors
+OECD004,OECD (international benchmark),Government
+OECD004,OECD (international benchmark),Multiple Stakeholders
+OECD005,OECD (international benchmark),Institution

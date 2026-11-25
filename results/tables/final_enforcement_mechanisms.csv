@@ -1,0 +1,10 @@
+id,country,mechanism,enforcement_level,mechanism_character
+EU001,EU,Provider administrative fines,Cross-referenced,Statutory enforcement
+EU002,EU,Provider administrative fines,Cross-referenced,Statutory enforcement
+EU003,EU,Provider administrative fines,Cross-referenced,Statutory enforcement
+EU004,EU,Provider administrative fines,Cross-referenced,Statutory enforcement
+EU004,EU,Deployer administrative fines,Cross-referenced,Statutory enforcement
+EU005,EU,Provider administrative fines,Cross-referenced,Statutory enforcement
+IND001,India,Voluntary transparency reporting,Direct,Soft accountability
+IND001,India,Peer scrutiny,Direct,Soft accountability
+UK005,UK,Existing statutory regulator powers,Direct,Existing statutory powers

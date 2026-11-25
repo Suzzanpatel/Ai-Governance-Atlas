@@ -1,0 +1,21 @@
+country,document,dimension,keyword_count,total_words,frequency_per_1000_words
+eu,eli_reg_2024_1689_oj_EN_TXT.pdf,Transparency,57,94269,0.605
+eu,eli_reg_2024_1689_oj_EN_TXT.pdf,Accountability,65,94269,0.69
+eu,eli_reg_2024_1689_oj_EN_TXT.pdf,Risk Assessment,541,94269,5.739
+eu,eli_reg_2024_1689_oj_EN_TXT.pdf,Safety and Testing,376,94269,3.989
+eu,eli_reg_2024_1689_oj_EN_TXT.pdf,Enforcement,335,94269,3.554
+india,India Al Governance Guidelines 5 Nov 2025.pdf,Transparency,37,16659,2.221
+india,India Al Governance Guidelines 5 Nov 2025.pdf,Accountability,83,16659,4.982
+india,India Al Governance Guidelines 5 Nov 2025.pdf,Risk Assessment,30,16659,1.801
+india,India Al Governance Guidelines 5 Nov 2025.pdf,Safety and Testing,79,16659,4.742
+india,India Al Governance Guidelines 5 Nov 2025.pdf,Enforcement,47,16659,2.821
+oecd,OECD-LEGAL-0449-en.pdf,Transparency,8,4689,1.706
+oecd,OECD-LEGAL-0449-en.pdf,Accountability,20,4689,4.265
+oecd,OECD-LEGAL-0449-en.pdf,Risk Assessment,2,4689,0.427
+oecd,OECD-LEGAL-0449-en.pdf,Safety and Testing,8,4689,1.706
+oecd,OECD-LEGAL-0449-en.pdf,Enforcement,0,4689,0.0
+uk,a-pro-innovation-approach-to-ai-regulation-amended-web-ready.pdf,Transparency,69,32029,2.154
+uk,a-pro-innovation-approach-to-ai-regulation-amended-web-ready.pdf,Accountability,88,32029,2.748
+uk,a-pro-innovation-approach-to-ai-regulation-amended-web-ready.pdf,Risk Assessment,20,32029,0.624
+uk,a-pro-innovation-approach-to-ai-regulation-amended-web-ready.pdf,Safety and Testing,80,32029,2.498
+uk,a-pro-innovation-approach-to-ai-regulation-amended-web-ready.pdf,Enforcement,33,32029,1.03

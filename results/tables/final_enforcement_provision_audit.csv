@@ -1,0 +1,21 @@
+id,country,enforcement_mechanisms,enforcement_level,mechanism_character,number_of_mechanisms
+EU001,EU,Provider administrative fines,Cross-referenced,Statutory enforcement,1
+EU002,EU,Provider administrative fines,Cross-referenced,Statutory enforcement,1
+EU003,EU,Provider administrative fines,Cross-referenced,Statutory enforcement,1
+EU004,EU,Provider administrative fines | Deployer administrative fines,Cross-referenced,Statutory enforcement,2
+EU005,EU,Provider administrative fines,Cross-referenced,Statutory enforcement,1
+IND001,India,Voluntary transparency reporting | Peer scrutiny,Direct,Soft accountability,2
+IND002,India,None,None identified,No specific mechanism identified,0
+IND003,India,None,Not applicable,Not applicable,0
+IND004,India,None,None identified,No coercive enforcement power identified,0
+IND005,India,None,System-level only,Existing sectoral powers,0
+UK001,UK,None,System-level only,Existing regulator powers,0
+UK002,UK,None,System-level only,Existing regulator powers,0
+UK003,UK,None,Not applicable,Government institutional function,0
+UK004,UK,None,System-level only,Existing regulator powers,0
+UK005,UK,Existing statutory regulator powers,Direct,Existing statutory powers,1
+OECD001,OECD (international benchmark),None,None identified,Monitoring is not legal enforcement,0
+OECD002,OECD (international benchmark),None,None identified,Monitoring is not legal enforcement,0
+OECD003,OECD (international benchmark),None,None identified,Monitoring is not legal enforcement,0
+OECD004,OECD (international benchmark),None,None identified,Monitoring is not legal enforcement,0
+OECD005,OECD (international benchmark),None,System-level only,Monitoring and reporting,0

@@ -1,0 +1,181 @@
+id,column,verdict,finding_and_evidence,audit_date
+EU001,exact_text,Verified,"Verbatim match against the source PDF on OJ p. 56 (automated check, ligatures and curly quotes normalised).",2026-11-25
+EU001,article_or_section,Verified,Art. 9(1)-(9) spans OJ pp. 56-57; para. 10 correctly excluded.,2026-11-25
+EU001,provision_summary,Corrected,"Paras 1-5 accurate (9(2)(a)-(d), 9(5) 'judged to be acceptable'). ADDED testing (9(6)-(8)) and vulnerable groups (9(9)) so the summary matches the coded range.",2026-11-25
+EU001,legal_status,Verified,Regulation is binding in its entirety and directly applicable (OJ text). Application dates as amended are recorded in applicability_status.,2026-11-25
+EU001,responsible_party,Verified,Provider via Art. 16(a); Art. 9(9) names 'providers'.,2026-11-25
+EU001,applicability,Verified,Art. 9(3) limitation and Art. 9(9) 'persons under the age of 18' confirmed (OJ p. 57).,2026-11-25
+EU001,enforcement_mechanism,Corrected,"Art. 16(a) wording confirmed (OJ p. 62); Art. 99(4)(a) and (e) confirmed (OJ p. 115). ADDED: 'if the offender is an undertaking' and 'preceding financial year' qualifiers, SME rule (Art. 99(6), OJ p. 116), Member States' role (Art. 99(1)), and OJ pages for Arts 43 (p. 78), 74 (p. 102), 79 (p. 106). Consolidated page numbers not independently re-verified.",2026-11-25
+EU001,source_reference,Verified,"ELIs confirmed on EUR-Lex: consolidated version 2026-07-27, amended by Regulation (EU) 2026/1744 of 8 July 2026 (OJ L 24.7.2026).",2026-11-25
+EU001,verification_notes,Corrected,Interpretation justified. Added OJ page for Art. 113 (p. 123).,2026-11-25
+EU002,exact_text,Verified,"Verbatim match against the source PDF on OJ p. 57 (automated check, ligatures and curly quotes normalised).",2026-11-25
+EU002,article_or_section,Verified with caveat,"Original Art. 10(1)-(4),(6) on OJ pp. 57-58. Amended wording of 10(1)/(6) and Art. 4a read only through EUR-Lex web view; check against the consolidated PDF.",2026-11-25
+EU002,provision_summary,Verified,Matches 10(1)-(4) and (6); bias and data-gap items correspond to 10(2)(f)-(h).,2026-11-25
+EU002,legal_status,Verified,Regulation is binding in its entirety and directly applicable (OJ text). Application dates as amended are recorded in applicability_status.,2026-11-25
+EU002,responsible_party,Verified,Provider via Art. 16(a).,2026-11-25
+EU002,applicability,Verified with caveat,Original Art. 10(6) reads 'paragraphs 2 to 5 apply only to the testing data sets' (OJ p. 58); amended reference to paras 2-4 and Art. 4a(1) taken from the EUR-Lex web view.,2026-11-25
+EU002,enforcement_mechanism,Corrected,"Art. 16(a) wording confirmed (OJ p. 62); Art. 99(4)(a) and (e) confirmed (OJ p. 115). ADDED: 'if the offender is an undertaking' and 'preceding financial year' qualifiers, SME rule (Art. 99(6), OJ p. 116), Member States' role (Art. 99(1)), and OJ pages for Arts 43 (p. 78), 74 (p. 102), 79 (p. 106). Consolidated page numbers not independently re-verified.",2026-11-25
+EU002,source_reference,Verified,"ELIs confirmed on EUR-Lex: consolidated version 2026-07-27, amended by Regulation (EU) 2026/1744 of 8 July 2026 (OJ L 24.7.2026).",2026-11-25
+EU002,verification_notes,Corrected,Was inconsistent: said 'Secondary fit: Safety and Testing' while secondary_dimension = Data Governance. Aligned. Art. 4a(2) 'does not create any obligation' wording confirmed on EUR-Lex. Added OJ page for Art. 113 (p. 123).,2026-11-25
+EU003,exact_text,Verified,"Verbatim match against the source PDF on OJ p. 59 (automated check, ligatures and curly quotes normalised).",2026-11-25
+EU003,article_or_section,Verified,Art. 13(1)-(3) on OJ pp. 59-60.,2026-11-25
+EU003,provision_summary,Verified,"Matches 13(1)-(3), including 13(3)(b)(iv) 'where applicable' explanation capability.",2026-11-25
+EU003,legal_status,Verified,Regulation is binding in its entirety and directly applicable (OJ text). Application dates as amended are recorded in applicability_status.,2026-11-25
+EU003,responsible_party,Verified,Provider; information owed to deployers (Art. 13(1)-(2)).,2026-11-25
+EU003,applicability,Corrected,"Accurate, but ADDED Art. 86 right to explanation (OJ p. 110) so 'not affected persons' is not read as meaning affected persons have no information rights.",2026-11-25
+EU003,enforcement_mechanism,Corrected,"Art. 16(a) wording confirmed (OJ p. 62); Art. 99(4)(a) and (e) confirmed (OJ p. 115). ADDED: 'if the offender is an undertaking' and 'preceding financial year' qualifiers, SME rule (Art. 99(6), OJ p. 116), Member States' role (Art. 99(1)), and OJ pages for Arts 43 (p. 78), 74 (p. 102), 79 (p. 106). Consolidated page numbers not independently re-verified.",2026-11-25
+EU003,source_reference,Verified,"ELIs confirmed on EUR-Lex: consolidated version 2026-07-27, amended by Regulation (EU) 2026/1744 of 8 July 2026 (OJ L 24.7.2026).",2026-11-25
+EU003,verification_notes,Corrected,"Cross-references 13(3)(b)(ii), (d), (f) confirmed. Art. 26(1) wording confirmed (OJ p. 67). Added OJ page for Art. 113 (p. 123).",2026-11-25
+EU004,exact_text,Verified,"Verbatim match against the source PDF on OJ p. 60 (automated check, ligatures and curly quotes normalised).",2026-11-25
+EU004,article_or_section,Verified,Art. 14(1)-(4) on OJ p. 60; para. 5 on p. 61.,2026-11-25
+EU004,provision_summary,Corrected,"Overstated: Art. 14(4) requires the system to be provided so overseers are 'enabled, as appropriate and proportionate', not that overseers 'must be able to'. Reworded.",2026-11-25
+EU004,legal_status,Verified,Regulation is binding in its entirety and directly applicable (OJ text). Application dates as amended are recorded in applicability_status.,2026-11-25
+EU004,responsible_party,Verified,"Provider (14(3)) and deployer (Art. 26(2), OJ p. 68, wording confirmed).",2026-11-25
+EU004,applicability,Verified,Art. 14(5) two-person rule and law-enforcement/migration exception confirmed (OJ p. 61).,2026-11-25
+EU004,enforcement_mechanism,Corrected,"Art. 16(a) wording confirmed (OJ p. 62); Art. 99(4)(a) and (e) confirmed (OJ p. 115). ADDED: 'if the offender is an undertaking' and 'preceding financial year' qualifiers, SME rule (Art. 99(6), OJ p. 116), Member States' role (Art. 99(1)), and OJ pages for Arts 43 (p. 78), 74 (p. 102), 79 (p. 106). Consolidated page numbers not independently re-verified.",2026-11-25
+EU004,source_reference,Verified,"ELIs confirmed on EUR-Lex: consolidated version 2026-07-27, amended by Regulation (EU) 2026/1744 of 8 July 2026 (OJ L 24.7.2026).",2026-11-25
+EU004,verification_notes,Corrected,Shared-responsibility reasoning justified; Art. 99(4)(e) deployer fines confirmed. Added OJ page for Art. 113 (p. 123).,2026-11-25
+EU005,exact_text,Verified,"Verbatim match against the source PDF on OJ p. 61 (automated check, ligatures and curly quotes normalised).",2026-11-25
+EU005,article_or_section,Verified,"Art. 15(1),(3)-(5) on OJ p. 61; 15(2) correctly excluded as institutional.",2026-11-25
+EU005,provision_summary,Verified,"Redundancy/fail-safe, feedback loops and attack types (data/model poisoning, adversarial examples, confidentiality attacks, model flaws) match Art. 15(4)-(5).",2026-11-25
+EU005,legal_status,Verified,Regulation is binding in its entirety and directly applicable (OJ text). Application dates as amended are recorded in applicability_status.,2026-11-25
+EU005,responsible_party,Verified,Provider via Art. 16(a).,2026-11-25
+EU005,applicability,Verified,Feedback-loop duty limited to systems that continue to learn (Art. 15(4)) confirmed.,2026-11-25
+EU005,enforcement_mechanism,Corrected,"Art. 16(a) wording confirmed (OJ p. 62); Art. 99(4)(a) and (e) confirmed (OJ p. 115). ADDED: 'if the offender is an undertaking' and 'preceding financial year' qualifiers, SME rule (Art. 99(6), OJ p. 116), Member States' role (Art. 99(1)), and OJ pages for Arts 43 (p. 78), 74 (p. 102), 79 (p. 106). Consolidated page numbers not independently re-verified.",2026-11-25
+EU005,source_reference,Verified,"ELIs confirmed on EUR-Lex: consolidated version 2026-07-27, amended by Regulation (EU) 2026/1744 of 8 July 2026 (OJ L 24.7.2026).",2026-11-25
+EU005,verification_notes,Corrected,'as resilient as possible' and Art. 13(3)(b)(ii) link confirmed. Added OJ page for Art. 113 (p. 123).,2026-11-25
+IND001,exact_text,Verified,"Verbatim match against the source PDF on PDF p. 44 (automated check, ligatures and curly quotes normalised).",2026-11-25
+IND001,article_or_section,Verified,"Part 4 'Guidelines for industry' list, PDF p. 44.",2026-11-25
+IND001,provision_summary,Verified,Confidential sharing with regulators confirmed (PDF p. 44).,2026-11-25
+IND001,legal_status,Verified,Non-binding: the Guidelines say a separate AI law is not needed at this stage (PDF p. 12) and voluntary measures lack legal enforceability (PDF p. 29).,2026-11-25
+IND001,responsible_party,Verified,'any person involved in developing or deploying AI systems in India' (PDF p. 44).,2026-11-25
+IND001,applicability,Verified,Proportionality passage confirmed (PDF p. 30).,2026-11-25
+IND001,enforcement_mechanism,Corrected,"Mis-cited: PDF p. 33 lists transparency reports, self-certifications, internal policies, committee hearings; 'peer monitoring' is on p. 35. Citation split.",2026-11-25
+IND001,source_reference,Corrected,PIB release PRID=2186639 (5 Nov 2025) confirmed. ADDED the PIB-hosted report PDF as primary link. Page-count match with the coded copy not verified.,2026-11-25
+IND001,verification_notes,Corrected,"'should be guided by' (p. 44), Sutra 6 (p. 15) and §2.5 Transparency (p. 35) confirmed. STATUS text tightened to the Overview's own list of laws and its 'given the current assessment of risks' qualifier (p. 12).",2026-11-25
+IND002,exact_text,Verified,"Verbatim match against the source PDF on PDF p. 35 (automated check, ligatures and curly quotes normalised).",2026-11-25
+IND002,article_or_section,Verified,§2.5 Recommendations (PDF p. 35); 'Liability' discussion (PDF p. 34).,2026-11-25
+IND002,provision_summary,Verified,Matches bullets 1-2 of §2.5 Recommendations and the graded-liability passage.,2026-11-25
+IND002,legal_status,Verified,Non-binding: the Guidelines say a separate AI law is not needed at this stage (PDF p. 12) and voluntary measures lack legal enforceability (PDF p. 29).,2026-11-25
+IND002,responsible_party,Verified with caveat,Government is the implied addressee: the recommendation names no body. Coding as Government is a reasonable inference; flagged as such.,2026-11-25
+IND002,applicability,Verified,"Developers, deployers, end-users named in the value-chain bullet.",2026-11-25
+IND002,enforcement_mechanism,Verified,'timely and consistent' (p. 35) and Action Plan item (p. 40) confirmed.,2026-11-25
+IND002,source_reference,Corrected,PIB release PRID=2186639 (5 Nov 2025) confirmed. ADDED the PIB-hosted report PDF as primary link. Page-count match with the coded copy not verified.,2026-11-25
+IND002,verification_notes,Corrected,RBI FREE-AI 'tolerant' stance and 'rule of law is paramount' confirmed (PDF p. 34). STATUS text tightened to the Overview's own list of laws and its 'given the current assessment of risks' qualifier (p. 12).,2026-11-25
+IND003,exact_text,Verified,"Verbatim match against the source PDF on PDF p. 32 (automated check, ligatures and curly quotes normalised).",2026-11-25
+IND003,article_or_section,Verified,"§2.4 Recommendations bullet 1, PDF p. 32; risk categories PDF p. 27.",2026-11-25
+IND003,provision_summary,Verified,Six categories match items 01-06 (p. 27); children and women examples (p. 28); 'empirical evidence of harm' (p. 11).,2026-11-25
+IND003,legal_status,Verified,Non-binding: the Guidelines say a separate AI law is not needed at this stage (PDF p. 12) and voluntary measures lack legal enforceability (PDF p. 29).,2026-11-25
+IND003,responsible_party,Verified,No body named; Action Plan 'with sectoral inputs' (p. 40) confirmed.,2026-11-25
+IND003,applicability,Verified,Interpretive; consistent with source.,2026-11-25
+IND003,enforcement_mechanism,Verified,'without the threat of penalties' (p. 29) confirmed.,2026-11-25
+IND003,source_reference,Corrected,PIB release PRID=2186639 (5 Nov 2025) confirmed. ADDED the PIB-hosted report PDF as primary link. Page-count match with the coded copy not verified.,2026-11-25
+IND003,verification_notes,Corrected,Coding as Recommended rather than Institutional is justified. STATUS text tightened to the Overview's own list of laws and its 'given the current assessment of risks' qualifier (p. 12).,2026-11-25
+IND004,exact_text,Verified,"Verbatim match against the source PDF on PDF p. 38 (automated check, ligatures and curly quotes normalised).",2026-11-25
+IND004,article_or_section,Verified,"§2.6 B. AI Safety Institute, PDF p. 38.",2026-11-25
+IND004,provision_summary,Verified,'main body responsible for guiding the safe and trusted development and use of AI' (p. 38) confirmed.,2026-11-25
+IND004,legal_status,Verified,Non-binding: the Guidelines say a separate AI law is not needed at this stage (PDF p. 12) and voluntary measures lack legal enforceability (PDF p. 29).,2026-11-25
+IND004,responsible_party,Verified,AISI named.,2026-11-25
+IND004,applicability,Verified,BIS/TEC standardising function confirmed (p. 43).,2026-11-25
+IND004,enforcement_mechanism,Verified,No powers in text; 'sector regulators continue to exercise enforcement powers' (p. 8) supports the reading.,2026-11-25
+IND004,source_reference,Corrected,PIB release PRID=2186639 (5 Nov 2025) confirmed. ADDED the PIB-hosted report PDF as primary link. Page-count match with the coded copy not verified.,2026-11-25
+IND004,verification_notes,Corrected,'recently established' (p. 38) and §2.4 critical-sector passage (p. 32) confirmed. STATUS text tightened to the Overview's own list of laws and its 'given the current assessment of risks' qualifier (p. 12).,2026-11-25
+IND005,exact_text,Verified,"Verbatim match against the source PDF on PDF p. 36 (automated check, ligatures and curly quotes normalised).",2026-11-25
+IND005,article_or_section,Verified,"§2.6 bullet 1, PDF p. 36; framework table pp. 42-43.",2026-11-25
+IND005,provision_summary,Verified,Ministry of Finance/RBI example and MeitY 'nodal ministry' confirmed (p. 36).,2026-11-25
+IND005,legal_status,Verified,Non-binding: the Guidelines say a separate AI law is not needed at this stage (PDF p. 12) and voluntary measures lack legal enforceability (PDF p. 29).,2026-11-25
+IND005,responsible_party,Verified,"RBI, SEBI, IRDAI, TRAI, ICMR, NHA all listed on p. 43.",2026-11-25
+IND005,applicability,Verified,"'regulatory gaps, and need for legal amendments' confirmed (p. 36).",2026-11-25
+IND005,enforcement_mechanism,Verified,"Framework-table functions and AIGG guideline function confirmed (pp. 36, 42-43).",2026-11-25
+IND005,source_reference,Corrected,PIB release PRID=2186639 (5 Nov 2025) confirmed. ADDED the PIB-hosted report PDF as primary link. Page-count match with the coded copy not verified.,2026-11-25
+IND005,verification_notes,Corrected,"Justified. In implementation_notes, ADDED that the AIGG composition was 'illustrative and subject to periodic reviews' (p. 37), which softens the AIGEG-membership comparison. STATUS text tightened to the Overview's own list of laws and its 'given the current assessment of risks' qualifier (p. 12).",2026-11-25
+UK001,exact_text,Verified,"Verbatim match against the source PDF on PDF p. 34 (automated check, ligatures and curly quotes normalised).",2026-11-25
+UK001,article_or_section,Verified,§3.2.3 begins PDF p. 32; principle on pp. 34-35.,2026-11-25
+UK001,provision_summary,Verified,"'may be asked to provide this information in the form and manner required by regulators, including through product labelling' (p. 34) confirmed.",2026-11-25
+UK001,legal_status,Verified,"Non-statutory: principles not put on a statutory footing initially (para 11, PDF p. 12).",2026-11-25
+UK001,responsible_party,Verified,Regulators and life cycle actors as stated.,2026-11-25
+UK001,applicability,Verified,Consistent with principle text.,2026-11-25
+UK001,enforcement_mechanism,Verified,"Para 55 (PDF p. 41), paras 57-59 (PDF p. 42) and para 68 (PDF p. 46) located; quotations match.",2026-11-25
+UK001,source_reference,Verified,"GOV.UK page confirmed: CP 815, published 29 Mar 2023, updated 3 Aug 2023 (correction to Annex C); the amended web-ready PDF and HTML /white-paper are listed there.",2026-11-25
+UK001,verification_notes,Verified,"Consultation Qs (p. 38), correction slip (pp. 4-5), 'state of the art' qualifier (p. 35) confirmed.",2026-11-25
+UK002,exact_text,Verified,"Verbatim match against the source PDF on PDF p. 36 (automated check, ligatures and curly quotes normalised).",2026-11-25
+UK002,article_or_section,Verified,Principle on PDF pp. 36-37; §3.3.2 and paras 80-83 on p. 61.,2026-11-25
+UK002,provision_summary,Verified,"Documentation, impact assessments, audits 'where appropriate' confirmed (p. 37).",2026-11-25
+UK002,legal_status,Verified,"Non-statutory: principles not put on a statutory footing initially (para 11, PDF p. 12).",2026-11-25
+UK002,responsible_party,Verified,Consistent with principle and para 80.,2026-11-25
+UK002,applicability,Verified,Consistent with source.,2026-11-25
+UK002,enforcement_mechanism,Verified,"Para 55 (PDF p. 41), paras 57-59 (PDF p. 42) and para 68 (PDF p. 46) located; quotations match.",2026-11-25
+UK002,source_reference,Verified,"GOV.UK page confirmed: CP 815, published 29 Mar 2023, updated 3 Aug 2023 (correction to Annex C); the amended web-ready PDF and HTML /white-paper are listed there.",2026-11-25
+UK002,verification_notes,Verified,Paras 80 and 83 quotations confirmed (p. 61).,2026-11-25
+UK003,exact_text,Verified,"Verbatim match against the source PDF on PDF p. 51 (automated check, ligatures and curly quotes normalised).",2026-11-25
+UK003,article_or_section,Corrected,Heading completed: '3.3.1 New central functions to support the framework' (p. 48); Box 3.1 title added (p. 49).,2026-11-25
+UK003,provision_summary,Verified,Box 3.1 cross-sectoral risk assessment activities (pp. 51-52).,2026-11-25
+UK003,legal_status,Verified,"Non-statutory: principles not put on a statutory footing initially (para 11, PDF p. 12).",2026-11-25
+UK003,responsible_party,Verified,Para 75 (p. 59) quotation confirmed.,2026-11-25
+UK003,applicability,Verified,Interpretive; consistent with source.,2026-11-25
+UK003,enforcement_mechanism,Verified,'risk enforcement best practices' (p. 51) confirmed.,2026-11-25
+UK003,source_reference,Verified,"GOV.UK page confirmed: CP 815, published 29 Mar 2023, updated 3 Aug 2023 (correction to Annex C); the amended web-ready PDF and HTML /white-paper are listed there.",2026-11-25
+UK003,verification_notes,Verified,'risks assessments' typo confirmed as in source; paras 22-25 on p. 17.,2026-11-25
+UK004,exact_text,Verified,"Verbatim match against the source PDF on PDF p. 33 (automated check, ligatures and curly quotes normalised).",2026-11-25
+UK004,article_or_section,Verified,Principle on PDF pp. 33-34.,2026-11-25
+UK004,provision_summary,Verified,'may require ... to regularly test or carry out due diligence' (p. 34) and NCSC reference confirmed.,2026-11-25
+UK004,legal_status,Verified,"Non-statutory: principles not put on a statutory footing initially (para 11, PDF p. 12).",2026-11-25
+UK004,responsible_party,Verified,Consistent with conditional testing language.,2026-11-25
+UK004,applicability,Verified,'core consideration for some regulators and more marginal for others' (p. 33) confirmed.,2026-11-25
+UK004,enforcement_mechanism,Verified,"Para 55 (PDF p. 41), paras 57-59 (PDF p. 42) and para 68 (PDF p. 46) located; quotations match.",2026-11-25
+UK004,source_reference,Verified,"GOV.UK page confirmed: CP 815, published 29 Mar 2023, updated 3 Aug 2023 (correction to Annex C); the amended web-ready PDF and HTML /white-paper are listed there.",2026-11-25
+UK004,verification_notes,Corrected,"The 'merged' statement describes changes since the 2022 policy paper (para 52, pp. 32-33); now said so and quoted. OECD footnote 93 (p. 34) confirmed.",2026-11-25
+UK005,exact_text,Verified,"Verbatim match against the source PDF on PDF p. 41 (automated check, ligatures and curly quotes normalised).",2026-11-25
+UK005,article_or_section,Verified,§3.2.4 begins p. 41; para 55 p. 41; paras 56-59 p. 42.,2026-11-25
+UK005,provision_summary,Verified,Matches paras 55-59.,2026-11-25
+UK005,legal_status,Verified,"Non-statutory: principles not put on a statutory footing initially (para 11, PDF p. 12).",2026-11-25
+UK005,responsible_party,Corrected,"CMA appears only in a footnote, not as a regulator applying the framework. Replaced with regulators named in the text (ICO, FCA, EHRC, MHRA).",2026-11-25
+UK005,applicability,Verified,Para 65 (p. 44) confirmed.,2026-11-25
+UK005,enforcement_mechanism,Verified,"Paras 57, 64 and Box 3.1 confirmed.",2026-11-25
+UK005,source_reference,Verified,"GOV.UK page confirmed: CP 815, published 29 Mar 2023, updated 3 Aug 2023 (correction to Annex C); the amended web-ready PDF and HTML /white-paper are listed there.",2026-11-25
+UK005,verification_notes,Verified,Paras 58 (p. 42) and 61 (p. 44) confirmed.,2026-11-25
+OECD001,exact_text,Verified,"Verbatim match against the source PDF on p. 8 (automated check, ligatures and curly quotes normalised).",2026-11-25
+OECD001,article_or_section,Verified,"Principle 1.3 (i)-(iv), pp. 8-9.",2026-11-25
+OECD001,provision_summary,Verified,"Matches (i)-(iv), incl. 'in the workplace' and 'where feasible and useful'.",2026-11-25
+OECD001,legal_status,Verified,Council Recommendation under Art. 5 b) of the OECD Convention (p. 7); Recommendations 'are not legally binding' (p. 12).,2026-11-25
+OECD001,responsible_party,Verified,Paras II and III (p. 8) confirmed.,2026-11-25
+OECD001,applicability,Verified,Qualifiers confirmed (p. 8).,2026-11-25
+OECD001,enforcement_mechanism,Corrected,"No sanctions confirmed. REMOVED the attribution to the OECD.AI Policy Observatory, which Section VIII does not mention; replaced with VIII(b)-(c).",2026-11-25
+OECD001,source_reference,Verified,"Compendium PDF URL confirmed (648.en.pdf, '© OECD 2026'). Adherents list not readable (JavaScript page).",2026-11-25
+OECD001,verification_notes,Corrected,"Background (pp. 4-5) claims confirmed: the 2024 revision clarified disclosure, added override/decommission, and moved traceability and risk management to Accountability. ADDED: p. 12 citation for non-binding status; updated adherence (EU confirmed; India not confirmed).",2026-11-25
+OECD002,exact_text,Verified,"Verbatim match against the source PDF on p. 9 (automated check, ligatures and curly quotes normalised).",2026-11-25
+OECD002,article_or_section,Verified,"Principle 1.5(a)-(b), p. 9.",2026-11-25
+OECD002,provision_summary,Verified,"Traceability of 'datasets, processes and decisions' confirmed.",2026-11-25
+OECD002,legal_status,Verified,Council Recommendation under Art. 5 b) of the OECD Convention (p. 7); Recommendations 'are not legally binding' (p. 12).,2026-11-25
+OECD002,responsible_party,Verified,AI actors definition (p. 8) confirmed.,2026-11-25
+OECD002,applicability,Verified,Consistent with source.,2026-11-25
+OECD002,enforcement_mechanism,Corrected,"No sanctions confirmed. REMOVED the attribution to the OECD.AI Policy Observatory, which Section VIII does not mention; replaced with VIII(b)-(c).",2026-11-25
+OECD002,source_reference,Verified,"Compendium PDF URL confirmed (648.en.pdf, '© OECD 2026'). Adherents list not readable (JavaScript page).",2026-11-25
+OECD002,verification_notes,Corrected,"Background (pp. 4-5) claims confirmed: the 2024 revision clarified disclosure, added override/decommission, and moved traceability and risk management to Accountability. ADDED: p. 12 citation for non-binding status; updated adherence (EU confirmed; India not confirmed).",2026-11-25
+OECD003,exact_text,Verified,"Verbatim match against the source PDF on p. 9 (automated check, ligatures and curly quotes normalised).",2026-11-25
+OECD003,article_or_section,Verified,"Principle 1.5(c), p. 9.",2026-11-25
+OECD003,provision_summary,Verified,"Risk list (bias, human rights incl. safety, security, privacy, labour and IP rights) confirmed.",2026-11-25
+OECD003,legal_status,Verified,Council Recommendation under Art. 5 b) of the OECD Convention (p. 7); Recommendations 'are not legally binding' (p. 12).,2026-11-25
+OECD003,responsible_party,Verified,Co-operation actors match 1.5(c).,2026-11-25
+OECD003,applicability,Verified,Lifecycle phases match definition (p. 8).,2026-11-25
+OECD003,enforcement_mechanism,Corrected,"No sanctions confirmed. REMOVED the attribution to the OECD.AI Policy Observatory, which Section VIII does not mention; replaced with VIII(b)-(c).",2026-11-25
+OECD003,source_reference,Verified,"Compendium PDF URL confirmed (648.en.pdf, '© OECD 2026'). Adherents list not readable (JavaScript page).",2026-11-25
+OECD003,verification_notes,Corrected,"Background (pp. 4-5) claims confirmed: the 2024 revision clarified disclosure, added override/decommission, and moved traceability and risk management to Accountability. ADDED: p. 12 citation for non-binding status; updated adherence (EU confirmed; India not confirmed).",2026-11-25
+OECD004,exact_text,Verified,"Verbatim match against the source PDF on p. 9 (automated check, ligatures and curly quotes normalised).",2026-11-25
+OECD004,article_or_section,Verified,"Principle 1.4(a)-(c), p. 9.",2026-11-25
+OECD004,provision_summary,Verified,Matches (a)-(c).,2026-11-25
+OECD004,legal_status,Verified,Council Recommendation under Art. 5 b) of the OECD Convention (p. 7); Recommendations 'are not legally binding' (p. 12).,2026-11-25
+OECD004,responsible_party,Verified,Passive voice confirmed; principles 'relevant to all stakeholders' (para II).,2026-11-25
+OECD004,applicability,Verified,'as appropriate' and 'where technically feasible' confirmed.,2026-11-25
+OECD004,enforcement_mechanism,Corrected,"No sanctions confirmed. REMOVED the attribution to the OECD.AI Policy Observatory, which Section VIII does not mention; replaced with VIII(b)-(c).",2026-11-25
+OECD004,source_reference,Verified,"Compendium PDF URL confirmed (648.en.pdf, '© OECD 2026'). Adherents list not readable (JavaScript page).",2026-11-25
+OECD004,verification_notes,Corrected,"Background (pp. 4-5) claims confirmed: the 2024 revision clarified disclosure, added override/decommission, and moved traceability and risk management to Accountability. ADDED: p. 12 citation for non-binding status; updated adherence (EU confirmed; India not confirmed).",2026-11-25
+OECD005,exact_text,Verified,"Verbatim match against the source PDF on p. 11 (automated check, ligatures and curly quotes normalised).",2026-11-25
+OECD005,article_or_section,Verified,"Section VIII chapeau and (a)-(d), p. 11.",2026-11-25
+OECD005,provision_summary,Corrected,"REMOVED '(supported by the OECD.AI Policy Observatory)', which is not in Section VIII.",2026-11-25
+OECD005,legal_status,Verified,Council Recommendation under Art. 5 b) of the OECD Convention (p. 7); Recommendations 'are not legally binding' (p. 12).,2026-11-25
+OECD005,responsible_party,Verified,"'INSTRUCTS the Digital Policy Committee, through its Working Party on AI Governance' (p. 11); AIGO acronym on p. 4.",2026-11-25
+OECD005,applicability,Verified,Interpretive; consistent with source.,2026-11-25
+OECD005,enforcement_mechanism,Verified,'being implemented by its Adherents' (p. 5) confirmed.,2026-11-25
+OECD005,source_reference,Verified,"Compendium PDF URL confirmed (648.en.pdf, '© OECD 2026'). Adherents list not readable (JavaScript page).",2026-11-25
+OECD005,verification_notes,Corrected,"Background (pp. 4-5) claims confirmed: the 2024 revision clarified disclosure, added override/decommission, and moved traceability and risk management to Accountability. ADDED: p. 12 citation for non-binding status; updated adherence (EU confirmed; India not confirmed).",2026-11-25
