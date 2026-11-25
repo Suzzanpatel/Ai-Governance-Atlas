@@ -14,6 +14,7 @@ Stages
     phase13     comparative analysis reports
     phase14     source validation, legal analysis and synthesis worksheets
     report      template-based comparative report
+    publish     academic paper (PDF, about 4,000 words) and interactive dashboard (HTML)
 
 Human-input files are protected
 -------------------------------
@@ -80,6 +81,10 @@ STAGES: dict[str, list[str]] = {
     ],
     "report": [
         "src/report_generator.py",
+    ],
+    "publish": [
+        "src/publish/generate_paper.py",
+        "src/publish/build_dashboard.py",
     ],
 }
 
