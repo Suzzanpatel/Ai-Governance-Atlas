@@ -92,7 +92,8 @@ def main():
             "phase": number,
             "analysis": title,
             "report_found": "Yes" if exists else "No",
-            "report_path": str(path) if exists else "",
+            # Project-relative, so outputs are identical on every machine
+            "report_path": path.relative_to(root).as_posix() if exists else "",
         })
         if exists:
             report_contents[number] = path.read_text(encoding="utf-8")

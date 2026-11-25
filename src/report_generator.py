@@ -17,8 +17,8 @@ from pathlib import Path
 from typing import Any
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_INPUT = PROJECT_ROOT / "research" / "stage_9_evidence_pack.json"
-DEFAULT_OUTPUT = PROJECT_ROOT / "research" / "AI_Governance_Atlas_Report.md"
+DEFAULT_INPUT = PROJECT_ROOT / "research" / "evidence" / "stage_9_evidence_pack.json"
+DEFAULT_OUTPUT = PROJECT_ROOT / "research" / "reports" / "AI_Governance_Atlas_Report.md"
 
 GROUP_ORDER = [
     "EU",
@@ -631,7 +631,7 @@ def main() -> None:
     if not input_path.exists():
         raise FileNotFoundError(
             f"Evidence pack not found: {input_path}\n"
-            "Place stage_9_evidence_pack.json in the project's research folder."
+            "Place stage_9_evidence_pack.json in research/evidence/."
         )
 
     with input_path.open("r", encoding="utf-8") as f:
