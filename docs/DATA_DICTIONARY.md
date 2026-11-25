@@ -81,6 +81,8 @@ see `research/methodology/limitations.md` §7.
 | Implementation evidence | `results/phase13/comparative_analysis/phase13_5_*` |
 | Enforcement mechanisms (final coding) | `results/tables/final_enforcement_matrix.csv`, `results/tables/final_enforcement_mechanisms.csv` |
 | Source and version validation | `results/phase14/source_validation/phase14_3_official_source_version_validation_register.csv` |
+| Generated paper | `results/paper/AI_Governance_Atlas_Paper.pdf` (word count in `paper_word_count.txt`) |
+| Interactive dashboard | `results/dashboard/index.html` |
 | Synthesis worksheet (to be completed by the researcher) | `results/phase14/research_synthesis/phase14_7_research_synthesis_worksheet.csv` |
 
 ## 5. Files that hold human review input
