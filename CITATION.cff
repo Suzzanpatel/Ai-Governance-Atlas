@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this dataset, code or paper, please cite it as below."
+title: "AI Governance Atlas: From AI Principles to Regulatory Practice"
+type: software
+authors:
+  - alias: "Suzzanpatel"
+version: "0.1.0"
+date-released: "2026-11-26"
+repository-code: "https://github.com/Suzzanpatel/ai-governance-atlas"
+abstract: >-
+  A reproducible, provision-level comparison of how the European Union, India and
+  the United Kingdom translate AI governance principles into enforceable
+  obligations, using the OECD AI Principles as an international benchmark.
+  Includes the coded evidence dataset, the analysis pipeline, a generated
+  academic paper and an interactive dashboard.
+keywords:
+  - AI governance
+  - AI regulation
+  - EU AI Act
+  - India
+  - United Kingdom
+  - OECD AI Principles
+  - comparative law
+  - computational legal studies

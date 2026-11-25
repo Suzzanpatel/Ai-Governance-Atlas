@@ -1,6 +1,15 @@
 # Changelog
 
-## Unreleased — reproducibility and repository hygiene
+## v0.1.0 — 2026-11-26 — working paper and dashboard
+
+### Added
+- **Academic paper generator** (`src/publish/generate_paper.py`): a 4,000-word manuscript (±10%, enforced) typeset as PDF, with an editable Markdown copy, four figures, three tables and a provision appendix. All counts, patterns and figures are computed from the coded dataset. It runs offline and is deterministic.
+- **Interactive dashboard** (`src/publish/build_dashboard.py`): a single self-contained HTML file with an overview, a provision explorer and text indicators; shared filters; a table view for every chart; and light and dark themes with color-vision-checked palettes.
+- Shared data layer (`src/publish/atlas_data.py`) so the paper and dashboard always agree.
+- `publish` stage in `run_pipeline.py`; `reportlab` dependency.
+- Documentation hub in `docs/` (getting started, pipeline, paper, dashboard, methodology), `CONTRIBUTING.md` and `CITATION.cff`; README reorganised as a landing page.
+
+## Reproducibility and repository hygiene (merged before v0.1.0)
 
 ### Fixed
 - **Text extraction skipped India on Linux and Windows CI.** `extract_text.py` looked for `data/raw/india`, but the folder is `data/raw/India`, which only matches on macOS's case-insensitive file system. The India PDF's file name also contains non-breaking spaces. Folder and file names are now matched ignoring case and whitespace variants.
