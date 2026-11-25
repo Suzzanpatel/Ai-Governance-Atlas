@@ -1,0 +1,16 @@
+# AI Governance Atlas — runtime dependencies
+# Requires Python 3.10 or newer.
+#
+# The full pipeline (python run_pipeline.py) has been tested at both ends of
+# these ranges: Python 3.10 with the minimum versions, and Python 3.13 with
+# pandas 3.0 / PyMuPDF 2.1.
+#
+# For byte-identical reproduction of the committed results, install
+# requirements-lock.txt instead (different PyMuPDF releases can extract a few
+# words differently from the same PDF).
+
+pandas>=2.0,<4
+numpy>=1.24
+matplotlib>=3.7
+seaborn>=0.13
+PyMuPDF>=1.23

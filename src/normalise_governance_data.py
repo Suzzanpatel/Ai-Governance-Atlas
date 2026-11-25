@@ -199,7 +199,7 @@ responsibility_long["responsibility_category"] = (
 )
 
 responsibility_long = responsibility_long.explode(
-    "responsibility_category"
+    "responsibility_category", ignore_index=True
 )
 
 responsibility_matrix = pd.crosstab(
@@ -228,11 +228,11 @@ enforcement_long = df[
 ].copy()
 
 enforcement_long["enforcement_category"] = (
-    enforcement_long["enforcement_categories"].str.split(" | ")
+    enforcement_long["enforcement_categories"].str.split(" | ", regex=False)
 )
 
 enforcement_long = enforcement_long.explode(
-    "enforcement_category"
+    "enforcement_category", ignore_index=True
 )
 
 enforcement_matrix = pd.crosstab(

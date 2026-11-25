@@ -1,9 +1,9 @@
 country,document,dimension,keyword_count,total_words,frequency_per_1000_words
-eu,eli_reg_2024_1689_oj_EN_TXT.pdf,Transparency,57,94269,0.605
-eu,eli_reg_2024_1689_oj_EN_TXT.pdf,Accountability,65,94269,0.69
-eu,eli_reg_2024_1689_oj_EN_TXT.pdf,Risk Assessment,541,94269,5.739
-eu,eli_reg_2024_1689_oj_EN_TXT.pdf,Safety and Testing,376,94269,3.989
-eu,eli_reg_2024_1689_oj_EN_TXT.pdf,Enforcement,335,94269,3.554
+eu,EU_AI_Act_Consolidated_2026-07-27.pdf,Transparency,22,63425,0.347
+eu,EU_AI_Act_Consolidated_2026-07-27.pdf,Accountability,45,63425,0.709
+eu,EU_AI_Act_Consolidated_2026-07-27.pdf,Risk Assessment,364,63425,5.739
+eu,EU_AI_Act_Consolidated_2026-07-27.pdf,Safety and Testing,266,63425,4.194
+eu,EU_AI_Act_Consolidated_2026-07-27.pdf,Enforcement,229,63425,3.611
 india,India Al Governance Guidelines 5 Nov 2025.pdf,Transparency,37,16659,2.221
 india,India Al Governance Guidelines 5 Nov 2025.pdf,Accountability,83,16659,4.982
 india,India Al Governance Guidelines 5 Nov 2025.pdf,Risk Assessment,30,16659,1.801
