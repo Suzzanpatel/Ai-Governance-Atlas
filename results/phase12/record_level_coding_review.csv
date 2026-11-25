@@ -1,0 +1,21 @@
+id,country,governance_dimension,legal_status,obligation_type,implementation_status
+EU001,EU,Risk Assessment,Binding legislation,Mandatory,Not assessed
+EU002,EU,Risk Assessment,Binding legislation,Mandatory,Not assessed
+EU003,EU,Transparency,Binding legislation,Mandatory,Not assessed
+EU004,EU,Accountability,Binding legislation,Mandatory,Not assessed
+EU005,EU,Safety and Testing,Binding legislation,Mandatory,Not assessed
+IND001,India,Transparency,Non-binding guidance,Recommended,No evidence of implementation found
+IND002,India,Accountability,Non-binding guidance,Recommended,Not yet implemented
+IND003,India,Risk Assessment,Non-binding guidance,Recommended,Partially implemented
+IND004,India,Safety and Testing,Non-binding guidance,Institutional,Partially implemented
+IND005,India,Enforcement,Non-binding guidance,Institutional,Partially implemented
+UK001,UK,Transparency,Government policy (non-statutory),Recommended,Partially implemented
+UK002,UK,Accountability,Government policy (non-statutory),Recommended,Partially implemented
+UK003,UK,Risk Assessment,Government policy (non-statutory),Institutional,Partially implemented
+UK004,UK,Safety and Testing,Government policy (non-statutory),Recommended,Partially implemented
+UK005,UK,Enforcement,Government policy (non-statutory),Institutional,Partially implemented
+OECD001,OECD (international benchmark),Transparency,International recommendation (non-binding),Recommended,Not assessed
+OECD002,OECD (international benchmark),Accountability,International recommendation (non-binding),Recommended,Not assessed
+OECD003,OECD (international benchmark),Risk Assessment,International recommendation (non-binding),Recommended,Not assessed
+OECD004,OECD (international benchmark),Safety and Testing,International recommendation (non-binding),Recommended,Not assessed
+OECD005,OECD (international benchmark),Enforcement,International recommendation (non-binding),Institutional,Implemented

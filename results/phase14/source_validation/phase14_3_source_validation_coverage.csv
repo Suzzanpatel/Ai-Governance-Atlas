@@ -1,0 +1,21 @@
+id,country,dataset_document,candidate_rows,local_candidate_paths,source_review_state
+EU001,EU,"Regulation (EU) 2024/1689 (Artificial Intelligence Act), as amended by Regulation (EU) 2026/1744 (Digital Omnibus on AI)",2,2,PENDING_SOURCE_REVIEW
+EU002,EU,"Regulation (EU) 2024/1689 (Artificial Intelligence Act), as amended by Regulation (EU) 2026/1744 (Digital Omnibus on AI)",2,2,PENDING_SOURCE_REVIEW
+EU003,EU,"Regulation (EU) 2024/1689 (Artificial Intelligence Act), as amended by Regulation (EU) 2026/1744 (Digital Omnibus on AI)",2,2,PENDING_SOURCE_REVIEW
+EU004,EU,"Regulation (EU) 2024/1689 (Artificial Intelligence Act), as amended by Regulation (EU) 2026/1744 (Digital Omnibus on AI)",2,2,PENDING_SOURCE_REVIEW
+EU005,EU,"Regulation (EU) 2024/1689 (Artificial Intelligence Act), as amended by Regulation (EU) 2026/1744 (Digital Omnibus on AI)",2,2,PENDING_SOURCE_REVIEW
+IND001,India,"India AI Governance Guidelines: Enabling Safe and Trusted AI Innovation (MeitY, IndiaAI Mission, 5 November 2025)",1,1,PENDING_SOURCE_REVIEW
+IND002,India,"India AI Governance Guidelines: Enabling Safe and Trusted AI Innovation (MeitY, IndiaAI Mission, 5 November 2025)",1,1,PENDING_SOURCE_REVIEW
+IND003,India,"India AI Governance Guidelines: Enabling Safe and Trusted AI Innovation (MeitY, IndiaAI Mission, 5 November 2025)",1,1,PENDING_SOURCE_REVIEW
+IND004,India,"India AI Governance Guidelines: Enabling Safe and Trusted AI Innovation (MeitY, IndiaAI Mission, 5 November 2025)",1,1,PENDING_SOURCE_REVIEW
+IND005,India,"India AI Governance Guidelines: Enabling Safe and Trusted AI Innovation (MeitY, IndiaAI Mission, 5 November 2025)",1,1,PENDING_SOURCE_REVIEW
+OECD001,OECD (international benchmark),"Recommendation of the Council on Artificial Intelligence, OECD/LEGAL/0449 (adopted 22 May 2019; revised 8 November 2023 and 3 May 2024)",1,1,PENDING_SOURCE_REVIEW
+OECD002,OECD (international benchmark),"Recommendation of the Council on Artificial Intelligence, OECD/LEGAL/0449 (adopted 22 May 2019; revised 8 November 2023 and 3 May 2024)",1,1,PENDING_SOURCE_REVIEW
+OECD003,OECD (international benchmark),"Recommendation of the Council on Artificial Intelligence, OECD/LEGAL/0449 (adopted 22 May 2019; revised 8 November 2023 and 3 May 2024)",1,1,PENDING_SOURCE_REVIEW
+OECD004,OECD (international benchmark),"Recommendation of the Council on Artificial Intelligence, OECD/LEGAL/0449 (adopted 22 May 2019; revised 8 November 2023 and 3 May 2024)",1,1,PENDING_SOURCE_REVIEW
+OECD005,OECD (international benchmark),"Recommendation of the Council on Artificial Intelligence, OECD/LEGAL/0449 (adopted 22 May 2019; revised 8 November 2023 and 3 May 2024)",1,1,PENDING_SOURCE_REVIEW
+UK001,UK,"A pro-innovation approach to AI regulation (DSIT White Paper, CP 815, March 2023; amended version)",1,1,PENDING_SOURCE_REVIEW
+UK002,UK,"A pro-innovation approach to AI regulation (DSIT White Paper, CP 815, March 2023; amended version)",1,1,PENDING_SOURCE_REVIEW
+UK003,UK,"A pro-innovation approach to AI regulation (DSIT White Paper, CP 815, March 2023; amended version)",1,1,PENDING_SOURCE_REVIEW
+UK004,UK,"A pro-innovation approach to AI regulation (DSIT White Paper, CP 815, March 2023; amended version)",1,1,PENDING_SOURCE_REVIEW
+UK005,UK,"A pro-innovation approach to AI regulation (DSIT White Paper, CP 815, March 2023; amended version)",1,1,PENDING_SOURCE_REVIEW

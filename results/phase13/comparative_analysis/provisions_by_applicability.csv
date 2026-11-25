@@ -1,0 +1,21 @@
+applicability,provision_count,share_of_dataset_pct
+"High-risk AI systems (classified under Art. 6 and Annexes I/III). Risks covered are limited to those that can be reasonably mitigated or eliminated through development, design or adequate technical information (Art. 9(3)). Art. 9(9) requires consideration of impacts on persons under 18 and other vulnerable groups.",1,5.0
+"High-risk AI systems that use techniques involving the training of AI models with data. For high-risk systems not using such training techniques, paras 2, 3 and 4 and Art. 4a(1) apply only to testing data sets (Art. 10(6) as amended).",1,5.0
+"High-risk AI systems. The beneficiary of the information is the deployer, not end-users or affected persons. Transparency towards natural persons interacting with AI systems (e.g. chatbots, deepfakes) is a separate regime under Art. 50. Affected persons have a separate right to obtain explanations of individual decisions from the deployer (Art. 86, OJ p. 110).",1,5.0
+"High-risk AI systems. Additional two-person verification rule for remote biometric identification systems (Annex III point 1(a)), with an exception for law enforcement, migration, border control or asylum where Union or national law deems it disproportionate (Art. 14(5)).",1,5.0
+"High-risk AI systems. The feedback-loop requirement (Art. 15(4), third subpara.) applies only to systems that continue to learn after being placed on the market or put into service.",1,5.0
+"All developers and deployers of AI systems in India; no risk threshold or system category is defined. Elsewhere the Guidelines say that low-risk applications may need only basic commitments such as transparency reporting, while high-risk applications in sensitive sectors may need more (§2.4, PDF p. 30).",1,5.0
+"All entities in the AI value chain (developers, deployers, end-users). Obligations are to be scaled to function and risk; no thresholds are specified yet.",1,5.0
+Economy-wide framework; it would determine which AI systems need which mitigation measures. No system categories exist yet.,1,5.0
+"AI systems generally; no category of system is required to be submitted for testing, and no trigger for testing is defined. Standards bodies (BIS, TEC) are separately mapped to 'Standardising testing, assessment, evaluation and validation procedures' (PDF p. 43).",1,5.0
+"AI applications falling within each regulator's existing statutory remit. Gaps between remits are left to AIGG to study ('regulatory gaps, and need for legal amendments', PDF p. 36).",1,5.0
+"All sectors, applied context-specifically by each regulator within its remit; the level of transparency is to be proportionate to the risk the AI system presents.",1,5.0
+All AI life cycle actors in all sectors; regulators decide which actors in the supply chain carry which expectations.,1,5.0
+Economy-wide; it supports regulators' own risk assessments and does not impose risk assessment duties on businesses.,1,5.0
+"All sectors; safety is expected to be a core consideration for some regulators (e.g. health, critical infrastructure) and more marginal for others.",1,5.0
+"All AI uses falling within existing regulators' remits. Risks outside any remit are to be addressed by regulators collaborating with government (para 65, PDF p. 44).",1,5.0
+"All AI systems and AI actors, 'according to their respective roles'; qualified by context and 'consistent with the state of art'.",1,5.0
+"All AI systems and AI actors; responsibility scaled by role, context and state of the art.",1,5.0
+"All AI systems across all lifecycle phases (plan and design, data, model building, testing, deployment, operation, retirement; lifecycle definition, p. 8).",1,5.0
+All AI systems across the lifecycle; mechanisms required 'as appropriate' (b) and 'where technically feasible' (c).,1,5.0
+Applies to the OECD's own bodies; it covers monitoring of all Adherents' implementation.,1,5.0

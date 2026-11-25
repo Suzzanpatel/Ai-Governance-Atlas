@@ -1,0 +1,19 @@
+responsible_party,Accountability,Enforcement,Risk Assessment,Safety and Testing,Transparency
+"AI Safety Institute (IndiaAI Safety Institute), working with agencies and sectoral regulators",0,0,0,1,0
+"AI actors (Council 'CALLS ON all AI actors', para III); Adherent governments to promote and implement (para II)",0,0,0,0,1
+"AI actors (those playing an active role in the AI system lifecycle, including those who deploy or operate AI; definitions, p. 8)",1,0,0,0,0
+"AI actors, with cooperation among AI actors, suppliers of AI knowledge and resources, AI system users and other stakeholders",0,0,1,0,0
+"AI life cycle actors (organisations and individuals that research, design, develop, train, operate, deploy or use AI); regulatory authority (to set expectations)",1,0,0,0,0
+"AI provider (design obligation); AI deployer (implementation, via Art. 26(2))",1,0,0,0,0
+AI provider (information duty owed to deployers),0,0,0,0,1
+AI provider (of high-risk AI systems),0,0,2,1,0
+Developer and deployer ('any person involved in developing or deploying AI systems in India'),0,0,0,0,1
+"Government (MeitY and sectoral regulators) to clarify and impose obligations; the eventual duty-bearers would be developers, deployers and end-users",1,0,0,0,0
+"Government (central functions; government will 'initially be responsible for delivering the central functions', para 75, PDF p. 59), working with regulators",0,0,1,0,0
+Government (developing body not named in the provision; Action Plan says 'with sectoral inputs'; AISI's listed functions include risk analysis),0,0,1,0,0
+Multiple stakeholders (principle phrased in the passive voice; addressed to AI actors via para III and to Adherents via para II),0,0,0,1,0
+"OECD Digital Policy Committee, through its Working Party on AI Governance (AIGO)",0,1,0,0,0
+"Regulatory authority (existing sectoral regulators; those named in the White Paper include the ICO, FCA, EHRC and MHRA), supported by central government",0,1,0,0,0
+Regulatory authority (implementation through guidance); AI life cycle actors (may be asked by regulators to provide information),0,0,0,0,1
+"Regulatory authority (to implement); developer and other AI life cycle actors (testing and due diligence, if required by regulators)",0,0,0,1,0
+"Sectoral regulators and agencies (e.g. RBI, SEBI, IRDAI, TRAI, ICMR, NHA, ministries), with MeitY as nodal ministry and AIGG coordinating",0,1,0,0,0

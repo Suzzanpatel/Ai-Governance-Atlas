@@ -1,0 +1,5 @@
+﻿jurisdiction,provision_records_in_dataset,share_of_dataset_percent,distinct_documents_in_dataset,governance_dimensions_represented,legal_status_categories_recorded,interpretation
+EU,5,25.0,1,Accountability; Risk Assessment; Safety and Testing; Transparency,Binding legislation,Descriptive coverage of this dataset only; not a measure of jurisdiction-wide regulatory activity or quality.
+India,5,25.0,1,Accountability; Enforcement; Risk Assessment; Safety and Testing; Transparency,Non-binding guidance,Descriptive coverage of this dataset only; not a measure of jurisdiction-wide regulatory activity or quality.
+OECD (international benchmark),5,25.0,1,Accountability; Enforcement; Risk Assessment; Safety and Testing; Transparency,International recommendation (non-binding),Descriptive coverage of this dataset only; not a measure of jurisdiction-wide regulatory activity or quality.
+UK,5,25.0,1,Accountability; Enforcement; Risk Assessment; Safety and Testing; Transparency,Government policy (non-statutory),Descriptive coverage of this dataset only; not a measure of jurisdiction-wide regulatory activity or quality.
