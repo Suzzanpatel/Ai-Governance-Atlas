@@ -1,6 +1,6 @@
 # From Principles to Enforceable Obligations: A Provision-Level Comparison of AI Governance in the European Union, India and the United Kingdom
 
-*AI Governance Atlas*
+*Suzzan Patel*
 
 *Manuscript generated 26 November 2026 from the AI Governance Atlas dataset*
 
