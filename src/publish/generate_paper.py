@@ -82,7 +82,7 @@ TEXT = "#191919"
 TEXT_2 = "#666666"
 GRID = "#e5e5e5"
 
-PRIVATE_ACTORS = {"AI Provider", "AI Deployer", "Developer", "End User", "AI Lifecycle Actors", "Multiple Stakeholders"}
+PRIVATE_ACTORS = {"AI Provider", "AI Deployer", "Developer", "Intermediary", "End User", "AI Lifecycle Actors", "Multiple Stakeholders"}
 PUBLIC_ACTORS = {"Government", "Regulator", "Institution"}
 
 # Scholarly works cited in the framing sections. Publication details were
@@ -99,9 +99,11 @@ LITERATURE = [
 # Instruments that post-date the coded versions and are not in the sample.
 # Listed so the limitations section stays honest about scope.
 OUT_OF_SAMPLE = [
-    "India's Information Technology (Intermediary Guidelines and Digital Media Ethics Code) "
-    "Amendment Rules, 2026, which brought synthetically generated content within binding "
-    "intermediary obligations from February 2026",
+    "India's Second Amendment Rules of 2026, prepared in April 2026 to require continuous display of "
+    "synthetic-content labels, whose gazette status could not be confirmed",
+    "the strategic approaches published by individual UK regulators in 2024, which are recorded as "
+    "implementation evidence rather than coded as provisions",
+    "sector-specific AI guidance issued under each framework",
 ]
 
 
@@ -135,6 +137,8 @@ def Num(n: int) -> str:
 
 def of(k: int, total: int) -> str:
     """'all five', 'none of the five', 'three of five'."""
+    if total == 2 and k == 2:
+        return "both"
     if total and k == total:
         return f"all {num(total)}"
     if k == 0:
@@ -336,7 +340,19 @@ def build_content(atlas: ad.Atlas, author: str, affiliation: str, figs: dict) ->
     mandatory = [r for r in R if r["obligation_type"] == "Mandatory"]
     mand_fw = sorted({r["country"] for r in mandatory}, key=FW.index)
     recommended = [r for r in R if r["obligation_type"] == "Recommended"]
-    institutional = [r for r in R if r["obligation_type"] == "Institutional"]
+    voluntary = [r for r in R if r["obligation_type"] == "Voluntary"]
+    unspecified = [r for r in R if r["obligation_type"] == "Not specified"]
+    binding = [r for r in R if r["legal_status"].startswith("Binding")]
+    binding_fw = sorted({r["country"] for r in binding}, key=FW.index)
+    nonbinding = [r for r in R if not r["legal_status"].startswith("Binding")]
+    # Mandatory wording inside a non-binding instrument (e.g. an internal OECD instruction)
+    mand_nonbinding = [r for r in mandatory if not r["legal_status"].startswith("Binding")]
+    later = [r for r in R if not r["principal_instrument"]]
+    later_fw = sorted({r["country"] for r in later}, key=FW.index)
+    later_docs = [d for d, src in atlas.sources.items() if not src["principal"]]
+    core_per_fw = {f: sum(r["principal_instrument"] for r in by[f]) for f in FW}
+    india_binding = [r for r in by["India"] if r["legal_status"].startswith("Binding")]
+    india_in_force = [r for r in india_binding if r["applicability_status"].startswith("In force")]
 
     linked = [r for r in R if r["enforcement_level"] in ("Cross-referenced", "Direct")]
     crossref = [r for r in R if r["enforcement_level"] == "Cross-referenced"]
@@ -354,6 +370,8 @@ def build_content(atlas: ad.Atlas, author: str, affiliation: str, figs: dict) ->
         return any(c in PUBLIC_ACTORS for c in r["responsibility_categories"])
 
     priv = {f: sum(addressed_private(r) for r in by[f]) for f in FW}
+    binding_private = sum(addressed_private(r) for r in binding)
+    nonbinding_public = sum(addressed_public(r) for r in nonbinding)
     pub = {f: sum(addressed_public(r) for r in by[f]) for f in FW}
     public_only = {f: sum(addressed_public(r) and not addressed_private(r) for r in by[f]) for f in FW}
 
@@ -395,18 +413,26 @@ def build_content(atlas: ad.Atlas, author: str, affiliation: str, figs: dict) ->
         "Artificial intelligence governance has produced a broad consensus on principles such as transparency, "
         "accountability and safety, but far less agreement on how those principles become duties that someone must "
         f"perform and that someone else can enforce. This paper compares {n} purposively selected provisions from the "
-        f"European Union's AI Act, India's AI Governance Guidelines and the United Kingdom's pro-innovation White Paper, "
-        "using the OECD Recommendation on Artificial Intelligence as an international benchmark. Each provision is "
-        "coded for legal force, obligation type, duty-holder, enforcement linkage and implementation evidence, and the "
-        "manual coding is complemented by keyword analysis of the full texts. "
-        f"{Num(len(mandatory))} of the {n} provisions are mandatory, all of them in "
-        f"{names(mand_fw)} sample, and {num(len(statutory_sanction))} are linked to statutory "
-        "sanctions. The frameworks differ less in the principles they recognise than in where they place responsibility: "
-        "the binding regime addresses private providers and deployers, whereas the non-statutory frameworks mainly "
+        "European Union's AI Act, India's AI Governance Guidelines"
+        + (" and its 2026 intermediary rules on synthetically generated information" if india_binding else "")
+        + ", and the United Kingdom's pro-innovation White Paper"
+        + (" and the government's 2024 response" if any(r["country"] == "UK" for r in later) else "")
+        + ", using the OECD Recommendation on Artificial Intelligence as an international benchmark. Each provision is "
+        "coded for legal force, obligation force and nature, duty-holder, enforcement linkage and implementation evidence, "
+        "and the manual coding is complemented by keyword analysis and an AI-assisted blind second coding. "
+        f"{Num(len(binding))} of the {n} provisions come from binding instruments, in {names(binding_fw)}, and "
+        f"{num(len(statutory_sanction))} are linked to statutory sanctions. The frameworks differ less in the principles "
+        "they recognise than in where they place responsibility: "
+        f"{'every' if binding_private == len(binding) else f'{binding_private} of the {len(binding)}'} binding "
+        "provision addresses private providers, deployers or intermediaries, whereas non-binding provisions mainly "
         "address governments and regulators. The paper calls this a difference in the translation chain between principle "
-        "and enforcement. It also finds an inverse pattern in implementation evidence: the framework with the most "
-        "enforceable duties is the one whose duties were not yet applicable during the research period. The findings "
-        "describe a small structured sample and do not rank the frameworks."))
+        "and enforcement. It also finds that enforceability and implementation diverge: "
+        + ("the EU's statutory duties were not yet applicable during the research period, while India's targeted "
+           "intermediary duties took effect within days by building on an existing due-diligence regime. "
+           if india_in_force and not_yet_applicable else
+           "the framework with the most enforceable duties is the one whose duties were not yet applicable during the "
+           "research period. ")
+        + "The findings describe a small structured sample and do not rank the frameworks."))
     blocks.append(("keywords", "Keywords: AI governance; AI Act; comparative regulation; enforcement; India; United Kingdom; OECD"))
 
     # ---------------- 1 Introduction ----------------
@@ -426,8 +452,11 @@ def build_content(atlas: ad.Atlas, author: str, affiliation: str, figs: dict) ->
     P("This paper examines that translation in three jurisdictions that have taken visibly different routes. The European "
       "Union adopted a horizontal, risk-based regulation, the AI Act, and amended it in 2026 through the Digital Omnibus "
       "on AI. The United Kingdom chose a principles-based framework applied by existing sectoral regulators without new "
-      "primary legislation. India issued national AI Governance Guidelines in November 2025 that favour voluntary measures, "
-      "existing law and new coordinating institutions. The OECD Recommendation on Artificial Intelligence, to which all "
+      "primary legislation, and confirmed that approach in its February 2024 response to consultation. India issued "
+      "national AI Governance Guidelines in November 2025 that favour voluntary measures, existing law and new "
+      "coordinating institutions"
+      + (", and three months later brought synthetically generated content within its binding rules for online "
+         "intermediaries" if india_binding else "") + ". The OECD Recommendation on Artificial Intelligence, to which all "
       "three relate, serves as an international benchmark rather than as a fourth jurisdiction.")
     P("The three cases were chosen because they vary the variable of interest while holding the underlying principles "
       "roughly constant. All three jurisdictions adhere to, or draw explicitly on, the OECD principles, so differences "
@@ -470,23 +499,34 @@ def build_content(atlas: ad.Atlas, author: str, affiliation: str, figs: dict) ->
     # ---------------- 3 Data and methods ----------------
     H1("3. Data and methods")
     H2("3.1 Sources and versions")
-    P(f"The corpus consists of one primary instrument per framework, listed with the version coded in Table 1. For the EU, "
+    P(f"The corpus consists of a principal instrument for each framework"
+      + (f", supplemented by {num(len(later_docs))} later {plural(len(later_docs), 'instrument')} for "
+         f"{names(later_fw)}" if later_docs else "")
+      + ", listed with the version coded in Table 1. For the EU, "
       f"the coding uses the consolidated text that incorporates Regulation (EU) 2026/1744; because several high-risk "
       f"obligations were deferred by that amendment, {of(len(not_yet_applicable), per_fw['EU'])} EU provisions are "
       "recorded as legally adopted but not yet applicable. The UK White Paper and the India Guidelines are coded in the "
-      "versions published by their issuing departments, and the OECD Recommendation as revised in May 2024.")
+      "versions published by their issuing departments, and the OECD Recommendation as revised in May 2024."
+      + (" The later instruments were added so that the sample reflects how each framework developed after its principal "
+         "instrument: India's 2026 amendment of the intermediary rules, which created the country's first binding "
+         "obligations aimed at AI-generated content, and the UK government's 2024 consultation response." if later_docs else ""))
     blocks.append(("table_sources", None))
     H2("3.2 Sample and coding")
     P(f"The evidence base contains {n} provisions, {join([f'{num(per_fw[f])} from {name(f)}' for f in FW])}. "
       "Provisions were selected purposively for their relevance to five governance dimensions: transparency, "
       "accountability, risk assessment, safety and testing, and enforcement. Each record contains the verbatim text, the "
       "article or section, PDF and printed page references, the duty-holder in the source's own terminology, the "
-      "enforcement route with cross-references, and dated implementation evidence. Equal numbers per framework support "
-      "balanced descriptive tables but do not imply that the frameworks are of equal scope or that the sample represents "
-      "each framework as a whole.")
+      "enforcement route with cross-references, and dated implementation evidence. "
+      + (f"The principal instruments contribute {num(core_per_fw['EU'])} provisions each; the later instruments add "
+         f"{num(len(later))} more. " if len(set(core_per_fw.values())) == 1 and later else "")
+      + "The counts support structured description but do not imply that the frameworks are of equal scope or that the "
+      "sample represents each framework as a whole.")
     P("Coding followed a written framework that defines each category and its decision rules, including the rule that "
       "aspirational language is not coded as a mandatory obligation and that a sanction located elsewhere in an "
-      "instrument is recorded as cross-referenced rather than direct. Duty-holders and enforcement mechanisms were then "
+      "instrument is recorded as cross-referenced rather than direct. Obligation force (mandatory, recommended, voluntary "
+      "or not specified) is coded separately from obligation nature (institutional, procedural, substantive, reporting "
+      "or other), so that a provision assigning a task to an institution is not mistaken for a weaker form of duty. "
+      "Duty-holders and enforcement mechanisms were then "
       "normalised into standard categories, allowing a provision to belong to more than one. A structured audit checked "
       "identifiers, missing values and category distributions, and a source-validation register links every record to "
       "its official publication.")
@@ -518,6 +558,25 @@ def build_content(atlas: ad.Atlas, author: str, affiliation: str, figs: dict) ->
           f"{v.get('Verified', 0)} were verified as recorded, {corrected} led to a correction"
           + (f" and {caveat} were verified with a caveat" if caveat else "") +
           applied + signoff + ". " + corrections_scope_sentence(meta))
+    rel = {r["field"]: r for r in meta.get("reliability", [])}
+    if rel:
+        def kfmt(field):
+            r = rel.get(field, {})
+            return f"κ = {float(r['cohens_kappa']):.2f}" if r.get("cohens_kappa") else "n/a"
+        weakest = min((r for r in rel.values() if r.get("cohens_kappa")), key=lambda r: float(r["cohens_kappa"]))
+        coder = rel[next(iter(rel))]["second_coder"]
+        nat = rel.get("obligation_nature", {})
+        P(f"Coding reliability was checked with a blind second coding of all {rel[next(iter(rel))]['n']} provisions. "
+          + ("The second coder was an AI agent that saw only each provision's text, location and instrument together with "
+             "the written coding framework, and never the primary codes; the check is therefore reported as AI-assisted and "
+             "is not a substitute for an independent human coder. " if coder != "human" else
+             "The second coder worked from the written framework without access to the primary codes. ") +
+          f"Agreement was {kfmt('legal_status')} for legal force, {kfmt('governance_dimension')} for the primary "
+          f"dimension, {kfmt('obligation_force')} for obligation force and {kfmt('enforcement_linkage')} for enforcement "
+          f"linkage (Cohen's kappa), with {nat.get('percent_agreement', 'n/a')}% exact agreement on the multi-label "
+          f"obligation nature. The weakest agreement, on {weakest['variable'].lower()}, concentrated on the boundary "
+          "between provisions that organise enforcement through existing bodies and provisions that create no compliance "
+          "duty at all, which the framework's definitions do not fully separate.")
     H2("3.3 Computational indicators")
     P("To complement the manual coding, the full text of each instrument was extracted page by page and searched for "
       "dimension-related keyword families, with counts normalised per 1,000 words. The extracted EU text is the "
@@ -529,47 +588,75 @@ def build_content(atlas: ad.Atlas, author: str, affiliation: str, figs: dict) ->
     # ---------------- 4 Findings ----------------
     H1("4. Findings")
     H2("4.1 Legal force and obligation force")
-    rec_fw = [f for f in FW if obl[f]["Recommended"]]
+    nonmand_parts = [f"recommendations ({len(recommended)})"]
+    if voluntary:
+        nonmand_parts.append(f"voluntary undertakings by the issuing government ({len(voluntary)})")
+    if unspecified:
+        nonmand_parts.append(f"statements of no specified force ({len(unspecified)})")
+    bind_mand = [r for r in mandatory if r["legal_status"].startswith("Binding")]
     P(f"Table 2 summarises the translation profile of each framework. The sharpest division is in obligation force. "
-      f"All {num(len(mandatory))} mandatory provisions in the sample come from {names(mand_fw)}, "
-      f"where {pct(obl['EU']['Mandatory'], per_fw['EU'])} of coded provisions impose requirements on identified actors. "
-      f"The remaining {n - len(mandatory)} provisions are either recommendations ({len(recommended)}) or institutional "
-      f"assignments ({len(institutional)}), spread across {names(rec_fw)}.")
+      f"{Num(len(bind_mand))} of the {num(len(mandatory))} mandatory provisions come from binding instruments: "
+      + join([f"{of(sum(r['country'] == f for r in bind_mand), per_fw[f] if f != 'India' else len(india_binding))} "
+              + ("EU provisions" if f == "EU" else "of India's 2026 intermediary-rule provisions" if f == "India" else f"{ad.SHORT[f]} provisions")
+              for f in sorted({r['country'] for r in bind_mand}, key=FW.index)])
+      + ". "
+      + (f"{Num(len(mand_nonbinding))} {plural(len(mand_nonbinding), 'is', 'are')} mandatory only within a non-binding "
+         f"instrument ({ids(mand_nonbinding)}): "
+         + " ".join(first_sentence(r['provision_summary'])[0].upper() + first_sentence(r['provision_summary'])[1:] + "."
+                    for r in mand_nonbinding)
+         + f" {plural(len(mand_nonbinding), 'It binds', 'They bind')} no state or AI actor. " if mand_nonbinding else "")
+      + f"The remaining {n - len(mandatory)} provisions are " + join(nonmand_parts) + ".")
     blocks.append(("table_profile", None))
-    P("The difference is not simply that one instrument is a statute. The UK and Indian provisions are frequently precise "
-      "about what good practice looks like: the UK transparency principle (UK001) describes proportionate explainability "
-      "in some detail, and the India Guidelines recommend transparency reports assessing risks of harm in the Indian "
-      "context (IND001). What they lack is the grammar of obligation: an addressee who must act and a consequence if it "
-      "does not. Conversely, the EU provisions are written in the passive voice, and their duty-holder is established only "
-      "by reading them with Article 16, which obliges providers to ensure compliance with the requirements of Chapter III, "
-      "Section 2. Obligation force therefore depends on the architecture of the instrument as well as on the wording of a "
-      "single provision.")
+    P("The difference is not simply that some instruments are statutes. The UK and Indian guideline provisions are "
+      "frequently precise about what good practice looks like: the UK transparency principle (UK001) describes "
+      "proportionate explainability in some detail, and the India Guidelines recommend transparency reports assessing "
+      "risks of harm in the Indian context (IND001). What they lack is the grammar of obligation: an addressee who must "
+      "act and a consequence if it does not. Conversely, the EU provisions are written in the passive voice, and their "
+      "duty-holder is established only by reading them with Article 16, which obliges providers to ensure compliance with "
+      "the requirements of Chapter III, Section 2."
+      + (" India's 2026 rules supply the grammar of obligation in a narrower field: intermediaries 'shall' label synthetic "
+         "content and preserve its provenance metadata, and the consequence of non-observance is stated in the rules "
+         "themselves." if india_binding else "")
+      + " Obligation force therefore depends on the architecture of the instrument as well as on the wording of a single "
+      "provision.")
 
     H2("4.2 Who is obliged? The addressees of governance")
+    ind_guid = [r for r in by["India"] if not r["legal_status"].startswith("Binding")]
+    ind_guid_pub = sum(addressed_public(r) for r in ind_guid)
     P(f"Figure {fig_n['addr']} shows the actors to whom each framework's provisions are addressed. In the EU sample, "
       f"{of(priv['EU'], per_fw['EU'])} provisions place duties on private actors (providers, and in EU004 also "
       f"deployers) and {num(pub['EU'])} address public bodies. The UK pattern is close to the reverse: regulators appear "
       f"in {of(sum('Regulator' in r['responsibility_categories'] for r in by['UK']), per_fw['UK'])} UK provisions, "
       f"and {num(public_only['UK'])} {plural(public_only['UK'], 'provision is', 'provisions are')} addressed to public "
-      f"bodies alone. India's sample is the most institutionally oriented, with {of(pub['India'], per_fw['India'])} "
-      "provisions addressed to government, regulators or new institutions such as the AI Safety Institute and the AI "
-      "Governance Group.")
+      "bodies alone. "
+      + (f"India's sample contains both patterns. {Num(ind_guid_pub)} of its {num(len(ind_guid))} Guidelines provisions "
+         "are addressed to government, regulators or new institutions such as the AI Safety Institute and the AI "
+         f"Governance Group, whereas its {num(len(india_binding))} intermediary-rule provisions place duties on online "
+         "intermediaries." if india_binding else
+         f"India's sample is the most institutionally oriented, with {of(pub['India'], per_fw['India'])} provisions "
+         "addressed to government, regulators or new institutions such as the AI Safety Institute and the AI Governance "
+         "Group.")
+      + f" Across the whole sample, {of(binding_private, len(binding))} binding provisions address private actors, while "
+      f"{num(nonbinding_public)} of the {num(len(nonbinding))} non-binding provisions address public bodies.")
     blocks.append(("figure", figs["addr"],
                    f"Figure {fig_n['addr']}. Duty-holders named in the coded provisions, by framework. Cells show the "
                    "number of provisions that address each actor category; a provision can address more than one. "
                    "Darker cells indicate more provisions."))
     P("This difference matters for the translation chain. A principle addressed to a regulator is translated into conduct "
       "only after a second step, when the regulator issues guidance, rules or decisions of its own. A principle addressed "
-      "to a provider skips that step. The non-statutory frameworks are therefore not merely softer versions of the EU "
-      "model; they are structured as instructions to the state about how to govern, with obligations on industry left to "
-      "existing sectoral law or to a later stage. The OECD benchmark sits between the two: it addresses AI actors "
-      f"generally in {num(priv['OECD (international benchmark)'])} of its {num(per_fw['OECD (international benchmark)'])} "
-      "provisions, but only through recommendations to adhering governments.")
+      "to a provider or an intermediary skips that step. Non-statutory provisions are therefore not merely softer "
+      "versions of statutory ones; they are structured as instructions to the state about how to govern, with obligations "
+      "on industry left to existing sectoral law or to a later stage. The OECD benchmark sits between the two: it "
+      f"addresses AI actors generally in {num(priv['OECD (international benchmark)'])} of its "
+      f"{num(per_fw['OECD (international benchmark)'])} provisions, but only through recommendations to adhering "
+      "governments.")
 
     H2("4.3 Enforcement linkage")
+    eu_cross = [r for r in crossref if r["country"] == "EU"]
+    other_linked = [r for r in linked if r["country"] != "EU"]
     P(f"Figure {fig_n['enf']} reports the enforcement linkage of each provision. {Num(len(linked))} of the {n} provisions "
       f"have a compliance route that is either named in the provision or attached to it by cross-reference. "
-      f"{Num(len(crossref))} of these are the EU provisions, each linked through Article 16 to administrative fines under "
+      f"{Num(len(eu_cross))} of these are EU provisions, each linked through Article 16 to administrative fines under "
       f"Article 99, supported by conformity assessment and market surveillance"
       + (f"; EU004 additionally links deployer duties to fines through Article 26" if any(r['id'] == 'EU004' and len(r['enforcement_mechanisms']) > 1 for r in by['EU']) else "")
       + ".")
@@ -578,14 +665,17 @@ def build_content(atlas: ad.Atlas, author: str, affiliation: str, figs: dict) ->
                    "duty linked to statutory sanctions elsewhere in the instrument. System-level only: reliance on the "
                    "general powers of existing bodies. Direct: mechanism named in the provision. Not applicable "
                    "(hatched): institution-building rather than a compliance duty."))
-    india_direct_desc = (f"In India, the only direct linkage ({ids(india_direct)}) is a soft-accountability route: "
-                         f"{join([m.lower() for r in india_direct for m in r['enforcement_mechanisms']])}, with no sanction "
-                         "for non-publication. ") if india_direct else ""
-    uk_direct_desc = (f"In the UK, the direct linkage ({ids(uk_direct)}) consists of the existing statutory powers of "
-                      "sectoral regulators, applied to the principles during an initial non-statutory period. ") if uk_direct else ""
-    P("The direct linkages outside the EU are qualitatively different from the EU's statutory route. "
-      + india_direct_desc + uk_direct_desc +
-      f"Across the non-EU frameworks, the most common outcome is reliance on system-level powers "
+    statutory_other = [r for r in other_linked if r["mechanism_character"] == "Statutory enforcement"]
+    soft_other = [r for r in other_linked if r["mechanism_character"] != "Statutory enforcement"]
+    P("Outside the EU, the compliance routes differ in kind. "
+      + (f"India's 2026 intermediary rules create a statutory route ({ids(statutory_other)}): an intermediary that fails "
+         "to observe the rules loses its exemption from liability for third-party content under section 79(1) of the "
+         "Information Technology Act, 2000. The sanction is the withdrawal of a legal protection rather than a fine, which "
+         "makes compliance a condition of the intermediary's business model. " if statutory_other else "")
+      + (" ".join(f"{r['id']} ({ad.SHORT[r['country']]}) relies on {join([m.lower() for m in r['enforcement_mechanisms']])}"
+                  + (", a soft-accountability route with no sanction" if r["mechanism_character"] == "Soft accountability" else "")
+                  + "." for r in soft_other) + " " if soft_other else "")
+      + f"Elsewhere outside the EU, the most common outcome is reliance on system-level powers "
       f"({num(sum(r['country'] != 'EU' for r in system))} {plural(sum(r['country'] != 'EU' for r in system), 'provision')}) "
       f"or no identified route ({num(sum(r['country'] != 'EU' for r in none_))}). "
       f"{Num(len(na))} {plural(len(na), 'provision is', 'provisions are')} coded as not applicable because "
@@ -599,55 +689,61 @@ def build_content(atlas: ad.Atlas, author: str, affiliation: str, figs: dict) ->
       "reporting by the Digital Policy Committee to the OECD Council, which monitors implementation but does not enforce it.")
 
     H2("4.4 Implementation evidence")
-    P(f"Figure {fig_n['imp']} reports the implementation evidence recorded for each provision. The pattern is the reverse of "
-      f"the enforcement pattern. {of(per_fw['EU'] - imp['EU']['Not assessed'], per_fw['EU']).capitalize()} EU provisions "
-      "has an implementation assessment, because their "
-      "obligations were adopted but not yet applicable during the research period; harmonised standards and the deferred "
-      f"application dates mean that compliance cannot yet be observed. By contrast, "
-      f"{of(len(evidenced['UK']), per_fw['UK'])} UK provisions show at least partial implementation, documented mainly through the government's "
-      f"2024 response and regulators' published approaches, and {of(len(evidenced['India']), per_fw['India'])} Indian "
-      "provisions show partial implementation, chiefly through institutional steps such as the creation of the IndiaAI "
-      "Safety Institute.")
+    implemented = [r for r in R if r["implementation_status"] == "Implemented"]
+    P(f"Figure {fig_n['imp']} reports the implementation evidence recorded for each provision. "
+      f"{of(per_fw['EU'] - imp['EU']['Not assessed'], per_fw['EU']).capitalize()} EU provisions "
+      "has an implementation assessment, because their obligations were adopted but not yet applicable during the "
+      "research period; harmonised standards and the deferred application dates mean that compliance cannot yet be "
+      f"observed. By contrast, {of(len(evidenced['UK']), per_fw['UK'])} UK provisions show at least partial "
+      "implementation, documented mainly through the government's 2024 response and regulators' published strategic "
+      f"approaches, and {of(len(evidenced['India']), per_fw['India'])} Indian provisions show at least partial "
+      "implementation, chiefly through institutional steps such as the creation of the IndiaAI Safety Institute"
+      + (f" and, for {ids([r for r in india_in_force if r in evidenced['India']])}, the entry into force of the "
+         "intermediary rules on 20 February 2026"
+         if any(r in evidenced['India'] for r in india_in_force) else "")
+      + "." + (f" {Num(len(implemented))} {plural(len(implemented), 'provision is', 'provisions are')} coded as fully "
+               f"implemented ({ids(implemented)})." if implemented else ""))
     blocks.append(("figure", figs["imp"],
                    f"Figure {fig_n['imp']}. Implementation evidence recorded for coded provisions, by framework. "
                    "Outlined segments are provisions not assessed, which is not a finding of non-implementation."))
-    ind_gap = [r for r in by["India"] if r["implementation_status"] in ("Not yet implemented", "No evidence of implementation found")]
-    P("This inverse relationship has a straightforward explanation, and it is itself a finding about the translation chain. "
-      "Measures addressed to the state, such as creating an institution or publishing guidance, can be implemented quickly "
-      "and documented in official sources. Measures addressed to industry under a statute require standards, designated "
-      "authorities and transition periods before they bite. "
-      + (f"Where Indian measures do depend on industry or on new legal obligations ({ids(ind_gap)}), the recorded evidence is "
-         "weakest. " if ind_gap else "") +
-      "Implementation evidence therefore needs to be read alongside the addressee of each duty: early implementation of "
-      "institution-building provisions does not show that private conduct has changed.")
+    ind_gap = [r for r in ind_guid if r["implementation_status"] in ("Not yet implemented", "No evidence of implementation found")]
+    P("Measures addressed to the state, such as creating an institution or publishing guidance, can be implemented quickly "
+      "and documented in official sources. The EU shows that measures addressed to industry under a new horizontal statute "
+      "may need standards, designated authorities and transition periods before they bite. "
+      + ("India's intermediary rules show the opposite case: a targeted duty attached to an existing due-diligence regime, "
+         "with an established sanction, took effect ten days after notification. The speed of implementation therefore "
+         "depends less on whether a duty is binding than on whether it can be attached to legal machinery that already "
+         "exists. " if india_in_force else "")
+      + (f"Where Indian Guidelines measures depend on industry or on new legal obligations ({ids(ind_gap)}), the recorded "
+         "evidence is weakest. " if ind_gap else "")
+      + "Implementation evidence also needs to be read alongside the addressee of each duty: early implementation of "
+      "institution-building provisions does not show that private conduct has changed, and entry into force does not show "
+      "compliance.")
 
     H2("4.5 Principle by principle")
-    P("Reading the sample by governance dimension shows how the same principle is expressed in different regulatory forms. "
-      "The paragraphs below take each dimension in turn, using the coded summary of each provision.")
+    P("Reading the sample by governance dimension shows how the same principle takes different regulatory forms. For each "
+      "dimension, the provisions are grouped below by obligation force, with an example of its strongest form.")
+    force_rank = {"Mandatory": 0, "Recommended": 1, "Voluntary": 2, "Not specified": 3}
     for dim in ad.DIMENSIONS:
         recs = [r for r in R if r["governance_dimension"] == dim]
         if not recs:
             continue
-        parts = [f"<i>{dim}</i> is the primary dimension of {num(len(recs))} {plural(len(recs), 'provision')}."]
-        for r in recs:
-            fw_name = {"EU": "the EU", "UK": "the UK", "OECD (international benchmark)": "the OECD benchmark"}.get(r["country"], r["country"])
-            parts.append(f"In {fw_name} ({r['id']}), {first_sentence(r['provision_summary'])}.")
-        mand = sorted({r["country"] for r in recs if r["obligation_type"] == "Mandatory"}, key=FW.index)
-        other = sorted({r["country"] for r in recs if r["obligation_type"] != "Mandatory"}, key=FW.index)
+        groups = []
+        for force in ad.OBLIGATION_TYPES:
+            members = [r for r in recs if r["obligation_type"] == force]
+            if members:
+                fws = sorted({r["country"] for r in members}, key=FW.index)
+                groups.append(f"{force.lower()} in {names(fws)} ({ids(members)})")
+        ranked = sorted(recs, key=lambda r: force_rank.get(r["obligation_type"], 9))
+        strong = ranked[0]
+        text = (f"<i>{dim}</i> ({num(len(recs))} {plural(len(recs), 'provision')}) is " + "; ".join(groups) + ". ")
+        text += f"In its strongest form, in {name(strong['country'])} ({strong['id']}), {first_sentence(strong['provision_summary'])}."
         missing = [f for f in FW if f not in {r["country"] for r in recs}]
-        if mand and other:
-            parts.append(f"Only {names(mand)} frames this dimension as a mandatory duty; "
-                         f"in {names(other)} it takes the form of recommendations or institutional functions.")
-        elif other:
-            parts.append(f"None of the provisions coded under this dimension is mandatory; all take the form of "
-                         "recommendations or institutional functions.")
         if missing:
-            reason = (" because enforcement attaches to its duties by cross-reference rather than through separate provisions"
-                      if dim == "Enforcement" and "EU" in missing else "")
-            parts.append(f"The {join([ad.SHORT[f] for f in missing])} sample has no provision coded primarily under this "
-                         f"dimension{reason}, which reflects the selection of provisions rather than the content of the "
-                         "framework.")
-        P(" ".join(parts))
+            text += (f" No provision from {names(missing)} is coded primarily under this dimension"
+                     + (", because EU enforcement attaches to duties by cross-reference" if dim == "Enforcement" and "EU" in missing else "")
+                     + "; this reflects the selection of provisions, not the content of the framework.")
+        P(text)
 
     H2("4.6 Computational indicators")
     P(f"Figure {fig_n['kw']} reports keyword frequencies. The EU text has the highest density of risk-assessment vocabulary "
@@ -667,7 +763,9 @@ def build_content(atlas: ad.Atlas, author: str, affiliation: str, figs: dict) ->
       "lexical methods. Part of the EU's risk-assessment score reflects the term 'high-risk', which is a defined category "
       "in the Act rather than evidence of a risk-assessment duty, and the accountability scores for India and the UK are "
       "inflated by general uses of 'responsible'. Keyword density measures how often a framework talks about a principle; "
-      "only provision-level reading establishes whether it turns that principle into a duty.")
+      "only provision-level reading establishes whether it turns that principle into a duty."
+      + (" The keyword corpus covers the principal instrument of each framework only; the later instruments are analysed "
+         "through provision-level coding alone." if later_docs else ""))
 
     # ---------------- 5 Discussion ----------------
     H1("5. Discussion")
@@ -684,29 +782,44 @@ def build_content(atlas: ad.Atlas, author: str, affiliation: str, figs: dict) ->
       "existing law applies to actors in the AI value chain and to develop risk frameworks. In both, the step that turns a "
       "principle into a duty on industry is postponed and distributed. This preserves flexibility and avoids premature "
       "rules for a fast-moving technology, but it makes outcomes depend on regulators' capacity, mandates and willingness "
-      "to act, and it can leave gaps where conduct falls between sectors.")
+      "to act, and it can leave gaps where conduct falls between sectors."
+      + (" India's 2026 rules show what can follow such delegation: when a specific harm, synthetic media, became "
+         "salient, binding duties were attached to an existing legal hook, intermediary due diligence, rather than enacted "
+         "in a horizontal AI statute." if india_binding else "")
+      + (" The UK's 2024 response points the same way, anticipating targeted mandatory interventions for highly capable "
+         "general-purpose systems while relying on voluntary measures for now." if any(r["id"] == "UK007" for r in R) else ""))
     P("Third, legal enforceability and early implementation pulled in opposite directions during the research period. The "
       "EU has the most complete chain on paper, with mandatory duties, named duty-holders and cross-referenced sanctions, but "
       "its high-risk obligations had not yet become applicable, and their entry into application was deferred by the "
       "2026 amendment. Commentators had already questioned whether parts of the Act's enforcement design would achieve their "
-      "aims (Veale and Zuiderveen Borgesius, 2021). The UK and India show more documented implementation, but of measures "
-      "addressed mainly to the state. Neither pattern establishes which approach will better protect people affected by AI; "
+      "aims (Veale and Zuiderveen Borgesius, 2021). The UK and India show more documented implementation, but mostly of "
+      "measures addressed to the state"
+      + ("; the exception, India's intermediary rules, combines binding force with rapid entry into force because it "
+         "extends an existing regime" if india_in_force else "") + ". Neither pattern establishes which approach will better protect people affected by AI; "
       "they show that enforceability and implementation must be assessed separately and over time.")
     weak_link = []
     for f in juris:
-        e = enf[f]
-        i = imp[f]
-        if e["Cross-referenced"] + e["Direct"] == per_fw[f] and i["Not assessed"] == per_fw[f]:
-            weak_link.append(f"For {name(f)}, whose sampled duties are fully linked to enforcement but not yet "
+        # Where a framework mixes binding and non-binding instruments, judge the
+        # weakest link on its non-binding (guidance or policy) provisions.
+        recs_f = by[f]
+        mixed = any(r["legal_status"].startswith("Binding") for r in recs_f) and any(
+            not r["legal_status"].startswith("Binding") for r in recs_f)
+        if mixed:
+            recs_f = [r for r in recs_f if not r["legal_status"].startswith("Binding")]
+        e = {lvl: sum(r["enforcement_level"] == lvl for r in recs_f) for lvl in ad.ENFORCEMENT_LEVELS}
+        i = {lvl: sum(r["implementation_status"] == lvl for r in recs_f) for lvl in ad.IMPLEMENTATION_LEVELS}
+        label = (f"{name(f)}'s Guidelines" if f == "India" else f"{name(f)}'s non-statutory provisions") if mixed else name(f)
+        if e["Cross-referenced"] + e["Direct"] == len(recs_f) and i["Not assessed"] == len(recs_f):
+            weak_link.append(f"For {label}, whose sampled duties are fully linked to enforcement but not yet "
                              "applicable, the weakest link is implementation: the priority is timely harmonised standards, "
                              "designated authorities and early reporting on conformity assessment and market surveillance.")
         elif e["System-level only"] >= max(e["None identified"], 1):
-            weak_link.append(f"For {name(f)}, where most sampled provisions rely on the general powers of existing "
+            weak_link.append(f"For {label}, where most sampled provisions rely on the general powers of existing "
                              "regulators, the weakest link is the connection between principle and sanction: a public map "
                              "of which regulator's powers cover which principle, and a statement of how gaps between "
                              "sectors are handled, would make that link visible.")
         else:
-            weak_link.append(f"For {name(f)}, where several sampled provisions have no identified enforcement route, "
+            weak_link.append(f"For {label}, where several sampled provisions have no identified enforcement route, "
                              "the weakest link is the duty-holder: the recommended clarification of obligations across the "
                              "AI value chain is the step on which the rest of the chain depends, and a published timetable "
                              "for it would allow progress to be tracked.")
@@ -720,22 +833,35 @@ def build_content(atlas: ad.Atlas, author: str, affiliation: str, figs: dict) ->
 
     # ---------------- 6 Limitations ----------------
     H1("6. Limitations")
-    P(f"The study has important limitations. The sample of {n} provisions is purposive, and its five-per-framework design "
-      "supports structured comparison, not statistical generalisation. A provision absent from the sample may exist "
-      "elsewhere in a framework, and a fuller sample could change the patterns observed. The coding was carried out by a "
-      "single researcher under a written framework; inter-coder reliability has not yet been measured.")
+    rel_note = ("The coding was carried out by a single researcher under a written framework, and the reliability check "
+                "used an AI second coder rather than a trained human coder; agreement with a human second coder remains to "
+                "be measured." if rel and rel[next(iter(rel))]["second_coder"] != "human" else
+                "The coding was carried out by a single researcher under a written framework"
+                + ("." if rel else "; inter-coder reliability has not yet been measured."))
+    P(f"The study has important limitations. The sample of {n} provisions is purposive"
+      + (f", with {num(core_per_fw['EU'])} provisions from each principal instrument" if len(set(core_per_fw.values())) == 1 else "")
+      + ", and supports structured comparison, not statistical generalisation. A provision absent from the sample may exist "
+      "elsewhere in a framework, and a fuller sample could change the patterns observed. " + rel_note)
     P("The instruments also differ in date, length, legal character and purpose. Later developments are outside the coded "
-      "versions, including " + join(OUT_OF_SAMPLE) + "; such developments may change the binding status of parts of a "
-      "framework that this sample codes as non-binding. Implementation evidence depends on what official sources publish "
-      "and was assessed at a single point in time. Finally, the computational indicators are sensitive to extraction "
+      "versions or the sample, including " + "; ".join(OUT_OF_SAMPLE[:-1]) + "; and " + OUT_OF_SAMPLE[-1] + ". Such developments may change the binding status "
+      "or practical effect of parts of a framework. Implementation evidence depends on what official sources publish "
+      "and was assessed at a single point in time."
+      + (f" The provisions added from later instruments ({ids(later)}) were checked against the official texts at rule "
+         "or paragraph level, but their page references and quotations have yet to be re-checked against downloaded copies."
+         if later else "")
+      + " Finally, the computational indicators are sensitive to extraction "
       "quality and instrument-specific vocabulary and should be read only as descriptive context.")
 
     # ---------------- 7 Conclusion ----------------
     H1("7. Conclusion")
     P("AI governance principles are widely shared; their translation into enforceable obligations is not. In this "
-      f"provision-level comparison, mandatory duties and statutory sanctions were confined to {names(sanction_fw) or 'none of the frameworks'}, "
-      "while the UK and India relied on regulators, institutions and existing law to complete the translation, and the OECD "
-      "benchmark relied on reporting. The most informative differences lay not in which principles each framework "
+      f"provision-level comparison, binding duties and statutory sanctions were confined to {names(sanction_fw) or 'none of the frameworks'}"
+      + (", and in India to targeted intermediary rules on synthetic content; India's Guidelines and the UK framework relied "
+         "on regulators, institutions and existing law to complete the translation, and the OECD benchmark relied on "
+         "reporting." if india_binding else
+         ", while the UK and India relied on regulators, institutions and existing law to complete the translation, and the "
+         "OECD benchmark relied on reporting.")
+      + " The most informative differences lay not in which principles each framework "
       "endorses but in who is obliged to act, whether a route to enforcement attaches to the duty, and whether evidence "
       "shows the measure in operation. Tracing those links, provision by provision, offers a more precise basis for "
       "comparing AI governance than counting principles, and a clearer view of where the gap between principle and "
@@ -757,25 +883,31 @@ def build_content(atlas: ad.Atlas, author: str, affiliation: str, figs: dict) ->
 # Tables
 # ---------------------------------------------------------------------------
 def table_sources(atlas):
-    rows = [["Framework", "Instrument", "Version coded", "Legal status"]]
-    for fw, s in atlas.sources.items():
-        rows.append([ad.SHORT[fw], s["document"], s["version_used"], s["legal_status"]])
-    return rows, "Table 1. Primary instruments and versions coded."
+    rows = [["Framework", "Instrument", "Version coded", "Legal status", "Provisions"]]
+    for doc, src in atlas.sources.items():
+        version = src["version_used"]
+        if len(version) > 160:  # keep long version notes readable in the table
+            version = version[:157].rsplit(" ", 1)[0] + " …"
+        rows.append([ad.SHORT[src["framework"]], doc, version, src["legal_status"], str(src["n_provisions"])])
+    return rows, "Table 1. Instruments and versions coded. The first instrument listed for each framework is its principal instrument."
 
 
 def table_profile(atlas):
     obl = atlas.crosstab("obligation_type", ad.OBLIGATION_TYPES)
     enf = atlas.crosstab("enforcement_level", ad.ENFORCEMENT_LEVELS)
-    rows = [["Framework", "Provisions", "Mandatory", "Recommended", "Institutional",
-             "Compliance route †", "System-level only", "Implementation evidence ‡"]]
+    rows = [["", "Total", "Binding", "Mand.", "Rec.", "Vol. or n.s.", "Route †", "System level", "Evidence ‡"]]
     for fw in ad.FRAMEWORKS:
         recs = atlas.by_framework(fw)
         ev = sum(r["implementation_status"] in ("Implemented", "Partially implemented") for r in recs)
-        rows.append([ad.SHORT[fw], str(len(recs)), str(obl[fw]["Mandatory"]), str(obl[fw]["Recommended"]),
-                     str(obl[fw]["Institutional"]), str(enf[fw]["Cross-referenced"] + enf[fw]["Direct"]),
+        bind = sum(r["legal_status"].startswith("Binding") for r in recs)
+        rows.append([ad.SHORT[fw], str(len(recs)), str(bind), str(obl[fw]["Mandatory"]), str(obl[fw]["Recommended"]),
+                     str(obl[fw]["Voluntary"] + obl[fw]["Not specified"]),
+                     str(enf[fw]["Cross-referenced"] + enf[fw]["Direct"]),
                      str(enf[fw]["System-level only"]), str(ev)])
-    note = ("Table 2. Translation profile by framework (number of coded provisions). † Direct or cross-referenced "
-            "enforcement linkage. ‡ Implemented or partially implemented.")
+    note = ("Table 2. Translation profile by framework (number of coded provisions). Binding: from a binding instrument. "
+            "Mand., Rec., Vol. or n.s.: obligation force mandatory, recommended, voluntary or not specified. "
+            "† Direct or cross-referenced enforcement linkage. System level: system-level enforcement only. "
+            "‡ Implemented or partially implemented.")
     return rows, note
 
 
@@ -789,9 +921,10 @@ def table_appendix(atlas):
 
 def primary_references(atlas):
     refs = []
-    for fw, s in atlas.sources.items():
-        url = re.search(r"https?://\S+", s["source_reference"])
-        refs.append(f"{s['document']}. Version coded: {s['version_used']}." + (f" Available at: {url.group(0).rstrip(';,')}" if url else ""))
+    for doc, src in atlas.sources.items():
+        url = re.search(r"https?://\S+", src["source_reference"])
+        refs.append(f"{doc}. Version coded: {src['version_used']}" + ("" if src["version_used"].endswith(".") else ".")
+                    + (f" Available at: {url.group(0).rstrip(';,')}" if url else ""))
     return refs
 
 
@@ -912,10 +1045,10 @@ def render_pdf(blocks, atlas, path: Path, author: str):
             story.append(KeepTogether([img, Paragraph(escape(b[2]), S["cap"])]))
         elif kind == "table_sources":
             rows, cap = table_sources(atlas)
-            story += tbl(rows, [0.11, 0.39, 0.30, 0.20], cap)
+            story += tbl(rows, [0.09, 0.36, 0.30, 0.15, 0.10], cap)
         elif kind == "table_profile":
             rows, cap = table_profile(atlas)
-            story += tbl(rows, [0.11, 0.10, 0.11, 0.14, 0.13, 0.13, 0.13, 0.15], cap)
+            story += tbl(rows, [0.10, 0.10, 0.10, 0.10, 0.12, 0.12, 0.12, 0.11, 0.13], cap)
         elif kind == "references":
             story.append(Paragraph("References", S["h1"]))
             story.append(Paragraph("<i>Primary sources</i>", S["h2"]))
@@ -945,7 +1078,7 @@ def render_pdf(blocks, atlas, path: Path, author: str):
 # ---------------------------------------------------------------------------
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate the AI Governance Atlas paper as PDF.")
-    parser.add_argument("--author", default="AI Governance Atlas", help="Author name for the title page")
+    parser.add_argument("--author", default="Suzzan Patel", help="Author name for the title page")
     parser.add_argument("--affiliation", default="", help="Author affiliation (optional)")
     parser.add_argument("--no-word-check", action="store_true",
                         help="Do not fail when the main text falls outside the target word range")

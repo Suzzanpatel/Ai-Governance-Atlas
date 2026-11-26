@@ -1,0 +1,34 @@
+id,field,previous_value,new_value,reason,date
+EU002,secondary_dimension,Data Governance,Safety and Testing,'Data Governance' is not one of the five framework dimensions; Art. 10 data-quality requirements support accuracy and robustness (Art. 15); data governance remains noted as a candidate sixth dimension,2026-11-26
+IND003,secondary_dimension,None,,the string 'None' replaced by an empty value (no secondary dimension),2026-11-26
+IND004,obligation_type,Institutional,Recommended,"'should' expresses an expectation; the record previously used 'Institutional', which is an obligation nature, not a force",2026-11-26
+IND005,obligation_type,Institutional,Recommended,'should take the lead' expresses an expectation; 'Institutional' moved to obligation_nature,2026-11-26
+UK003,obligation_type,Institutional,Voluntary,"a central function the government undertakes to deliver itself (para 75); an undertaking, not a duty imposed on others; 'Institutional' moved to obligation_nature",2026-11-26
+UK005,obligation_type,Institutional,Recommended,"principles are to be applied by regulators on a non-statutory basis: an expectation, not a duty; 'Institutional' moved to obligation_nature",2026-11-26
+UK005,secondary_dimension,None,,the string 'None' replaced by an empty value (no secondary dimension),2026-11-26
+OECD005,obligation_type,Institutional,Mandatory,"Section VIII 'INSTRUCTS' the Digital Policy Committee to report to Council: mandatory within the OECD's internal procedure, but it binds no state or AI actor; 'Institutional' moved to obligation_nature",2026-11-26
+OECD005,secondary_dimension,None,,the string 'None' replaced by an empty value (no secondary dimension),2026-11-26
+EU001,obligation_nature,,Procedural,new column: obligation nature coded under coding framework section 4,2026-11-26
+EU002,obligation_nature,,Procedural | Substantive,new column: obligation nature coded under coding framework section 4,2026-11-26
+EU003,obligation_nature,,Substantive | Reporting,new column: obligation nature coded under coding framework section 4,2026-11-26
+EU004,obligation_nature,,Substantive,new column: obligation nature coded under coding framework section 4,2026-11-26
+EU005,obligation_nature,,Substantive,new column: obligation nature coded under coding framework section 4,2026-11-26
+IND001,obligation_nature,,Reporting,new column: obligation nature coded under coding framework section 4,2026-11-26
+IND002,obligation_nature,,Institutional,new column: obligation nature coded under coding framework section 4,2026-11-26
+IND003,obligation_nature,,Institutional,new column: obligation nature coded under coding framework section 4,2026-11-26
+IND004,obligation_nature,,Institutional,new column: obligation nature coded under coding framework section 4,2026-11-26
+IND005,obligation_nature,,Institutional,new column: obligation nature coded under coding framework section 4,2026-11-26
+UK001,obligation_nature,,Substantive,new column: obligation nature coded under coding framework section 4,2026-11-26
+UK002,obligation_nature,,Procedural,new column: obligation nature coded under coding framework section 4,2026-11-26
+UK003,obligation_nature,,Institutional,new column: obligation nature coded under coding framework section 4,2026-11-26
+UK004,obligation_nature,,Substantive | Procedural,new column: obligation nature coded under coding framework section 4,2026-11-26
+UK005,obligation_nature,,Institutional,new column: obligation nature coded under coding framework section 4,2026-11-26
+OECD001,obligation_nature,,Reporting,new column: obligation nature coded under coding framework section 4,2026-11-26
+OECD002,obligation_nature,,Substantive,new column: obligation nature coded under coding framework section 4,2026-11-26
+OECD003,obligation_nature,,Procedural,new column: obligation nature coded under coding framework section 4,2026-11-26
+OECD004,obligation_nature,,Substantive,new column: obligation nature coded under coding framework section 4,2026-11-26
+OECD005,obligation_nature,,Institutional | Reporting,new column: obligation nature coded under coding framework section 4,2026-11-26
+IND006,(new record),,"Rule 3(3) (Due diligence in relation to synthetically generated information), cl",new record coding a later instrument,2026-11-26
+IND007,(new record),,"Rule 7 (Non-observance of Rules), applied to the synthetically generated informa",new record coding a later instrument,2026-11-26
+UK006,(new record),,Paragraph 15 (Section 5.1); regulators listed in footnote 28,new record coding a later instrument,2026-11-26
+UK007,(new record),,"Paragraph 72 (Section 5.2, highly capable general-purpose AI); see also paragrap",new record coding a later instrument,2026-11-26

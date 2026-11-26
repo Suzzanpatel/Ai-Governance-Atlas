@@ -1,6 +1,6 @@
 field,records_with_content,records_without_content,records_total,content_presence_pct,interpretation
-implementation_notes,20,0,20,100.0,Text is present; its evidential quality must be assessed.
-verification_notes,20,0,20,100.0,Text is present; its evidential quality must be assessed.
-source_reference,20,0,20,100.0,Text is present; its evidential quality must be assessed.
-exact_text,20,0,20,100.0,Text is present; its evidential quality must be assessed.
-provision_summary,20,0,20,100.0,Text is present; its evidential quality must be assessed.
+implementation_notes,24,0,24,100.0,Text is present; its evidential quality must be assessed.
+verification_notes,24,0,24,100.0,Text is present; its evidential quality must be assessed.
+source_reference,24,0,24,100.0,Text is present; its evidential quality must be assessed.
+exact_text,24,0,24,100.0,Text is present; its evidential quality must be assessed.
+provision_summary,24,0,24,100.0,Text is present; its evidential quality must be assessed.

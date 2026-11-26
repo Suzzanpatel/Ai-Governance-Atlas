@@ -31,6 +31,10 @@ IND004,India,system_level,Institutional testing and advice,"The AI Safety Instit
 IND004,India,system_level,Compliance monitoring,"The AI Safety Institute has research, testing and advisory functions in the examined guidance, but no power to compel testing or impose sanctions."
 IND005,India,direct,No new AI-specific enforcement power,Existing regulators may enforce applicable laws under their own statutory powers. The guidelines do not create new AI-specific sanctions.
 IND005,India,system_level,Existing sectoral regulatory powers,Existing regulators may enforce applicable laws under their own statutory powers. The guidelines do not create new AI-specific sanctions.
+IND006,India,cross_referenced,Loss of section 79 safe harbour (rule 7),The SGI due-diligence duties are enforced through rule 7: an intermediary that fails to observe the Rules loses the section 79(1) exemption from liability.
+IND006,India,system_level,Blocking and takedown powers under the IT Act,The SGI due-diligence duties are enforced through rule 7: an intermediary that fails to observe the Rules loses the section 79(1) exemption from liability.
+IND007,India,direct,Loss of section 79 safe harbour,Rule 7 itself states the consequence of non-observance: loss of the safe-harbour exemption under section 79(1).
+IND007,India,system_level,Liability under the IT Act and other laws,Rule 7 itself states the consequence of non-observance: loss of the safe-harbour exemption under section 79(1).
 UK001,UK,direct,No new enforcement mechanism,"The non-statutory transparency principle relies on existing regulator powers. Information may be requested by regulators, but the principle itself creates no new general sanction."
 UK001,UK,system_level,Existing regulator powers,"The non-statutory transparency principle relies on existing regulator powers. Information may be requested by regulators, but the principle itself creates no new general sanction."
 UK001,UK,system_level,Regulatory information requests,"The non-statutory transparency principle relies on existing regulator powers. Information may be requested by regulators, but the principle itself creates no new general sanction."
@@ -45,6 +49,9 @@ UK004,UK,system_level,Regulatory monitoring,"The safety principle is non-statuto
 UK005,UK,direct,Existing statutory regulator powers,Existing regulators use powers under their own laws. The proposed due-regard duty was conditional and not a binding new power in the examined White Paper.
 UK005,UK,system_level,Central monitoring and evaluation,Existing regulators use powers under their own laws. The proposed due-regard duty was conditional and not a binding new power in the examined White Paper.
 UK005,UK,system_level,Proposed future due-regard duty,Existing regulators use powers under their own laws. The proposed due-regard duty was conditional and not a binding new power in the examined White Paper.
+UK006,UK,system_level,Existing statutory regulator powers,A non-statutory request to regulators to publish their strategic approaches. Regulators' existing powers remain the enforcement route.
+UK006,UK,system_level,Public reporting by regulators,A non-statutory request to regulators to publish their strategic approaches. Regulators' existing powers remain the enforcement route.
+UK007,UK,system_level,Anticipated future targeted mandatory interventions,States an expectation of future binding measures for highly capable general-purpose AI; creates no duty or sanction.
 OECD001,OECD (international benchmark),direct,No legal enforcement or sanctions,The transparency principle is non-binding. Monitoring and reporting operate at instrument level.
 OECD001,OECD (international benchmark),system_level,OECD implementation monitoring,The transparency principle is non-binding. Monitoring and reporting operate at instrument level.
 OECD001,OECD (international benchmark),system_level,Reporting to Council,The transparency principle is non-binding. Monitoring and reporting operate at instrument level.

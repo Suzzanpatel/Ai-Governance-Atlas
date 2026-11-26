@@ -1,6 +1,6 @@
 # Phase 14.5 — Comparative Legal Argument Matrix
 
-Generated: 2026-11-26 11:39:16
+Generated: 2026-11-26 12:09:45
 
 ## Purpose
 
@@ -17,12 +17,12 @@ implementation evidence.
 
 ## Input availability
 
-- Dataset provisions processed: 20
+- Dataset provisions processed: 24
 - Jurisdictions represented in dataset: 4
 - Primary governance dimensions represented: 5
-- Phase 14.2 source-context rows available: 25
-- Phase 14.3 source/version register rows available: 25
-- Phase 14.4 legal-analysis worksheet rows available: 20
+- Phase 14.2 source-context rows available: 29
+- Phase 14.3 source/version register rows available: 29
+- Phase 14.4 legal-analysis worksheet rows available: 24
 - Rows with a source status explicitly labelled Verified/Confirmed/Validated: 0
 
 ## How to use the argument matrix

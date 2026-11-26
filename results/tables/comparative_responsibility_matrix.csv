@@ -1,5 +1,5 @@
-country,AI Deployer,AI Lifecycle Actors,AI Provider,Developer,End User,Government,Institution,Multiple Stakeholders,Regulator
-EU,1,0,5,0,0,0,0,0,0
-India,2,0,0,2,1,3,3,0,3
-OECD (international benchmark),0,4,0,0,0,2,1,2,0
-UK,0,3,0,1,0,2,0,0,5
+country,AI Deployer,AI Lifecycle Actors,AI Provider,Developer,End User,Government,Institution,Intermediary,Multiple Stakeholders,Regulator
+EU,1,0,5,0,0,0,0,0,0,0
+India,2,0,0,2,1,3,3,2,0,3
+OECD (international benchmark),0,4,0,0,0,2,1,0,2,0
+UK,0,3,0,2,0,3,0,0,0,6

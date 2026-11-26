@@ -1,5 +1,5 @@
-country,Institutional,Mandatory,Recommended
-EU,0.0,100.0,0.0
-India,40.0,0.0,60.0
-OECD (international benchmark),20.0,0.0,80.0
-UK,40.0,0.0,60.0
+country,Mandatory,Not specified,Recommended,Voluntary
+EU,100.0,0.0,0.0,0.0
+India,28.6,0.0,71.4,0.0
+OECD (international benchmark),20.0,0.0,80.0,0.0
+UK,0.0,14.3,71.4,14.3

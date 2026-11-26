@@ -19,6 +19,8 @@ IND004,India,Regulator
 IND005,India,Regulator
 IND005,India,Government
 IND005,India,Institution
+IND006,India,Intermediary
+IND007,India,Intermediary
 UK001,UK,Regulator
 UK001,UK,AI Lifecycle Actors
 UK002,UK,Regulator
@@ -30,6 +32,9 @@ UK004,UK,Developer
 UK004,UK,AI Lifecycle Actors
 UK005,UK,Regulator
 UK005,UK,Government
+UK006,UK,Regulator
+UK007,UK,Developer
+UK007,UK,Government
 OECD001,OECD (international benchmark),AI Lifecycle Actors
 OECD001,OECD (international benchmark),Government
 OECD002,OECD (international benchmark),AI Lifecycle Actors

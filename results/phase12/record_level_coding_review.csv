@@ -7,15 +7,19 @@ EU005,EU,Safety and Testing,Binding legislation,Mandatory,Not assessed
 IND001,India,Transparency,Non-binding guidance,Recommended,No evidence of implementation found
 IND002,India,Accountability,Non-binding guidance,Recommended,Not yet implemented
 IND003,India,Risk Assessment,Non-binding guidance,Recommended,Partially implemented
-IND004,India,Safety and Testing,Non-binding guidance,Institutional,Partially implemented
-IND005,India,Enforcement,Non-binding guidance,Institutional,Partially implemented
+IND004,India,Safety and Testing,Non-binding guidance,Recommended,Partially implemented
+IND005,India,Enforcement,Non-binding guidance,Recommended,Partially implemented
+IND006,India,Transparency,Binding legislation,Mandatory,Partially implemented
+IND007,India,Enforcement,Binding legislation,Mandatory,Not assessed
 UK001,UK,Transparency,Government policy (non-statutory),Recommended,Partially implemented
 UK002,UK,Accountability,Government policy (non-statutory),Recommended,Partially implemented
-UK003,UK,Risk Assessment,Government policy (non-statutory),Institutional,Partially implemented
+UK003,UK,Risk Assessment,Government policy (non-statutory),Voluntary,Partially implemented
 UK004,UK,Safety and Testing,Government policy (non-statutory),Recommended,Partially implemented
-UK005,UK,Enforcement,Government policy (non-statutory),Institutional,Partially implemented
+UK005,UK,Enforcement,Government policy (non-statutory),Recommended,Partially implemented
+UK006,UK,Accountability,Government policy (non-statutory),Recommended,Implemented
+UK007,UK,Safety and Testing,Government policy (non-statutory),Not specified,Not yet implemented
 OECD001,OECD (international benchmark),Transparency,International recommendation (non-binding),Recommended,Not assessed
 OECD002,OECD (international benchmark),Accountability,International recommendation (non-binding),Recommended,Not assessed
 OECD003,OECD (international benchmark),Risk Assessment,International recommendation (non-binding),Recommended,Not assessed
 OECD004,OECD (international benchmark),Safety and Testing,International recommendation (non-binding),Recommended,Not assessed
-OECD005,OECD (international benchmark),Enforcement,International recommendation (non-binding),Institutional,Implemented
+OECD005,OECD (international benchmark),Enforcement,International recommendation (non-binding),Mandatory,Implemented

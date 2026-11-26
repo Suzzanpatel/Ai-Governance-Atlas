@@ -6,32 +6,36 @@ This phase examines how responsibility is assigned in the selected provisions, u
 
 ## Dataset scope
 
-- Provisions analysed: **20**
+- Provisions analysed: **24**
 - Jurisdictions represented: **4**
-- Distinct responsible-party labels: **18**
+- Distinct responsible-party labels: **22**
 - Source: `data/annotated/governance_dataset.csv`
 - Original dataset modified: **No**
 
 ## 1. Overall responsible-party distribution
 
-- **AI provider (of high-risk AI systems)**: 3 provision(s) (15.0%)
-- **AI provider (information duty owed to deployers)**: 1 provision(s) (5.0%)
-- **AI provider (design obligation); AI deployer (implementation, via Art. 26(2))**: 1 provision(s) (5.0%)
-- **Developer and deployer ('any person involved in developing or deploying AI systems in India')**: 1 provision(s) (5.0%)
-- **Government (MeitY and sectoral regulators) to clarify and impose obligations; the eventual duty-bearers would be developers, deployers and end-users**: 1 provision(s) (5.0%)
-- **Government (developing body not named in the provision; Action Plan says 'with sectoral inputs'; AISI's listed functions include risk analysis)**: 1 provision(s) (5.0%)
-- **AI Safety Institute (IndiaAI Safety Institute), working with agencies and sectoral regulators**: 1 provision(s) (5.0%)
-- **Sectoral regulators and agencies (e.g. RBI, SEBI, IRDAI, TRAI, ICMR, NHA, ministries), with MeitY as nodal ministry and AIGG coordinating**: 1 provision(s) (5.0%)
-- **Regulatory authority (implementation through guidance); AI life cycle actors (may be asked by regulators to provide information)**: 1 provision(s) (5.0%)
-- **AI life cycle actors (organisations and individuals that research, design, develop, train, operate, deploy or use AI); regulatory authority (to set expectations)**: 1 provision(s) (5.0%)
-- **Government (central functions; government will 'initially be responsible for delivering the central functions', para 75, PDF p. 59), working with regulators**: 1 provision(s) (5.0%)
-- **Regulatory authority (to implement); developer and other AI life cycle actors (testing and due diligence, if required by regulators)**: 1 provision(s) (5.0%)
-- **Regulatory authority (existing sectoral regulators; those named in the White Paper include the ICO, FCA, EHRC and MHRA), supported by central government**: 1 provision(s) (5.0%)
-- **AI actors (Council 'CALLS ON all AI actors', para III); Adherent governments to promote and implement (para II)**: 1 provision(s) (5.0%)
-- **AI actors (those playing an active role in the AI system lifecycle, including those who deploy or operate AI; definitions, p. 8)**: 1 provision(s) (5.0%)
-- **AI actors, with cooperation among AI actors, suppliers of AI knowledge and resources, AI system users and other stakeholders**: 1 provision(s) (5.0%)
-- **Multiple stakeholders (principle phrased in the passive voice; addressed to AI actors via para III and to Adherents via para II)**: 1 provision(s) (5.0%)
-- **OECD Digital Policy Committee, through its Working Party on AI Governance (AIGO)**: 1 provision(s) (5.0%)
+- **AI provider (of high-risk AI systems)**: 3 provision(s) (12.5%)
+- **AI provider (information duty owed to deployers)**: 1 provision(s) (4.2%)
+- **AI provider (design obligation); AI deployer (implementation, via Art. 26(2))**: 1 provision(s) (4.2%)
+- **Developer and deployer ('any person involved in developing or deploying AI systems in India')**: 1 provision(s) (4.2%)
+- **Government (MeitY and sectoral regulators) to clarify and impose obligations; the eventual duty-bearers would be developers, deployers and end-users**: 1 provision(s) (4.2%)
+- **Government (developing body not named in the provision; Action Plan says 'with sectoral inputs'; AISI's listed functions include risk analysis)**: 1 provision(s) (4.2%)
+- **AI Safety Institute (IndiaAI Safety Institute), working with agencies and sectoral regulators**: 1 provision(s) (4.2%)
+- **Sectoral regulators and agencies (e.g. RBI, SEBI, IRDAI, TRAI, ICMR, NHA, ministries), with MeitY as nodal ministry and AIGG coordinating**: 1 provision(s) (4.2%)
+- **Intermediaries offering a computer resource that enables the creation, modification or dissemination of synthetically generated information; significant social media intermediaries (rule 4(1A))**: 1 provision(s) (4.2%)
+- **Intermediaries (consequence); courts and the Central Government applying the IT Act, 2000**: 1 provision(s) (4.2%)
+- **Regulatory authority (implementation through guidance); AI life cycle actors (may be asked by regulators to provide information)**: 1 provision(s) (4.2%)
+- **AI life cycle actors (organisations and individuals that research, design, develop, train, operate, deploy or use AI); regulatory authority (to set expectations)**: 1 provision(s) (4.2%)
+- **Government (central functions; government will 'initially be responsible for delivering the central functions', para 75, PDF p. 59), working with regulators**: 1 provision(s) (4.2%)
+- **Regulatory authority (to implement); developer and other AI life cycle actors (testing and due diligence, if required by regulators)**: 1 provision(s) (4.2%)
+- **Regulatory authority (existing sectoral regulators; those named in the White Paper include the ICO, FCA, EHRC and MHRA), supported by central government**: 1 provision(s) (4.2%)
+- **Regulators named in footnote 28: Ofcom, ICO, FCA, CMA, EHRC, MHRA, Ofsted, LSB, ONR, Ofqual, HSE, the Bank of England and Ofgem; also OPSS (Department for Business and Trade)**: 1 provision(s) (4.2%)
+- **Developers of highly capable general-purpose AI systems (prospective addressees); central government (policy development)**: 1 provision(s) (4.2%)
+- **AI actors (Council 'CALLS ON all AI actors', para III); Adherent governments to promote and implement (para II)**: 1 provision(s) (4.2%)
+- **AI actors (those playing an active role in the AI system lifecycle, including those who deploy or operate AI; definitions, p. 8)**: 1 provision(s) (4.2%)
+- **AI actors, with cooperation among AI actors, suppliers of AI knowledge and resources, AI system users and other stakeholders**: 1 provision(s) (4.2%)
+- **Multiple stakeholders (principle phrased in the passive voice; addressed to AI actors via para III and to Adherents via para II)**: 1 provision(s) (4.2%)
+- **OECD Digital Policy Committee, through its Working Party on AI Governance (AIGO)**: 1 provision(s) (4.2%)
 
 ## 2. Responsibility patterns by jurisdiction
 
@@ -43,11 +47,13 @@ The accompanying count and percentage matrices show how the recorded responsible
 - AI provider (of high-risk AI systems): 3 provision(s), 60.0%
 
 ### India
-- AI Safety Institute (IndiaAI Safety Institute), working with agencies and sectoral regulators: 1 provision(s), 20.0%
-- Developer and deployer ('any person involved in developing or deploying AI systems in India'): 1 provision(s), 20.0%
-- Government (MeitY and sectoral regulators) to clarify and impose obligations; the eventual duty-bearers would be developers, deployers and end-users: 1 provision(s), 20.0%
-- Government (developing body not named in the provision; Action Plan says 'with sectoral inputs'; AISI's listed functions include risk analysis): 1 provision(s), 20.0%
-- Sectoral regulators and agencies (e.g. RBI, SEBI, IRDAI, TRAI, ICMR, NHA, ministries), with MeitY as nodal ministry and AIGG coordinating: 1 provision(s), 20.0%
+- AI Safety Institute (IndiaAI Safety Institute), working with agencies and sectoral regulators: 1 provision(s), 14.3%
+- Developer and deployer ('any person involved in developing or deploying AI systems in India'): 1 provision(s), 14.3%
+- Government (MeitY and sectoral regulators) to clarify and impose obligations; the eventual duty-bearers would be developers, deployers and end-users: 1 provision(s), 14.3%
+- Government (developing body not named in the provision; Action Plan says 'with sectoral inputs'; AISI's listed functions include risk analysis): 1 provision(s), 14.3%
+- Intermediaries (consequence); courts and the Central Government applying the IT Act, 2000: 1 provision(s), 14.3%
+- Intermediaries offering a computer resource that enables the creation, modification or dissemination of synthetically generated information; significant social media intermediaries (rule 4(1A)): 1 provision(s), 14.3%
+- Sectoral regulators and agencies (e.g. RBI, SEBI, IRDAI, TRAI, ICMR, NHA, ministries), with MeitY as nodal ministry and AIGG coordinating: 1 provision(s), 14.3%
 
 ### OECD (international benchmark)
 - AI actors (Council 'CALLS ON all AI actors', para III); Adherent governments to promote and implement (para II): 1 provision(s), 20.0%
@@ -57,11 +63,13 @@ The accompanying count and percentage matrices show how the recorded responsible
 - OECD Digital Policy Committee, through its Working Party on AI Governance (AIGO): 1 provision(s), 20.0%
 
 ### UK
-- AI life cycle actors (organisations and individuals that research, design, develop, train, operate, deploy or use AI); regulatory authority (to set expectations): 1 provision(s), 20.0%
-- Government (central functions; government will 'initially be responsible for delivering the central functions', para 75, PDF p. 59), working with regulators: 1 provision(s), 20.0%
-- Regulatory authority (existing sectoral regulators; those named in the White Paper include the ICO, FCA, EHRC and MHRA), supported by central government: 1 provision(s), 20.0%
-- Regulatory authority (implementation through guidance); AI life cycle actors (may be asked by regulators to provide information): 1 provision(s), 20.0%
-- Regulatory authority (to implement); developer and other AI life cycle actors (testing and due diligence, if required by regulators): 1 provision(s), 20.0%
+- AI life cycle actors (organisations and individuals that research, design, develop, train, operate, deploy or use AI); regulatory authority (to set expectations): 1 provision(s), 14.3%
+- Developers of highly capable general-purpose AI systems (prospective addressees); central government (policy development): 1 provision(s), 14.3%
+- Government (central functions; government will 'initially be responsible for delivering the central functions', para 75, PDF p. 59), working with regulators: 1 provision(s), 14.3%
+- Regulators named in footnote 28: Ofcom, ICO, FCA, CMA, EHRC, MHRA, Ofsted, LSB, ONR, Ofqual, HSE, the Bank of England and Ofgem; also OPSS (Department for Business and Trade): 1 provision(s), 14.3%
+- Regulatory authority (existing sectoral regulators; those named in the White Paper include the ICO, FCA, EHRC and MHRA), supported by central government: 1 provision(s), 14.3%
+- Regulatory authority (implementation through guidance); AI life cycle actors (may be asked by regulators to provide information): 1 provision(s), 14.3%
+- Regulatory authority (to implement); developer and other AI life cycle actors (testing and due diligence, if required by regulators): 1 provision(s), 14.3%
 
 ## 3. Responsibility and applicability
 

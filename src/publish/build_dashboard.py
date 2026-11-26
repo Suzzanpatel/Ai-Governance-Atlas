@@ -32,7 +32,7 @@ OUT_FILE = OUT_DIR / "index.html"
 
 RECORD_FIELDS = [
     "id", "country", "framework_short", "document", "legal_status", "article_or_section", "page_number",
-    "governance_dimension", "secondary_dimension", "exact_text", "provision_summary", "obligation_type",
+    "governance_dimension", "secondary_dimension", "exact_text", "provision_summary", "obligation_type", "obligation_nature",
     "responsible_party", "applicability", "enforcement_mechanism", "enforcement_level", "enforcement_mechanisms",
     "mechanism_character", "responsibility_categories", "source_reference", "version_used",
     "applicability_status", "implementation_status", "implementation_notes", "verification_notes",
@@ -267,7 +267,7 @@ const IMP_VAR = {"Implemented": "--imp-1", "Partially implemented": "--imp-2", "
                  "No evidence of implementation found": "--imp-4", "Not assessed": "--imp-5"};
 const OUTLINED = new Set(["Not applicable", "Not assessed"]);
 const HATCHED = new Set(["Not applicable"]);
-const PRIVATE = new Set(["AI Provider", "AI Deployer", "Developer", "End User", "AI Lifecycle Actors", "Multiple Stakeholders"]);
+const PRIVATE = new Set(["AI Provider", "AI Deployer", "Developer", "Intermediary", "End User", "AI Lifecycle Actors", "Multiple Stakeholders"]);
 const PUBLIC = new Set(["Government", "Regulator", "Institution"]);
 const css = v => getComputedStyle(document.querySelector(".viz-root")).getPropertyValue(v).trim();
 const short = f => D.short[f] || f;
@@ -408,10 +408,11 @@ function renderOverview() {
   stacked("impChart", imp, D.implementationLevels, IMP_VAR);
   tableView("impTable", ["Framework", ...D.implementationLevels], Object.entries(imp).map(([f, c]) => [short(f), ...D.implementationLevels.map(l => c[l])]));
   const obl = countBy(recs, "obligation_type", D.obligationTypes);
-  tableView("oblTable", ["Framework", "Provisions", "Mandatory", "Recommended", "Institutional", "Compliance route", "Implementation evidence"],
+  tableView("oblTable", ["Framework", "Provisions", "Binding instrument", "Mandatory", "Recommended", "Voluntary or unspecified", "Compliance route", "Implementation evidence"],
     Object.entries(obl).map(([f, c]) => {
       const rs = recs.filter(r => r.country === f);
-      return [short(f), rs.length, c.Mandatory, c.Recommended, c.Institutional,
+      return [short(f), rs.length, rs.filter(r => r.legal_status.startsWith("Binding")).length,
+        c.Mandatory, c.Recommended, c.Voluntary + c["Not specified"],
         rs.filter(r => ["Cross-referenced", "Direct"].includes(r.enforcement_level)).length,
         rs.filter(r => ["Implemented", "Partially implemented"].includes(r.implementation_status)).length];
     }));
@@ -485,7 +486,7 @@ function renderDetail(r) {
   box.append(el("p", {}, r.provision_summary));
   if (r.exact_text) box.append(el("blockquote", {}, r.exact_text));
   const chain = el("div", {class: "chain", "aria-label": "Translation chain"});
-  [["Legal force", r.legal_status], ["Obligation", r.obligation_type], ["Duty-holder", r.responsible_party],
+  [["Legal force", r.legal_status], ["Obligation", r.obligation_type + (r.obligation_nature ? " · " + r.obligation_nature : "")], ["Duty-holder", r.responsible_party],
    ["Enforcement linkage", r.enforcement_level + (r.enforcement_mechanisms.length ? " — " + r.enforcement_mechanisms.join("; ") : "")],
    ["Implementation", r.implementation_status]].forEach(([k, v]) => { const st = el("div", {class: "step"}); st.append(el("b", {}, k), document.createTextNode(v)); chain.append(st); });
   box.append(chain);

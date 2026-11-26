@@ -1,5 +1,24 @@
 # Changelog
 
+## v0.2.0 — 2026-11-26 — research completion
+
+### Added
+- **Four new coded provisions** from later instruments: India's IT (Intermediary Guidelines and Digital Media Ethics Code) Amendment Rules, 2026 (IND006: due diligence on synthetically generated information; IND007: loss of section 79 safe harbour under rule 7) and the UK's February 2024 government response, CP 1019 (UK006: regulators' strategic approaches; UK007: anticipated targeted mandatory interventions). The dataset now has 24 records.
+- **`obligation_nature`** column (coding framework §4) for every record.
+- **Phase 14 review record** (`research/evidence/phase14_review_record.csv`), merged into the Phase 14 worksheets on every run. It records the completed source verification and drafted legal analysis, comparative argument and synthesis fields, marked for researcher review.
+- **Inter-coder reliability** (`src/analysis/reliability.py`): blind, AI-assisted second coding of all 24 provisions, with Cohen's kappa per variable, a disagreement list and a template for a human second coder.
+- `data/annotated/coding_change_log.csv` logging every coding change.
+
+### Changed
+- `obligation_type` now records **force** only. Five records previously coded `Institutional` were recoded (IND004, IND005, UK005 → Recommended; UK003 → Voluntary; OECD005 → Mandatory as an internal OECD instruction).
+- EU002 secondary dimension `Data Governance` → `Safety and Testing`; the string `None` in `secondary_dimension` → empty.
+- **Paper** regenerated: India's binding rules and the UK response are now covered; the findings on addressees, enforcement and implementation speed are revised accordingly; a reliability paragraph has been added; Tables 1 and 2 show every instrument and the new force categories. The main text is 4,383 words.
+- **Dashboard**: 24 provisions, obligation nature in the explorer, an updated translation-profile table, and "Intermediary" as a private actor.
+- Phase 14.7 reads the corrected 14.6 audit, and the 14.6 audit reports completion statuses. Fixed a whitespace regex in `phase14_6_corrected_audit.py`.
+
+### Removed
+- The empty `LICENSE` file. The project is published without a licence (all rights reserved).
+
 ## v0.1.1 — 2026-11-26
 
 ### Fixed

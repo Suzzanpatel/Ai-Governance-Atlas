@@ -29,6 +29,7 @@ ARCHITECTURE = ROOT / "results" / "tables" / "system_level_enforcement_architect
 KEYWORDS = ROOT / "results" / "tables" / "keyword_summary_by_country.csv"
 VERIFICATION_AUDIT = ROOT / "research" / "evidence" / "verification_audit.csv"
 CORRECTION_REGISTER = ROOT / "results" / "phase12" / "AI_Governance_Atlas_Phase12_Correction_Register.csv"
+RELIABILITY = ROOT / "results" / "reliability" / "agreement_summary.csv"
 
 # Framework order used everywhere (tables, charts, prose). The OECD is the
 # international benchmark and is always listed last.
@@ -67,7 +68,7 @@ IMPLEMENTATION_LEVELS = [
     "Not assessed",
 ]
 
-OBLIGATION_TYPES = ["Mandatory", "Recommended", "Institutional"]
+OBLIGATION_TYPES = ["Mandatory", "Recommended", "Voluntary", "Not specified"]
 
 
 @dataclass
@@ -161,20 +162,23 @@ def load() -> Atlas:
 
     architecture = {row["country"]: row.to_dict() for _, row in arch.iterrows()}
 
+    # One entry per instrument (a framework can have several), in framework order.
+    # The first instrument of each framework is its principal instrument.
     sources: "OrderedDict[str, dict]" = OrderedDict()
     for fw in FRAMEWORKS:
-        rows = df[df["country"] == fw]
-        if rows.empty:
-            continue
-        first = rows.iloc[0]
-        sources[fw] = {
+        for i, doc in enumerate(dict.fromkeys(df.loc[df["country"] == fw, "document"])):
+            first = df[(df["country"] == fw) & (df["document"] == doc)].iloc[0]
+            sources[doc] = {
+            "framework": fw,
+            "principal": i == 0,
+            "n_provisions": int(((df["country"] == fw) & (df["document"] == doc)).sum()),
             "document": first["document"],
             "document_type": first["document_type"],
             "legal_status": first["legal_status"],
             "version_used": first["version_used"],
             "source_reference": first["source_reference"],
             "applicability_status": first["applicability_status"],
-        }
+            }
 
     # Quality-assurance summary (optional inputs: reported only if present)
     meta = {"audit_checks": 0, "audit_verdicts": {}, "corrections": 0, "corrections_decided": 0, "audit_fields": 0,
@@ -191,12 +195,23 @@ def load() -> Atlas:
         meta["corrections_decided"] = int(reg["review_decision"].str.strip().isin(["Approve", "Reject"]).sum())
         meta["corrections_by_field"] = reg["field_to_review"].value_counts().to_dict()
         # The register records each field's value after the audit correction.
-        # Count how many of those values are what the dataset holds now.
+        # Count how many of those values are still in the dataset. A value that a
+        # later, logged coding change extended (e.g. a note appended to
+        # verification_notes) still counts, because the corrected text is kept.
         current = df.set_index("id")
         norm = lambda v: " ".join(str(v).split())  # noqa: E731
         meta["corrections_in_dataset"] = int(sum(
             row["id"] in current.index and row["field_to_review"] in current.columns
-            and norm(current.at[row["id"], row["field_to_review"]]) == norm(row["original_value"])
+            and norm(current.at[row["id"], row["field_to_review"]]).startswith(norm(row["original_value"]))
             for _, row in reg.iterrows()))
+
+    if RELIABILITY.is_file():
+        rel = pd.read_csv(RELIABILITY, dtype=str, keep_default_na=False)
+        meta["reliability"] = rel.to_dict("records")
+
+    principal = {fw: next((d for d, s in sources.items() if s["framework"] == fw and s["principal"]), "")
+                 for fw in FRAMEWORKS}
+    for rec in records:
+        rec["principal_instrument"] = rec["document"] == principal[rec["country"]]
 
     return Atlas(records=records, keywords=kw, architecture=architecture, sources=sources, meta=meta)

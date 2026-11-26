@@ -1,4 +1,4 @@
-country,Existing statutory regulator powers,No coercive enforcement power identified,No legal enforcement or sanctions,No new AI-specific enforcement power,No new enforcement mechanism,No specific enforcement mechanism identified,Not applicable,Peer scrutiny,Voluntary transparency reporting
-India,0,1,0,1,0,1,1,1,1
-OECD (international benchmark),0,0,5,0,0,0,0,0,0
-UK,1,0,0,0,3,0,1,0,0
+country,Existing statutory regulator powers,Loss of section 79 safe harbour,No coercive enforcement power identified,No legal enforcement or sanctions,No new AI-specific enforcement power,No new enforcement mechanism,No specific enforcement mechanism identified,Not applicable,Peer scrutiny,Voluntary transparency reporting
+India,0,1,1,0,1,0,1,1,1,1
+OECD (international benchmark),0,0,0,5,0,0,0,0,0,0
+UK,1,0,0,0,0,3,0,1,0,0

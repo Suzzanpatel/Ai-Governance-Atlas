@@ -55,6 +55,7 @@ STAGES: dict[str, list[str]] = {
         "src/build_enforcement_architecture.py",
         "src/finalise_enforcement_analysis.py",
         "src/advanced_visualisations.py",
+        "src/analysis/reliability.py",
     ],
     "phase12": [
         "src/analysis/coding_audit.py",

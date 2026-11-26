@@ -254,6 +254,35 @@ coding = {
         )
     },
 
+    "IND006": {
+        "direct": [],
+        "cross_referenced": [
+            "Loss of section 79 safe harbour (rule 7)"
+        ],
+        "system_level": [
+            "Blocking and takedown powers under the IT Act"
+        ],
+        "rationale": (
+            "The SGI due-diligence duties are enforced through rule 7: "
+            "an intermediary that fails to observe the Rules loses the "
+            "section 79(1) exemption from liability."
+        )
+    },
+
+    "IND007": {
+        "direct": [
+            "Loss of section 79 safe harbour"
+        ],
+        "cross_referenced": [],
+        "system_level": [
+            "Liability under the IT Act and other laws"
+        ],
+        "rationale": (
+            "Rule 7 itself states the consequence of non-observance: "
+            "loss of the safe-harbour exemption under section 79(1)."
+        )
+    },
+
     "UK005": {
         "direct": [
             "Existing statutory regulator powers"
@@ -267,6 +296,32 @@ coding = {
             "Existing regulators use powers under their own laws. "
             "The proposed due-regard duty was conditional and "
             "not a binding new power in the examined White Paper."
+        )
+    },
+
+    "UK006": {
+        "direct": [],
+        "cross_referenced": [],
+        "system_level": [
+            "Existing statutory regulator powers",
+            "Public reporting by regulators"
+        ],
+        "rationale": (
+            "A non-statutory request to regulators to publish their "
+            "strategic approaches. Regulators' existing powers remain "
+            "the enforcement route."
+        )
+    },
+
+    "UK007": {
+        "direct": [],
+        "cross_referenced": [],
+        "system_level": [
+            "Anticipated future targeted mandatory interventions"
+        ],
+        "rationale": (
+            "States an expectation of future binding measures for highly "
+            "capable general-purpose AI; creates no duty or sanction."
         )
     },
 

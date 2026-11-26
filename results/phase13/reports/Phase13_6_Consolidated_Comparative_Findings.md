@@ -6,8 +6,8 @@ This report consolidates the descriptive outputs of the AI Governance Atlas comp
 
 ## 1. Dataset and analytical scope
 
-- Provisions in the current annotated dataset: **20**
-- Unique provision IDs: **20**
+- Provisions in the current annotated dataset: **24**
+- Unique provision IDs: **24**
 - Jurisdiction labels represented: **4**
 - Baseline: `data/annotated/governance_dataset.csv`
 - Original annotated dataset modified: **No**
@@ -27,31 +27,32 @@ Reports missing for phases: None.
 
 ### 3.1 Jurisdictional distribution
 
+- **India:** 7
+- **UK:** 7
 - **EU:** 5
-- **India:** 5
-- **UK:** 5
 - **OECD (international benchmark):** 5
 
 ### 3.2 Governance dimension distribution
 
 - **Risk Assessment:** 5
-- **Transparency:** 4
-- **Accountability:** 4
-- **Safety and Testing:** 4
-- **Enforcement:** 3
+- **Transparency:** 5
+- **Accountability:** 5
+- **Safety and Testing:** 5
+- **Enforcement:** 4
 
 ### 3.3 Recorded legal status
 
-- **Binding legislation:** 5
+- **Binding legislation:** 7
+- **Government policy (non-statutory):** 7
 - **Non-binding guidance:** 5
-- **Government policy (non-statutory):** 5
 - **International recommendation (non-binding):** 5
 
 ### 3.4 Recorded obligation types
 
-- **Recommended:** 10
-- **Mandatory:** 5
-- **Institutional:** 5
+- **Recommended:** 14
+- **Mandatory:** 8
+- **Voluntary:** 1
+- **Not specified:** 1
 
 ### 3.5 Recorded enforcement mechanisms
 
@@ -76,16 +77,16 @@ Reports missing for phases: None.
 - **Government (developing body not named in the provision; Action Plan says 'with sectoral inputs'; AISI's listed functions include risk analysis):** 1
 - **AI Safety Institute (IndiaAI Safety Institute), working with agencies and sectoral regulators:** 1
 - **Sectoral regulators and agencies (e.g. RBI, SEBI, IRDAI, TRAI, ICMR, NHA, ministries), with MeitY as nodal ministry and AIGG coordinating:** 1
-- **Regulatory authority (implementation through guidance); AI life cycle actors (may be asked by regulators to provide information):** 1
-- **AI life cycle actors (organisations and individuals that research, design, develop, train, operate, deploy or use AI); regulatory authority (to set expectations):** 1
+- **Intermediaries offering a computer resource that enables the creation, modification or dissemination of synthetically generated information; significant social media intermediaries (rule 4(1A)):** 1
+- **Intermediaries (consequence); courts and the Central Government applying the IT Act, 2000:** 1
 
 ### 3.7 Recorded implementation status
 
-- **Not assessed:** 9
-- **Partially implemented:** 8
+- **Not assessed:** 10
+- **Partially implemented:** 9
+- **Not yet implemented:** 2
+- **Implemented:** 2
 - **No evidence of implementation found:** 1
-- **Not yet implemented:** 1
-- **Implemented:** 1
 
 ## 4. Comparative interpretation framework
 

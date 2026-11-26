@@ -8,7 +8,7 @@
 
 ```bash
 python run_pipeline.py --stage publish
-# or, with your name on the title page:
+# or, with a different author or an affiliation on the title page (default author: Suzzan Patel):
 python src/publish/generate_paper.py --author "Your Name" --affiliation "Your University"
 ```
 
@@ -28,6 +28,7 @@ Four figures and three tables are drawn from the data on each run.
 | Per-dimension paragraphs, which quote each provision's coded summary | Parts of the discussion and conclusion |
 | Pattern-dependent sentences (for example, which framework makes a principle mandatory, or each framework's weakest link) | The three scholarly references (checked against publishers' records) |
 | Verification-audit figures and correction sign-off status | |
+| Reliability statistics (from `results/reliability/`) | |
 | All figures, tables, primary-source references and the appendix | |
 
 If you recode provisions, the findings, figures and tables update automatically. **Re-read the fixed framing paragraphs** after significant data changes to make sure they still fit.
@@ -44,6 +45,7 @@ The generated paper is a data-driven draft. Before submitting it to a journal or
 2. Extend the literature review. The paper cites three works; a journal will expect a fuller review.
 3. Check every legal statement against the primary sources listed in the references.
 4. ~~Sign off the 37 source-verification corrections~~ Done: all 37 approved on 26 November 2026.
-5. Consider adding later instruments (see section 6) and an inter-coder reliability check.
+5. ~~Add later instruments and a reliability check~~ Done in v0.2.0 (India IT Rules 2026, UK CP 1019; AI-assisted blind second coding). A human second coder would strengthen the reliability claim.
+6. Confirm the page references for IND006, IND007, UK006 and UK007 against downloaded PDFs.
 
 To edit the prose by hand, work from the Markdown file. Note that re-running the pipeline overwrites both the PDF and the Markdown.

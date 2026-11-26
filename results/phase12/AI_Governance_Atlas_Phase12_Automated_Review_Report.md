@@ -3,7 +3,7 @@
 
 ### Scope
 
-- Annotated dataset records: 20
+- Annotated dataset records: 24
 - Total audit checks: 180
 - Correction/caveat findings processed: 40
 - Correction findings: 37

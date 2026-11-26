@@ -1,0 +1,6 @@
+second_coder,variable,field,n,agreements,percent_agreement,cohens_kappa,interpretation,measure
+AI-assisted,Legal force of instrument,legal_status,24,24,100.0,1.0,almost perfect,Cohen's kappa
+AI-assisted,Primary governance dimension,governance_dimension,24,21,87.5,0.843,almost perfect,Cohen's kappa
+AI-assisted,Obligation force,obligation_force,24,23,95.8,0.927,almost perfect,Cohen's kappa
+AI-assisted,Enforcement linkage,enforcement_linkage,24,17,70.8,0.632,substantial,Cohen's kappa
+AI-assisted,Obligation nature (multi-label),obligation_nature,24,20,83.3,,mean Jaccard overlap 0.90,exact-set agreement; mean Jaccard

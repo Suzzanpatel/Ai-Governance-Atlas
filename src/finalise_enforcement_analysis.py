@@ -133,6 +133,34 @@ final_coding = {
         "character": "Existing regulator powers"
     },
 
+    "IND006": {
+        "mechanisms": [
+            "Loss of section 79 safe harbour (rule 7)"
+        ],
+        "level": "Cross-referenced",
+        "character": "Statutory enforcement"
+    },
+
+    "IND007": {
+        "mechanisms": [
+            "Loss of section 79 safe harbour"
+        ],
+        "level": "Direct",
+        "character": "Statutory enforcement"
+    },
+
+    "UK006": {
+        "mechanisms": [],
+        "level": "System-level only",
+        "character": "Existing regulator powers"
+    },
+
+    "UK007": {
+        "mechanisms": [],
+        "level": "None identified",
+        "character": "No specific mechanism identified"
+    },
+
     "UK005": {
         "mechanisms": [
             "Existing statutory regulator powers"

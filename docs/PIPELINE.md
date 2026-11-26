@@ -1,6 +1,6 @@
 # Pipeline
 
-`run_pipeline.py` runs 32 scripts in seven stages, in dependency order. Each stage can also be run on its own with `--stage`.
+`run_pipeline.py` runs 33 scripts in seven stages, in dependency order. Each stage can also be run on its own with `--stage`.
 
 ## Stages
 
@@ -25,6 +25,7 @@ The EU corpus uses the consolidated AI Act text of 27 July 2026, which has no re
 | `src/build_enforcement_architecture.py` | System-level enforcement architecture |
 | `src/finalise_enforcement_analysis.py` | Final enforcement linkage per provision |
 | `src/advanced_visualisations.py` | Charts `results/charts/01–07_*.png` |
+| `src/analysis/reliability.py` | Agreement between the primary coding and the second coding in `data/reliability/` (Cohen's kappa); writes `results/reliability/`. Uses `second_coder_human.csv` if present, otherwise `second_coder_ai.csv` |
 
 ### 3. `phase12`: coding audit
 | Script | Purpose |
@@ -38,6 +39,8 @@ Six scripts in `src/analysis/phase13/` (13.1–13.6) compare jurisdictions, gove
 
 ### 5. `phase14`: source validation and synthesis
 Eight scripts in `src/analysis/phase14/` (14.1–14.7) locate each provision in its source PDF, validate the official source and version, prepare the legal-analysis worksheet and argument matrix, audit completeness and build the research-synthesis worksheet. Outputs: `results/phase14/`.
+
+Reviewer input for Phase 14 lives in **`research/evidence/phase14_review_record.csv`**. Phases 14.3, 14.4, 14.5 and 14.7 merge it into their worksheets on every run (`review_record.py`), filling only blank or placeholder fields, so re-running never loses it. The corrected 14.6 audit reports each record as `SOURCE_AND_LEGAL_REVIEW_PENDING`, `DRAFT_COMPLETE_AWAITING_RESEARCHER_REVIEW` or `SOURCE_AND_LEGAL_REVIEW_COMPLETE`. The record was first drafted by `draft_review_record.py` (not part of the pipeline; it refuses to overwrite).
 
 ### 6. `report`: template-based report
 `src/report_generator.py` → `research/reports/AI_Governance_Atlas_Report.md`

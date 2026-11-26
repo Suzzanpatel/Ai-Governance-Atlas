@@ -4,17 +4,20 @@ EU,Risk Assessment,Mandatory,2
 EU,Safety and Testing,Mandatory,1
 EU,Transparency,Mandatory,1
 India,Accountability,Recommended,1
-India,Enforcement,Institutional,1
+India,Enforcement,Mandatory,1
+India,Enforcement,Recommended,1
 India,Risk Assessment,Recommended,1
-India,Safety and Testing,Institutional,1
+India,Safety and Testing,Recommended,1
+India,Transparency,Mandatory,1
 India,Transparency,Recommended,1
 OECD (international benchmark),Accountability,Recommended,1
-OECD (international benchmark),Enforcement,Institutional,1
+OECD (international benchmark),Enforcement,Mandatory,1
 OECD (international benchmark),Risk Assessment,Recommended,1
 OECD (international benchmark),Safety and Testing,Recommended,1
 OECD (international benchmark),Transparency,Recommended,1
-UK,Accountability,Recommended,1
-UK,Enforcement,Institutional,1
-UK,Risk Assessment,Institutional,1
+UK,Accountability,Recommended,2
+UK,Enforcement,Recommended,1
+UK,Risk Assessment,Voluntary,1
+UK,Safety and Testing,Not specified,1
 UK,Safety and Testing,Recommended,1
 UK,Transparency,Recommended,1

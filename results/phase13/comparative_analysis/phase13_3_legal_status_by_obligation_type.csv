@@ -1,5 +1,5 @@
-legal_status,Institutional,Mandatory,Recommended
-Binding legislation,0,5,0
-Government policy (non-statutory),2,0,3
-International recommendation (non-binding),1,0,4
-Non-binding guidance,2,0,3
+legal_status,Mandatory,Not specified,Recommended,Voluntary
+Binding legislation,7,0,0,0
+Government policy (non-statutory),0,1,5,1
+International recommendation (non-binding),1,0,4,0
+Non-binding guidance,0,0,5,0

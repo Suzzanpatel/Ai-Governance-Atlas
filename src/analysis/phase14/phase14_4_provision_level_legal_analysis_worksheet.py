@@ -18,6 +18,9 @@ from pathlib import Path
 import sys
 import pandas as pd
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from review_record import apply_review_record, apply_review_record_rows  # noqa: E402
+
 
 def locate_root() -> Path:
     here = Path(__file__).resolve()
@@ -141,6 +144,7 @@ def main():
 
     worksheet = pd.DataFrame(worksheet_rows)
     worksheet_path = output_dir / "phase14_4_provision_level_legal_analysis_worksheet.csv"
+    worksheet = apply_review_record(worksheet)
     worksheet.to_csv(worksheet_path, index=False)
 
     # A compact methodology guide accompanies the spreadsheet.

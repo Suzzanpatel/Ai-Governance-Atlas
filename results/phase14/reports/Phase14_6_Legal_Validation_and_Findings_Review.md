@@ -1,6 +1,6 @@
 # Phase 14.6 — Legal Validation and Findings Review
 
-Generated: 2026-11-26 11:39:16
+Generated: 2026-11-26 12:09:45
 
 ## Purpose
 
@@ -13,21 +13,21 @@ interpretation is correct.
 
 | Input | Rows available |
 |---|---:|
-| Annotated dataset | 20 |
-| Phase 14.3 source/version register | 25 |
-| Phase 14.4 legal-analysis worksheet | 20 |
-| Phase 14.5 comparative argument matrix | 20 |
-| Phase 14.5 claim-evidence register | 20 |
+| Annotated dataset | 24 |
+| Phase 14.3 source/version register | 29 |
+| Phase 14.4 legal-analysis worksheet | 24 |
+| Phase 14.5 comparative argument matrix | 24 |
+| Phase 14.5 claim-evidence register | 24 |
 
 ## Automated workflow status
 
 | Status | Provisions |
 |---|---:|
 | Ready for senior human review | 0 |
-| Source validation required | 20 |
+| Source validation required | 24 |
 | Legal analysis incomplete | 0 |
-| Total provisions audited | 20 |
-| Total checklist issues identified | 220 |
+| Total provisions audited | 24 |
+| Total checklist issues identified | 240 |
 
 These are workflow-completeness counts, not findings about the quality,
 validity, or effectiveness of any jurisdiction's law.

@@ -17,6 +17,10 @@ Run from the project root:
 """
 
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from review_record import apply_review_record, apply_review_record_rows  # noqa: E402
 import csv
 import re
 from datetime import datetime
@@ -29,7 +33,8 @@ P14_DIR = ROOT / "results/phase14"
 P14_3 = P14_DIR / "source_validation/phase14_3_official_source_version_validation_register.csv"
 P14_4 = P14_DIR / "legal_analysis/phase14_4_provision_level_legal_analysis_worksheet.csv"
 P14_5 = P14_DIR / "comparative_argument/phase14_5_comparative_legal_argument_matrix.csv"
-P14_6 = P14_DIR / "legal_validation/phase14_6_legal_validation_audit.csv"
+# Read the corrected Phase 14.6 audit, whose checks match the 14.3-14.5 worksheet columns
+P14_6 = P14_DIR / "legal_validation/phase14_6_corrected_legal_validation_audit.csv"
 
 OUT_DIR = P14_DIR / "research_synthesis"
 REPORT_DIR = ROOT / "results/phase14/reports"
@@ -146,10 +151,10 @@ def main():
             "article_or_section": get(row, "article_or_section"),
             "governance_dimension": get(row, "governance_dimension"),
             "dataset_provision_summary": get(row, "provision_summary"),
-            "source_validation_status": get(audit, "source_validation_status") or get(source, "source_validation_status", "validation_status") or "NOT_AVAILABLE",
-            "source_version_status": get(audit, "source_version_status") or get(source, "version_status", "version_validation_status") or "NOT_AVAILABLE",
+            "source_validation_status": get(audit, "source_validation_decisions", "source_validation_status") or get(source, "source_validation_status", "validation_status") or "NOT_AVAILABLE",
+            "source_version_status": get(audit, "version_human_confirmed", "source_version_status") or get(source, "version_status", "version_validation_status") or "NOT_AVAILABLE",
             "legal_analysis_status": get(audit, "overall_review_status") or "NOT_AUDITED",
-            "legal_interpretation_present": get(audit, "legal_interpretation_completed") or "NOT_CHECKED",
+            "legal_interpretation_present": get(audit, "legal_analysis_completed", "legal_interpretation_completed") or "NOT_CHECKED",
             "comparative_argument_present": get(audit, "comparative_argument_drafted") or ("YES" if get(argument, "proposed_argument") else "NO"),
             "research_synthesis_claim": "",
             "supporting_provision_ids": "",
@@ -165,6 +170,7 @@ def main():
               jurisdiction_rows, list(jurisdiction_rows[0].keys()) if jurisdiction_rows else [])
     write_csv(OUT_DIR / "phase14_7_governance_dimension_comparison.csv",
               dimension_rows, list(dimension_rows[0].keys()) if dimension_rows else [])
+    synthesis_rows = apply_review_record_rows(synthesis_rows)
     write_csv(OUT_DIR / "phase14_7_research_synthesis_worksheet.csv",
               synthesis_rows, list(synthesis_rows[0].keys()) if synthesis_rows else [])
 
@@ -182,18 +188,12 @@ def main():
         for r in jurisdiction_rows
     ) or "- No jurisdiction records available."
 
-    ready_count = sum(
-        1 for r in p14_6
-        if get(r, "overall_review_status") == "READY_FOR_SENIOR_HUMAN_REVIEW"
-    )
-    source_pending_count = sum(
-        1 for r in p14_6
-        if get(r, "overall_review_status") == "SOURCE_VALIDATION_REQUIRED"
-    )
-    analysis_pending_count = sum(
-        1 for r in p14_6
-        if get(r, "overall_review_status") == "LEGAL_ANALYSIS_INCOMPLETE"
-    )
+    # Statuses written by phase14_6_corrected_audit.py
+    status_of = [get(r, "overall_review_status") for r in p14_6]
+    ready_count = sum(s == "SOURCE_AND_LEGAL_REVIEW_COMPLETE" for s in status_of)
+    draft_count = sum(s == "DRAFT_COMPLETE_AWAITING_RESEARCHER_REVIEW" for s in status_of)
+    source_pending_count = sum(s in ("SOURCE_AND_LEGAL_REVIEW_PENDING", "SOURCE_REGISTER_ROW_MISSING") for s in status_of)
+    analysis_pending_count = sum(s == "RESEARCH_WORKSHEET_ROW_MISSING" for s in status_of)
 
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     report = f"""# Phase 14.7 — Research Synthesis
@@ -235,9 +235,10 @@ a complete inventory of each jurisdiction's AI governance framework.
 
 ### Phase 14.6 workflow flags
 
-- Ready for senior human review: {ready_count}
-- Source validation required: {source_pending_count}
-- Legal analysis incomplete: {analysis_pending_count}
+- Source and legal review complete: {ready_count}
+- Draft complete, awaiting researcher review: {draft_count}
+- Source or legal review pending: {source_pending_count}
+- Worksheet rows missing: {analysis_pending_count}
 
 These are administrative completeness flags only. They are not legal approval
 or an assessment of the substantive quality of any rule.

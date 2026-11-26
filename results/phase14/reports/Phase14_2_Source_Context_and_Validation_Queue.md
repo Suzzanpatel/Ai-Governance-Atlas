@@ -8,11 +8,11 @@ citation and quotation.
 
 ## Results
 
-- Dataset provisions: **20**
+- Dataset provisions: **24**
 - Local PDFs successfully read: **5**
 - Provision IDs with at least one located candidate: **20**
-- Provision IDs with no located candidate or no dataset excerpt: **0**
-- Candidate source rows: **25**
+- Provision IDs with no located candidate or no dataset excerpt: **4**
+- Candidate source rows: **29**
 - Automatically verified provisions: **0**
 - Original dataset modified: **No**
 

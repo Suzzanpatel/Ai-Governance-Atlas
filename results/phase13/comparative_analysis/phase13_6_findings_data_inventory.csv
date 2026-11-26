@@ -1,20 +1,21 @@
 analysis_area,category,provision_count,availability
+jurisdiction,India,7,Available
+jurisdiction,UK,7,Available
 jurisdiction,EU,5,Available
-jurisdiction,India,5,Available
-jurisdiction,UK,5,Available
 jurisdiction,OECD (international benchmark),5,Available
 dimension,Risk Assessment,5,Available
-dimension,Transparency,4,Available
-dimension,Accountability,4,Available
-dimension,Safety and Testing,4,Available
-dimension,Enforcement,3,Available
-legal_status,Binding legislation,5,Available
+dimension,Transparency,5,Available
+dimension,Accountability,5,Available
+dimension,Safety and Testing,5,Available
+dimension,Enforcement,4,Available
+legal_status,Binding legislation,7,Available
+legal_status,Government policy (non-statutory),7,Available
 legal_status,Non-binding guidance,5,Available
-legal_status,Government policy (non-statutory),5,Available
 legal_status,International recommendation (non-binding),5,Available
-obligation,Recommended,10,Available
-obligation,Mandatory,5,Available
-obligation,Institutional,5,Available
+obligation,Recommended,14,Available
+obligation,Mandatory,8,Available
+obligation,Voluntary,1,Available
+obligation,Not specified,1,Available
 enforcement,"No enforcement or sanctions. Implementation is monitored through the Digital Policy Committee's reports to Council (Section VIII(d), p. 11), practical implementation guidance (VIII(b)) and an information-exchange forum (VIII(c)) (see OECD005).",4,Available
 enforcement,"Art. 16(a) (cons. p. 28; OJ p. 62) obliges providers to ensure compliance with Chapter III Section 2 (Arts 8-15). Non-compliance with Art. 16 provider obligations is subject to administrative fines of up to EUR 15 000 000 or, if the offender is an undertaking, up to 3% of total worldwide annual turnover for the preceding financial year, whichever is higher (Art. 99(4)(a), cons. p. 116; OJ p. 115; unchanged by 2026/1744). For SMEs, including start-ups, the lower of the two applies (Art. 99(6), OJ p. 116). The Act sets maxima; Member States lay down the penalty rules and enforce them (Art. 99(1), OJ p. 115). Ex ante conformity assessment (Art. 43, cons. p. 53; OJ p. 78); market surveillance (Art. 74, cons. p. 91; OJ p. 102) and procedure for AI systems presenting a risk (Art. 79, cons. p. 104; OJ p. 106).",3,Available
 enforcement,"No new enforcement mechanism. The principles are applied by existing regulators 'using the powers and resources available to them' (para 55, PDF p. 41). Government anticipates, but has not committed to, a statutory duty on regulators to 'have due regard' to the principles (para 57, PDF p. 42), and may not introduce it (para 59). Regulators are encouraged to integrate the principles into existing monitoring, investigation and enforcement processes (para 68, PDF p. 46).",3,Available
@@ -33,10 +34,10 @@ responsibility,"Government (MeitY and sectoral regulators) to clarify and impose
 responsibility,Government (developing body not named in the provision; Action Plan says 'with sectoral inputs'; AISI's listed functions include risk analysis),1,Available
 responsibility,"AI Safety Institute (IndiaAI Safety Institute), working with agencies and sectoral regulators",1,Available
 responsibility,"Sectoral regulators and agencies (e.g. RBI, SEBI, IRDAI, TRAI, ICMR, NHA, ministries), with MeitY as nodal ministry and AIGG coordinating",1,Available
-responsibility,Regulatory authority (implementation through guidance); AI life cycle actors (may be asked by regulators to provide information),1,Available
-responsibility,"AI life cycle actors (organisations and individuals that research, design, develop, train, operate, deploy or use AI); regulatory authority (to set expectations)",1,Available
-implementation,Not assessed,9,Available
-implementation,Partially implemented,8,Available
+responsibility,"Intermediaries offering a computer resource that enables the creation, modification or dissemination of synthetically generated information; significant social media intermediaries (rule 4(1A))",1,Available
+responsibility,"Intermediaries (consequence); courts and the Central Government applying the IT Act, 2000",1,Available
+implementation,Not assessed,10,Available
+implementation,Partially implemented,9,Available
+implementation,Not yet implemented,2,Available
+implementation,Implemented,2,Available
 implementation,No evidence of implementation found,1,Available
-implementation,Not yet implemented,1,Available
-implementation,Implemented,1,Available
