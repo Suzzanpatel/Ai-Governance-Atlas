@@ -184,9 +184,9 @@ def corrections_scope_sentence(meta: dict) -> str:
     top = sorted(((v, k) for k, v in by_field.items() if k not in CLASSIFICATION_FIELDS), reverse=True)[:3]
     top_txt = join([f"{k.replace('_', ' ')} ({v})" for v, k in top])
     if classification == 0:
-        return (f"None of the proposed corrections changes a classification category used in the analysis; they "
+        return (f"None of the corrections changes a classification category used in the analysis; they "
                 f"concern descriptive and referencing fields, chiefly {top_txt}.")
-    return (f"{Num(classification)} proposed {plural(classification, 'correction concerns', 'corrections concern')} "
+    return (f"{Num(classification)} {plural(classification, 'correction concerns', 'corrections concern')} "
             f"a classification category used in the analysis; the remainder concern {top_txt}.")
 
 
@@ -495,17 +495,29 @@ def build_content(atlas: ad.Atlas, author: str, affiliation: str, figs: dict) ->
         v = meta["audit_verdicts"]
         corrected = v.get("Corrected", 0)
         caveat = v.get("Verified with caveat", 0)
-        pending = meta["corrections"] - meta["corrections_decided"]
+        signed = meta["corrections_decided"]
+        total = meta["corrections"]
+        in_data = meta["corrections_in_dataset"]
+        if total and in_data == total:
+            applied = (f"; all {total} corrections have been made in the dataset analysed here and are logged in a "
+                       "correction register so that each can be formally signed off with a recorded reason")
+        elif total:
+            applied = (f"; {in_data} of the {total} logged corrections match the dataset analysed here, and the "
+                       "correction register records each for formal sign-off")
+        else:
+            applied = ""
+        if total and signed < total:
+            signoff = (f". At the time of generation, {'none' if signed == 0 else f'{signed} of the {total}'} "
+                       "had been signed off by a reviewer")
+        elif total:
+            signoff = ". All corrections had been signed off at the time of generation"
+        else:
+            signoff = ""
         P(f"Every record was then checked against its primary source. The verification audit comprises "
           f"{meta['audit_checks']} field-level checks across {meta['audit_fields']} coded fields: "
-          f"{v.get('Verified', 0)} were verified as recorded, {corrected} led to a proposed correction"
+          f"{v.get('Verified', 0)} were verified as recorded, {corrected} led to a correction"
           + (f" and {caveat} were verified with a caveat" if caveat else "") +
-          ". Proposed corrections are logged in a correction register rather than applied silently, so that each change "
-          "can be accepted or rejected with a recorded reason"
-          + (f"; at the time of generation {'all ' + str(pending) if pending == meta['corrections'] else str(pending) + ' of the ' + str(meta['corrections'])} "
-             "proposed corrections awaited a decision, and the findings below use the coded values before correction"
-             if pending else "; all proposed corrections had been decided at the time of generation") +
-          ". " + corrections_scope_sentence(meta))
+          applied + signoff + ". " + corrections_scope_sentence(meta))
     H2("3.3 Computational indicators")
     P("To complement the manual coding, the full text of each instrument was extracted page by page and searched for "
       "dimension-related keyword families, with counts normalised per 1,000 words. The extracted EU text is the "

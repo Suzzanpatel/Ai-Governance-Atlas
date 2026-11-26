@@ -28,7 +28,7 @@ Each provision is coded on five separate links. Strength at one link is never ta
 
 - **20 provisions**, 5 per framework, selected purposively across five governance dimensions: transparency, accountability, risk assessment, safety and testing, and enforcement.
 - Each record carries the verbatim text, article or section, PDF and printed page numbers, source URL and version.
-- **Verification:** 180 field-level checks against the primary sources, with proposed corrections logged in a register for human decision rather than applied automatically.
+- **Verification:** 180 field-level checks against the primary sources. The 37 corrections that resulted were made in the dataset and logged in a correction register, where each is formally signed off.
 
 ## Interpretive safeguards
 

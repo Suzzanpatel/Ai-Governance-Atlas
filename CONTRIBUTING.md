@@ -14,7 +14,9 @@ This guide covers the most common changes: adding a provision, correcting a code
 
 ## Correcting a coded value
 
-Do not edit the master dataset silently. Record the change in the Phase 12 correction register (`results/phase12/AI_Governance_Atlas_Phase12_Correction_Register.csv`): set `review_decision` to `Approve`, `Reject` or `Needs evidence` (it starts as `Pending`), fill in `approved_revised_value` for approvals and add `reviewer_comments`, then run `python run_pipeline.py --stage phase12`. Only rows marked `Approve` are applied; they are written to `results/phase12/governance_dataset_phase12_revised.csv`, with a change log.
+**Signing off existing corrections.** The 37 corrections from the source-verification audit are already in the dataset. Their register rows are marked `Pending` only because they have not been formally accepted. Review each row, then set `review_decision` to `Approve` (or `Reject` with a comment, then revert the field by hand).
+
+**New corrections.** Do not edit the master dataset silently. Record the change in the Phase 12 correction register (`results/phase12/AI_Governance_Atlas_Phase12_Correction_Register.csv`): set `review_decision` to `Approve`, `Reject` or `Needs evidence` (it starts as `Pending`), fill in `approved_revised_value` for approvals and add `reviewer_comments`, then run `python run_pipeline.py --stage phase12`. Only rows marked `Approve` are applied; they are written to `results/phase12/governance_dataset_phase12_revised.csv`, with a change log.
 
 ## Adding or replacing a source document
 
