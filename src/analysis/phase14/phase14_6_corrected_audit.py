@@ -25,7 +25,7 @@ def read_csv(path):
         return list(csv.DictReader(f))
 
 def clean(value):
-    return re.sub(r"\\s+", " ", str(value or "")).strip()
+    return re.sub(r"\s+", " ", str(value or "")).strip()
 
 def filled(value):
     return clean(value).lower() not in {
@@ -112,14 +112,22 @@ def main():
             ]:
                 if not any(filled(r.get(field)) for r in ars):
                     issues.append(message)
-            actions.append("Draft a qualified comparative argument after completing source and legal review")
+            if not all(any(filled(r.get(f)) for r in ars) for f in ("proposed_argument", "researcher_legal_assessment")):
+                actions.append("Draft a qualified comparative argument after completing source and legal review")
 
+        analysis_states = {clean(r.get("analysis_status")).upper() for r in ls}
         if not ss:
             status = "SOURCE_REGISTER_ROW_MISSING"
         elif not ls or not ars:
             status = "RESEARCH_WORKSHEET_ROW_MISSING"
-        else:
+        elif issues:
             status = "SOURCE_AND_LEGAL_REVIEW_PENDING"
+        elif any(state.startswith("DRAFT") for state in analysis_states):
+            # Every field is filled, but the legal analysis is a draft that the
+            # researcher still has to review (see phase14_review_record.csv)
+            status = "DRAFT_COMPLETE_AWAITING_RESEARCHER_REVIEW"
+        else:
+            status = "SOURCE_AND_LEGAL_REVIEW_COMPLETE"
 
         candidates = sorted({clean(r.get("candidate_pdf")) for r in ss if clean(r.get("candidate_pdf"))})
         pages = sorted({clean(r.get("candidate_pdf_page")) for r in ss if clean(r.get("candidate_pdf_page"))})

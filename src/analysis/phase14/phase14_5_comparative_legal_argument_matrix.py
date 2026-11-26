@@ -16,6 +16,10 @@ Run from the project root:
 """
 
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from review_record import apply_review_record, apply_review_record_rows  # noqa: E402
 import csv
 import re
 from datetime import datetime
@@ -156,6 +160,7 @@ def main():
 
     argument_fields = list(argument_rows[0].keys()) if argument_rows else []
     evidence_fields = list(evidence_rows[0].keys()) if evidence_rows else []
+    argument_rows = apply_review_record_rows(argument_rows)
     write_csv(OUT_DIR / "phase14_5_comparative_legal_argument_matrix.csv", argument_rows, argument_fields)
     write_csv(OUT_DIR / "phase14_5_claim_evidence_register.csv", evidence_rows, evidence_fields)
 

@@ -20,6 +20,9 @@ import re
 import sys
 import pandas as pd
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from review_record import apply_review_record, apply_review_record_rows  # noqa: E402
+
 
 def locate_root() -> Path:
     here = Path(__file__).resolve()
@@ -129,6 +132,7 @@ def main():
 
     register = pd.DataFrame(rows)
     register_path = output_dir / "phase14_3_official_source_version_validation_register.csv"
+    register = apply_review_record(register)
     register.to_csv(register_path, index=False)
 
     # Coverage summary at provision level.
