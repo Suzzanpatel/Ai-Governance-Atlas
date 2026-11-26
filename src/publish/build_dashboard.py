@@ -584,7 +584,7 @@ legend("impLegend", D.implementationLevels, IMP_VAR, l => l.replace("No evidence
 const foot = document.getElementById("foot");
 const m = D.meta || {};
 foot.textContent = `Generated ${D.generated} from data/annotated/governance_dataset.csv (${D.records.length} coded provisions). `
-  + (m.audit_checks ? `Source verification: ${m.audit_checks} field-level checks; ${m.corrections - m.corrections_decided} proposed corrections pending review. ` : "")
+  + (m.audit_checks ? `Source verification: ${m.audit_checks} field-level checks; ${m.corrections} corrections applied, ${m.corrections_decided} signed off. ` : "")
   + "The sample is purposive and does not rank the frameworks. Not legal advice.";
 render();
 })();

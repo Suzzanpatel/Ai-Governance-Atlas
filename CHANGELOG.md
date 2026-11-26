@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.1 — 2026-11-26
+
+### Fixed
+- **Paper wording on source-verification corrections.** v0.1.0 said that the 37 corrections "awaited a decision" and that the findings used the values *before* correction. In fact all 37 corrections are already in the dataset, so the findings use the corrected values. Only formal sign-off is outstanding. The paper now checks each register value against the dataset and reports that, together with the number signed off.
+- The dashboard footer, README, paper guide, methodology overview and contributing guide are updated to match.
+
 ## v0.1.0 — 2026-11-26 — working paper and dashboard
 
 ### Added

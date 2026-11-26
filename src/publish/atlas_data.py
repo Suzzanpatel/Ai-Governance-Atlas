@@ -177,7 +177,8 @@ def load() -> Atlas:
         }
 
     # Quality-assurance summary (optional inputs: reported only if present)
-    meta = {"audit_checks": 0, "audit_verdicts": {}, "corrections": 0, "corrections_decided": 0, "audit_fields": 0}
+    meta = {"audit_checks": 0, "audit_verdicts": {}, "corrections": 0, "corrections_decided": 0, "audit_fields": 0,
+            "corrections_in_dataset": 0, "corrections_by_field": {}}
     if VERIFICATION_AUDIT.is_file():
         audit = pd.read_csv(VERIFICATION_AUDIT, dtype=str).fillna("")
         meta["audit_checks"] = len(audit)
@@ -189,5 +190,13 @@ def load() -> Atlas:
         # "Needs evidence" keeps a correction open; only Approve/Reject close it
         meta["corrections_decided"] = int(reg["review_decision"].str.strip().isin(["Approve", "Reject"]).sum())
         meta["corrections_by_field"] = reg["field_to_review"].value_counts().to_dict()
+        # The register records each field's value after the audit correction.
+        # Count how many of those values are what the dataset holds now.
+        current = df.set_index("id")
+        norm = lambda v: " ".join(str(v).split())  # noqa: E731
+        meta["corrections_in_dataset"] = int(sum(
+            row["id"] in current.index and row["field_to_review"] in current.columns
+            and norm(current.at[row["id"], row["field_to_review"]]) == norm(row["original_value"])
+            for _, row in reg.iterrows()))
 
     return Atlas(records=records, keywords=kw, architecture=architecture, sources=sources, meta=meta)

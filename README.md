@@ -87,7 +87,7 @@ ai-governance-atlas/
 
 **v0.1.0: working paper and dashboard released.** The pipeline, paper generator and dashboard are complete. Open research tasks:
 
-- [ ] Decide the 37 pending entries in the Phase 12 correction register
+- [ ] Sign off the 37 source-verification corrections in the Phase 12 correction register (already applied to the dataset; set each `review_decision` to `Approve`)
 - [ ] Complete the researcher fields in the Phase 14.7 synthesis worksheet
 - [ ] Code later instruments, such as India's 2026 amendments to the IT Rules on synthetically generated information and the UK Government's February 2024 response
 - [ ] Extend the paper's literature review and add an inter-coder reliability check

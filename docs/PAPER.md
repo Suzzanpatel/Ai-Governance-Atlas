@@ -27,7 +27,7 @@ Four figures and three tables are drawn from the data on each run.
 | Every count, percentage and list of provision IDs | Framing of the introduction and the translation-chain framework |
 | Per-dimension paragraphs, which quote each provision's coded summary | Parts of the discussion and conclusion |
 | Pattern-dependent sentences (for example, which framework makes a principle mandatory, or each framework's weakest link) | The three scholarly references (checked against publishers' records) |
-| Verification-audit figures and pending corrections | |
+| Verification-audit figures and correction sign-off status | |
 | All figures, tables, primary-source references and the appendix | |
 
 If you recode provisions, the findings, figures and tables update automatically. **Re-read the fixed framing paragraphs** after significant data changes to make sure they still fit.
@@ -43,7 +43,7 @@ The generated paper is a data-driven draft. Before submitting it to a journal or
 1. Put your name and affiliation on the title page (`--author`, `--affiliation`).
 2. Extend the literature review. The paper cites three works; a journal will expect a fuller review.
 3. Check every legal statement against the primary sources listed in the references.
-4. Decide on the 37 pending corrections in the Phase 12 correction register; the paper reports them as pending.
+4. Sign off the 37 source-verification corrections in the Phase 12 correction register. They are already in the dataset, and the paper reports how many have been signed off.
 5. Consider adding later instruments (see section 6) and an inter-coder reliability check.
 
 To edit the prose by hand, work from the Markdown file. Note that re-running the pipeline overwrites both the PDF and the Markdown.
