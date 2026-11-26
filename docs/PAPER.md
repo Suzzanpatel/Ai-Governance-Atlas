@@ -43,7 +43,7 @@ The generated paper is a data-driven draft. Before submitting it to a journal or
 1. Put your name and affiliation on the title page (`--author`, `--affiliation`).
 2. Extend the literature review. The paper cites three works; a journal will expect a fuller review.
 3. Check every legal statement against the primary sources listed in the references.
-4. Sign off the 37 source-verification corrections in the Phase 12 correction register. They are already in the dataset, and the paper reports how many have been signed off.
+4. ~~Sign off the 37 source-verification corrections~~ Done: all 37 approved on 26 November 2026.
 5. Consider adding later instruments (see section 6) and an inter-coder reliability check.
 
 To edit the prose by hand, work from the Markdown file. Note that re-running the pipeline overwrites both the PDF and the Markdown.

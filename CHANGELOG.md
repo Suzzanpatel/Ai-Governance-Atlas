@@ -6,6 +6,9 @@
 - **Paper wording on source-verification corrections.** v0.1.0 said that the 37 corrections "awaited a decision" and that the findings used the values *before* correction. In fact all 37 corrections are already in the dataset, so the findings use the corrected values. Only formal sign-off is outstanding. The paper now checks each register value against the dataset and reports that, together with the number signed off.
 - The dashboard footer, README, paper guide, methodology overview and contributing guide are updated to match.
 
+### Reviewed
+- **All 37 source-verification corrections approved** in the Phase 12 correction register (`review_decision = Approve`, with the approved value and a reviewer note). The Phase 12 change log records all 37. The paper now reports that all corrections are signed off.
+
 ## v0.1.0 — 2026-11-26 — working paper and dashboard
 
 ### Added

@@ -1,6 +1,6 @@
 # Phase 14.7 — Research Synthesis
 
-Generated: 2026-11-26 11:25:04
+Generated: 2026-11-26 11:39:16
 
 ## 1. Purpose and scope
 
