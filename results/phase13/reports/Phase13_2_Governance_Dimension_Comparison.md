@@ -6,7 +6,7 @@ This analysis compares the distribution of coded governance dimensions across th
 
 ## Dataset scope
 
-- Provisions analysed: **20**
+- Provisions analysed: **24**
 - Jurisdictions represented: **4**
 - Distinct recorded governance-dimension labels: **5**
 - Source: `data/annotated/governance_dataset.csv`
@@ -14,11 +14,11 @@ This analysis compares the distribution of coded governance dimensions across th
 
 ## 1. Overall dimension distribution
 
-- **Risk Assessment**: 5 provisions (25.0% of the coded sample)
-- **Transparency**: 4 provisions (20.0% of the coded sample)
-- **Accountability**: 4 provisions (20.0% of the coded sample)
-- **Safety and Testing**: 4 provisions (20.0% of the coded sample)
-- **Enforcement**: 3 provisions (15.0% of the coded sample)
+- **Risk Assessment**: 5 provisions (20.8% of the coded sample)
+- **Transparency**: 5 provisions (20.8% of the coded sample)
+- **Accountability**: 5 provisions (20.8% of the coded sample)
+- **Safety and Testing**: 5 provisions (20.8% of the coded sample)
+- **Enforcement**: 4 provisions (16.7% of the coded sample)
 
 ## 2. Dimension distribution within each jurisdiction
 
@@ -32,11 +32,11 @@ The percentages below use each jurisdiction's own number of coded provisions as 
 - Transparency: 1 provision(s), 20.0%
 
 ### India
-- Accountability: 1 provision(s), 20.0%
-- Enforcement: 1 provision(s), 20.0%
-- Risk Assessment: 1 provision(s), 20.0%
-- Safety and Testing: 1 provision(s), 20.0%
-- Transparency: 1 provision(s), 20.0%
+- Accountability: 1 provision(s), 14.3%
+- Enforcement: 2 provision(s), 28.6%
+- Risk Assessment: 1 provision(s), 14.3%
+- Safety and Testing: 1 provision(s), 14.3%
+- Transparency: 2 provision(s), 28.6%
 
 ### OECD (international benchmark)
 - Accountability: 1 provision(s), 20.0%
@@ -46,11 +46,11 @@ The percentages below use each jurisdiction's own number of coded provisions as 
 - Transparency: 1 provision(s), 20.0%
 
 ### UK
-- Accountability: 1 provision(s), 20.0%
-- Enforcement: 1 provision(s), 20.0%
-- Risk Assessment: 1 provision(s), 20.0%
-- Safety and Testing: 1 provision(s), 20.0%
-- Transparency: 1 provision(s), 20.0%
+- Accountability: 2 provision(s), 28.6%
+- Enforcement: 1 provision(s), 14.3%
+- Risk Assessment: 1 provision(s), 14.3%
+- Safety and Testing: 2 provision(s), 28.6%
+- Transparency: 1 provision(s), 14.3%
 
 ## 3. Sample coverage across jurisdictions
 

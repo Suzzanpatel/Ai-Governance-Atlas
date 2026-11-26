@@ -1,11 +1,13 @@
 country,enforcement_level,provision_count
 EU,Cross-referenced,5
-India,Direct,1
+India,Cross-referenced,1
+India,Direct,2
 India,None identified,2
 India,Not applicable,1
 India,System-level only,1
 OECD (international benchmark),None identified,4
 OECD (international benchmark),System-level only,1
 UK,Direct,1
+UK,None identified,1
 UK,Not applicable,1
-UK,System-level only,3
+UK,System-level only,4

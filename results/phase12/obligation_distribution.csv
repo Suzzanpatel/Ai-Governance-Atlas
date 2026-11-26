@@ -1,8 +1,9 @@
 country,obligation_type,0
 EU,Mandatory,5
-India,Institutional,2
-India,Recommended,3
-OECD (international benchmark),Institutional,1
+India,Mandatory,2
+India,Recommended,5
+OECD (international benchmark),Mandatory,1
 OECD (international benchmark),Recommended,4
-UK,Institutional,2
-UK,Recommended,3
+UK,Not specified,1
+UK,Recommended,5
+UK,Voluntary,1

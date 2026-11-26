@@ -8,11 +8,15 @@ responsible_party,Accountability,Enforcement,Risk Assessment,Safety and Testing,
 AI provider (information duty owed to deployers),0,0,0,0,1
 AI provider (of high-risk AI systems),0,0,2,1,0
 Developer and deployer ('any person involved in developing or deploying AI systems in India'),0,0,0,0,1
+Developers of highly capable general-purpose AI systems (prospective addressees); central government (policy development),0,0,0,1,0
 "Government (MeitY and sectoral regulators) to clarify and impose obligations; the eventual duty-bearers would be developers, deployers and end-users",1,0,0,0,0
 "Government (central functions; government will 'initially be responsible for delivering the central functions', para 75, PDF p. 59), working with regulators",0,0,1,0,0
 Government (developing body not named in the provision; Action Plan says 'with sectoral inputs'; AISI's listed functions include risk analysis),0,0,1,0,0
+"Intermediaries (consequence); courts and the Central Government applying the IT Act, 2000",0,1,0,0,0
+"Intermediaries offering a computer resource that enables the creation, modification or dissemination of synthetically generated information; significant social media intermediaries (rule 4(1A))",0,0,0,0,1
 Multiple stakeholders (principle phrased in the passive voice; addressed to AI actors via para III and to Adherents via para II),0,0,0,1,0
 "OECD Digital Policy Committee, through its Working Party on AI Governance (AIGO)",0,1,0,0,0
+"Regulators named in footnote 28: Ofcom, ICO, FCA, CMA, EHRC, MHRA, Ofsted, LSB, ONR, Ofqual, HSE, the Bank of England and Ofgem; also OPSS (Department for Business and Trade)",1,0,0,0,0
 "Regulatory authority (existing sectoral regulators; those named in the White Paper include the ICO, FCA, EHRC and MHRA), supported by central government",0,1,0,0,0
 Regulatory authority (implementation through guidance); AI life cycle actors (may be asked by regulators to provide information),0,0,0,0,1
 "Regulatory authority (to implement); developer and other AI life cycle actors (testing and due diligence, if required by regulators)",0,0,0,1,0

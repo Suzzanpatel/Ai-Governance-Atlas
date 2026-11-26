@@ -8,10 +8,10 @@ status, citation accuracy, and quotation context.
 
 ## Coverage
 
-- Unique provisions in the annotated dataset: **20**
+- Unique provisions in the annotated dataset: **24**
 - Provision IDs with at least one local PDF candidate: **20**
-- Candidate source rows in the register: **25**
-- Register rows without a candidate PDF path: **0**
+- Candidate source rows in the register: **29**
+- Register rows without a candidate PDF path: **4**
 - Automatically authenticated official sources: **0**
 - Automatically verified legal provisions: **0**
 

@@ -1,4 +1,5 @@
-country,enforcement_level,Administrative fines,Deployer administrative fines,Existing statutory regulator powers,Peer scrutiny,Provider administrative fines,Voluntary transparency reporting
-EU,cross_referenced,4,1,0,0,1,0
-India,direct,0,0,0,1,0,1
-UK,direct,0,0,1,0,0,0
+country,enforcement_level,Administrative fines,Deployer administrative fines,Existing statutory regulator powers,Loss of section 79 safe harbour,Loss of section 79 safe harbour (rule 7),Peer scrutiny,Provider administrative fines,Voluntary transparency reporting
+EU,cross_referenced,4,1,0,0,0,0,1,0
+India,cross_referenced,0,0,0,0,1,0,0,0
+India,direct,0,0,0,1,0,1,0,1
+UK,direct,0,0,1,0,0,0,0,0

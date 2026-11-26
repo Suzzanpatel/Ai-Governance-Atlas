@@ -8,11 +8,11 @@ point for primary-source validation.
 
 ## Scope
 
-- Dataset provisions: **20**
+- Dataset provisions: **24**
 - Local PDF files found under `data/raw/`: **5**
 - PDFs successfully read: **5**
 - Provision IDs with at least one text locator match: **20**
-- Provision IDs with no local text match: **0**
+- Provision IDs with no local text match: **4**
 - Original annotated dataset modified: **No**
 - Source PDFs modified: **No**
 

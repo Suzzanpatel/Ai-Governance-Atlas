@@ -1,7 +1,7 @@
 AI GOVERNANCE ATLAS — DATA VALIDATION REPORT
 ==================================================
-Total records: 20
-Total columns: 21
+Total records: 24
+Total columns: 22
 Duplicate IDs: 0
 Duplicate rows: 0
 Missing columns: []
@@ -11,34 +11,36 @@ secondary_dimension    3
 
 Records by jurisdiction / benchmark:
 country
+India                             7
+UK                                7
 EU                                5
-India                             5
-UK                                5
 OECD (international benchmark)    5
 
 Governance dimensions:
 governance_dimension
 Risk Assessment       5
-Transparency          4
-Accountability        4
-Safety and Testing    4
-Enforcement           3
+Transparency          5
+Accountability        5
+Safety and Testing    5
+Enforcement           4
 
 Obligation types:
 obligation_type
-Recommended      10
-Mandatory         5
-Institutional     5
+Recommended      14
+Mandatory         8
+Voluntary         1
+Not specified     1
 
 Applicability status:
 applicability_status
-Not legally binding (policy or international instrument)    15
+Not legally binding (policy or international instrument)    17
 Legally adopted but not yet applicable                       5
+In force (from 20 February 2026)                             2
 
 Implementation status:
 implementation_status
-Not assessed                           9
-Partially implemented                  8
-No evidence of implementation found    1
-Not yet implemented                    1
-Implemented                            1
+Not assessed                           10
+Partially implemented                   9
+Not yet implemented                     2
+Implemented                             2
+No evidence of implementation found     1

@@ -6,18 +6,18 @@ This phase examines the implementation-status labels and the presence of impleme
 
 ## Dataset scope
 
-- Provisions analysed: **20**
+- Provisions analysed: **24**
 - Jurisdictions represented: **4**
 - Source: `data/annotated/governance_dataset.csv`
 - Original annotated dataset modified: **No**
 
 ## 1. Recorded implementation-status distribution
 
-- **Not assessed:** 9 provision(s) (45.0%)
-- **Partially implemented:** 8 provision(s) (40.0%)
-- **No evidence of implementation found:** 1 provision(s) (5.0%)
-- **Not yet implemented:** 1 provision(s) (5.0%)
-- **Implemented:** 1 provision(s) (5.0%)
+- **Not assessed:** 10 provision(s) (41.7%)
+- **Partially implemented:** 9 provision(s) (37.5%)
+- **Not yet implemented:** 2 provision(s) (8.3%)
+- **Implemented:** 2 provision(s) (8.3%)
+- **No evidence of implementation found:** 1 provision(s) (4.2%)
 
 ## 2. Implementation status by jurisdiction
 
@@ -27,11 +27,11 @@ See the accompanying count and within-jurisdiction percentage matrices. They des
 
 The completeness table records whether selected fields contain text. It does not assess the reliability, independence, date, or sufficiency of that text.
 
-- **implementation_notes**: 20/20 records contain text (100.0%).
-- **verification_notes**: 20/20 records contain text (100.0%).
-- **source_reference**: 20/20 records contain text (100.0%).
-- **exact_text**: 20/20 records contain text (100.0%).
-- **provision_summary**: 20/20 records contain text (100.0%).
+- **implementation_notes**: 24/24 records contain text (100.0%).
+- **verification_notes**: 24/24 records contain text (100.0%).
+- **source_reference**: 24/24 records contain text (100.0%).
+- **exact_text**: 24/24 records contain text (100.0%).
+- **provision_summary**: 24/24 records contain text (100.0%).
 
 ## 4. Phase 12 audit cross-reference
 

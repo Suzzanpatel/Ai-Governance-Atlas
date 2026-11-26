@@ -1,6 +1,6 @@
 # Phase 14.7 — Research Synthesis
 
-Generated: 2026-11-26 11:39:16
+Generated: 2026-11-26 12:09:45
 
 ## 1. Purpose and scope
 
@@ -11,24 +11,24 @@ determine legal meaning, measure real-world effectiveness, or rank jurisdictions
 
 ## 2. Dataset coverage
 
-- Provision records: **20**
+- Provision records: **24**
 - Jurisdictions represented: **4**
 - Primary governance dimensions represented: **5**
 
 ### Records by jurisdiction
 
-- EU: 5 records (25.0% of this dataset)
-- India: 5 records (25.0% of this dataset)
-- OECD (international benchmark): 5 records (25.0% of this dataset)
-- UK: 5 records (25.0% of this dataset)
+- EU: 5 records (20.8% of this dataset)
+- India: 7 records (29.2% of this dataset)
+- OECD (international benchmark): 5 records (20.8% of this dataset)
+- UK: 7 records (29.2% of this dataset)
 
 ### Records by primary governance dimension
 
-- Accountability: 4 records (20.0% of this dataset)
-- Enforcement: 3 records (15.0% of this dataset)
-- Risk Assessment: 5 records (25.0% of this dataset)
-- Safety and Testing: 4 records (20.0% of this dataset)
-- Transparency: 4 records (20.0% of this dataset)
+- Accountability: 5 records (20.8% of this dataset)
+- Enforcement: 4 records (16.7% of this dataset)
+- Risk Assessment: 5 records (20.8% of this dataset)
+- Safety and Testing: 5 records (20.8% of this dataset)
+- Transparency: 5 records (20.8% of this dataset)
 
 These figures describe the current coded sample. They must not be presented as
 a complete inventory of each jurisdiction's AI governance framework.
@@ -37,16 +37,17 @@ a complete inventory of each jurisdiction's AI governance framework.
 
 - Phase 13 report files detected: 6
 - Phase 13 CSV outputs detected: 49
-- Phase 14.3 source/version register rows: 25
-- Phase 14.4 legal-analysis worksheet rows: 20
-- Phase 14.5 comparative argument rows: 20
-- Phase 14.6 validation audit rows: 20
+- Phase 14.3 source/version register rows: 29
+- Phase 14.4 legal-analysis worksheet rows: 24
+- Phase 14.5 comparative argument rows: 24
+- Phase 14.6 validation audit rows: 24
 
 ### Phase 14.6 workflow flags
 
-- Ready for senior human review: 0
-- Source validation required: 20
-- Legal analysis incomplete: 0
+- Source and legal review complete: 0
+- Draft complete, awaiting researcher review: 24
+- Source or legal review pending: 0
+- Worksheet rows missing: 0
 
 These are administrative completeness flags only. They are not legal approval
 or an assessment of the substantive quality of any rule.
