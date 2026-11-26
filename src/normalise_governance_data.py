@@ -44,6 +44,8 @@ responsibility_map = {
     "IND003": ["Government", "Institution"],
     "IND004": ["Institution", "Regulator"],
     "IND005": ["Regulator", "Government", "Institution"],
+    "IND006": ["Intermediary"],
+    "IND007": ["Intermediary"],
 
     "UK001": ["Regulator", "AI Lifecycle Actors"],
     "UK002": ["Regulator", "AI Lifecycle Actors"],
@@ -54,6 +56,8 @@ responsibility_map = {
         "AI Lifecycle Actors"
     ],
     "UK005": ["Regulator", "Government"],
+    "UK006": ["Regulator"],
+    "UK007": ["Developer", "Government"],
 
     "OECD001": ["AI Lifecycle Actors", "Government"],
     "OECD002": ["AI Lifecycle Actors"],
@@ -107,6 +111,8 @@ enforcement_map = {
     "IND003": ["Not Applicable"],
     "IND004": ["Monitoring and Reporting"],
     "IND005": ["Existing Regulatory Powers"],
+    "IND006": ["Loss of Legal Protection"],
+    "IND007": ["Loss of Legal Protection"],
 
     "UK001": [
         "Existing Regulatory Powers",
@@ -126,6 +132,8 @@ enforcement_map = {
         "Monitoring and Evaluation",
         "Proposed or Future Mechanism"
     ],
+    "UK006": ["Monitoring and Reporting"],
+    "UK007": ["Proposed or Future Mechanism"],
 
     "OECD001": ["Monitoring and Reporting"],
     "OECD002": ["Monitoring and Reporting"],
