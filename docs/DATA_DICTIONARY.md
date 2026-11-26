@@ -7,38 +7,39 @@ Category definitions and coding rules are in
 ## 1. Coded evidence dataset
 
 **File:** `data/annotated/governance_dataset.csv`
-**Unit:** one row per selected provision (20 rows: 5 each for EU, India, UK and the OECD benchmark)
+**Unit:** one row per selected provision (24 rows: EU 5, India 7, UK 7, OECD benchmark 5; five per framework from each principal instrument, plus four from later instruments)
 **Status:** the master dataset. Every analysis script reads it, and none of them write to it.
 Corrections go through the Phase 12 review process and are written to
-`results/phase12/governance_dataset_phase12_revised.csv`.
+`results/phase12/governance_dataset_phase12_revised.csv`. Coding changes made
+directly to the master (recodes, new records) are logged in
+`data/annotated/coding_change_log.csv`.
 
 | Column | Meaning | Values used |
 |---|---|---|
-| `id` | Unique record identifier: framework prefix + number | `EU001`–`EU005`, `IND001`–`IND005`, `UK001`–`UK005`, `OECD001`–`OECD005` |
+| `id` | Unique record identifier: framework prefix + number | `EU001`–`EU005`, `IND001`–`IND007`, `UK001`–`UK007`, `OECD001`–`OECD005` |
 | `country` | Jurisdiction, or the international benchmark | `EU`, `India`, `UK`, `OECD (international benchmark)` |
 | `document` | Full citation of the instrument, including amendments and revisions | Free text |
-| `document_type` | Form of the instrument | `Legislation`, `Government guidelines`, `White paper`, `International recommendation` |
+| `document_type` | Form of the instrument | Free text, e.g. `Legislation`, `Subordinate legislation`, `Government response (policy)`, `International recommendation` |
 | `legal_status` | Legal force of the **instrument** (not of the individual provision) | `Binding legislation`, `Non-binding guidance`, `Government policy (non-statutory)`, `International recommendation (non-binding)` |
 | `article_or_section` | Precise location of the provision in the instrument | Free text |
 | `page_number` | Page reference. Where printed and PDF page numbers differ, both are given; for the EU, consolidated and original OJ pages are given | Free text |
 | `governance_dimension` | **Primary** governance dimension: the provision's principal regulatory purpose | `Transparency`, `Accountability`, `Risk Assessment`, `Safety and Testing`, `Enforcement` |
-| `secondary_dimension` | Optional additional function supported by the text (blank in 3 rows) | The five dimensions above, plus `Data Governance`* |
+| `secondary_dimension` | Optional additional function supported by the text (blank where none) | The five dimensions above |
 | `exact_text` | Verbatim extract from the primary source | Free text |
 | `provision_summary` | Researcher's plain-language summary | Free text |
-| `obligation_type` | Force of the obligation in this provision | `Mandatory`, `Recommended`, `Institutional`* |
+| `obligation_type` | **Force** of the obligation in this provision (coding framework §3) | `Mandatory`, `Recommended`, `Voluntary`, `Not specified` |
+| `obligation_nature` | **Nature** of the obligation (coding framework §4); several allowed, separated by ` \| ` | `Institutional`, `Procedural`, `Substantive`, `Reporting`, `Other` |
 | `responsible_party` | Actor(s) on whom the responsibility falls, in the source's terminology | Free text |
 | `applicability` | Scope: which systems, actors or situations the provision covers | Free text |
 | `enforcement_mechanism` | Enforcement route established by, or cross-referenced from, the provision | Free text with article and page references |
 | `source_reference` | Official URL(s) and identifiers (ELI, CP number, OECD/LEGAL number) | Free text |
 | `verification_notes` | Notes from checking the coding against the primary source | Free text |
 | `version_used` | Exact version or edition of the instrument coded | Free text |
-| `applicability_status` | Whether the provision currently has legal effect | `Legally adopted but not yet applicable`, `Not legally binding (policy or international instrument)` |
+| `applicability_status` | Whether the provision currently has legal effect | `In force (from <date>)`, `Legally adopted but not yet applicable`, `Not legally binding (policy or international instrument)` |
 | `implementation_status` | Documented implementation evidence | `Implemented`, `Partially implemented`, `Not yet implemented`, `No evidence of implementation found`, `Not assessed` |
 | `implementation_notes` | Evidence and reasoning behind `implementation_status` | Free text |
 
-\* **Known inconsistencies with the coding framework.** These are recorded here and the data is left unchanged.
-- `obligation_type` uses `Institutional` for 5 records. The coding framework treats *Institutional* as an **obligation nature** (§4), not an **obligation force** (§3: Mandatory / Recommended / Voluntary / Not specified). Consider splitting this column into `obligation_force` and `obligation_nature`.
-- `secondary_dimension` uses `Data Governance` (EU002), which is not one of the five framework dimensions.
+**Coding changes of 26 November 2026** (all logged in `coding_change_log.csv`): the five records previously coded `Institutional` in `obligation_type` were recoded by force (IND004, IND005, UK005 → Recommended; UK003 → Voluntary; OECD005 → Mandatory, an internal OECD instruction that binds no state or AI actor), and *Institutional* moved to the new `obligation_nature` column. EU002's secondary dimension changed from `Data Governance` (not a framework dimension) to `Safety and Testing`, and the string `None` in `secondary_dimension` was replaced by an empty value.
 
 **Reading the status fields.** `Not assessed` means that no assessment was made. It does not mean that implementation failed. `No evidence of implementation found` records the result of a documented search, not proof of non-implementation.
 
@@ -49,7 +50,7 @@ Corrections go through the Phase 12 review process and are written to
 
 | Column | Meaning |
 |---|---|
-| `responsibility_categories` | Standardised actor categories derived from `responsible_party`, separated by ` \| ` |
+| `responsibility_categories` | Standardised actor categories derived from `responsible_party`, separated by ` \| `. Private actors: AI Provider, AI Deployer, Developer, Intermediary, End User, AI Lifecycle Actors, Multiple Stakeholders. Public bodies: Government, Regulator, Institution |
 | `enforcement_categories` | Standardised mechanism categories derived from `enforcement_mechanism`, separated by ` \| ` |
 
 A provision can belong to several categories, so in the `*_long.csv` and
@@ -85,7 +86,17 @@ see `research/methodology/limitations.md` §7.
 | Interactive dashboard | `results/dashboard/index.html` |
 | Synthesis worksheet (to be completed by the researcher) | `results/phase14/research_synthesis/phase14_7_research_synthesis_worksheet.csv` |
 
-## 5. Files that hold human review input
+## 5. Review and reliability files
+
+| File | Contents |
+|---|---|
+| `research/evidence/phase14_review_record.csv` | Persistent Phase 14 review record, one row per provision: source checks (from the verification audit), drafted legal analysis, comparative argument and synthesis fields. Merged into the Phase 14 worksheets on every run. Set `analysis_status` to `REVIEWED` once you have checked a row |
+| `data/reliability/second_coder_ai.csv` | Blind AI-assisted second coding of all provisions |
+| `data/reliability/blind_coding_template.csv` | Blank sheet for a human second coder (no primary codes); save the completed file as `second_coder_human.csv` |
+| `results/reliability/agreement_summary.csv` | Percentage agreement and Cohen's kappa per variable |
+| `results/reliability/disagreements.csv` | Every provision and variable where the coders differ |
+
+## 6. Files that hold human review input
 
 The following files contain decisions entered by hand. The pipeline never regenerates them by default:
 

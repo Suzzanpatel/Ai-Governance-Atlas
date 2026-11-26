@@ -15,7 +15,7 @@ Start here to find your way around the project. Each guide covers one topic.
 
 ## The project in one paragraph
 
-AI Governance Atlas compares how the European Union, India and the United Kingdom turn AI governance principles into obligations, using the OECD AI Principles as an international benchmark. Twenty provisions (five per framework) are coded by hand for legal force, obligation force, duty-holder, enforcement linkage and implementation evidence. Keyword analysis of the full texts adds context. A single command reproduces every table, chart, the academic paper and the dashboard from the coded dataset.
+AI Governance Atlas compares how the European Union, India and the United Kingdom turn AI governance principles into obligations, using the OECD AI Principles as an international benchmark. Twenty-four provisions (five from each framework's principal instrument, plus four from later Indian and UK instruments) are coded by hand for legal force, obligation force, duty-holder, enforcement linkage and implementation evidence. Keyword analysis of the full texts adds context. A single command reproduces every table, chart, the academic paper and the dashboard from the coded dataset.
 
 ## How the pieces fit together
 
